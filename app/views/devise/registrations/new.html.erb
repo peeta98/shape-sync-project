@@ -2,7 +2,7 @@
   <div class="row gx-0">
     <div class="col-12">
       <h2>Join ShapeSync now!</h2>
-      <h3>Sign up to save your workout progress and stats</h3>
+      <h3>Save your settings, workout progress and more.</h3>
 
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= f.error_notification %>
@@ -11,21 +11,25 @@
           <%= f.input :email,
                       required: true,
                       autofocus: true,
-                      input_html: { autocomplete: "email" }%>
+                      input_html: { autocomplete: "email", class: "transparent", placeholder: "Email" } %>
           <%= f.input :password,
                       required: true,
-                      input_html: { autocomplete: "new-password" } %>
+                      input_html: { autocomplete: "new-password", class: "transparent", placeholder: "Password" } %>
           <%= f.input :password_confirmation,
                       required: true,
-                      input_html: { autocomplete: "new-password" } %>
+                      input_html: { autocomplete: "new-password", class: "transparent", placeholder: "Confirm Password" } %>
         </div>
 
         <div class="form-actions">
-          <%= f.button :submit, "Sign up", class:"button-green w-100 mt-4 mb-3 " %>
+          <%= f.button :submit, "Create my account", class:"button-green w-100 mt-4 mb-3 " %>
+        </div>
+        <div>
+         <%= link_to "Already have an account?", new_session_path(resource_name), class:"btn-already text-white" %>
         </div>
       <% end %>
-
-      <%= render "devise/shared/links"%>
+      <div class="fixed-bottom text-center">
+        <p style="color: white; font-size: 12px;">By continuing, you agree to Shape Sync’s <u>Terms & Conditions</u> and <u>Privacy Policy</u>.</p>
+      </div>
     </div>
   </div>
 </div>
