@@ -1,108 +1,228 @@
-require 'open-uri'
-
-puts "Deleting seeds..."
+puts 'Deleting seeds...'
 User.destroy_all
 Exercise.destroy_all
 Achievement.destroy_all
 Workout.destroy_all
 WorkoutProgram.destroy_all
-puts "Seeds deleted!"
+puts 'Seeds deleted!'
 
 #  ----- Seeding instances of User -----
-puts "Creating 5 users..."
-pedro = User.create!(username: "PedroPullup", email: "pedro@gmail.com", password: "secret", gender: "Male", height: 175, weight: 82, age: 30, goal: 'Get shredded',)
-puts "User 1 created!"
-# klevion = User.create!(username: "KettlebellKlevion", email: "klevion@gmail.com", password: "secret", gender: "male", height: 181, weight: 87, goal: "strength")
-# puts "User 2 created!"
-# ayub = User.create!(username: "AbsMasterAyub", email: "ayub@gmail.com", password: "secret", gender: "male", height: 190, weight: 80, goal: "weight loss")
-# puts "User 3 created!"
-# gonçalo = User.create!(username: "GonçaloGains", email: "gonçalo@gmail.com", password: "secret", gender: "male", height: 180, weight: 84, goal: "strength")
-# puts "User 4 created!"
-# kevin = User.create!(username: "KarateKevin", email: "kevin@gmail.com", password: "secret", gender: "male", height: 186, weight: 86, goal: "fitness")
-# puts "User 5 created!"
-
-puts "Creating exercises..."
-
-exercise1 = Exercise.create!(
-  name: "Skullcrushers",
-  category: "Triceps",
-  sets: 3,
-  reps: 15,
-  weight: 0,
-  rest: 60,
-  rpe: 7
+puts 'Creating 1 user...'
+pedro = User.create!(
+  username: 'Peeta98',
+  email: 'pedro@gmail.com',
+  password: 'secret',
+  gender: 'male',
+  height: 175,
+  weight: 82
 )
-puts "Exercise 1 created!"
+puts 'User 1 created!'
 
-exercise2 = Exercise.create!(
-  name: "Hammer Curls",
-  category: "Biceps",
+# ----- Seeding instances of Workout Program -----
+puts 'Creating 1 Workout Program...'
+max_gainz = WorkoutProgram.create!(
+  workout_split: 'PPL',
+  weekly_frequency: 3,
+  start_date: Date.today,
+  end_date: Date.today + 30.days,
+  user: pedro
+)
+puts 'Workout Program created!'
+
+# ----- Seeding istances of Workout -----
+puts 'Creating all the workouts...'
+push_week1 = Workout.create!(
+  name: 'Push Day',
+  date: Date.today,
+  duration: 90,
+  week: 1,
+  workout_program: max_gainz
+)
+pull_week1 = Workout.create!(
+  name: 'Pull day',
+  date: Date.today + 1,
+  duration: 75,
+  week: 1,
+  workout_program: max_gainz
+)
+legs_week1 = Workout.create!(
+  name: 'Leg day',
+  date: Date.today + 2,
+  duration: 93,
+  week: 1,
+  workout_program: max_gainz
+)
+puts 'Workouts for week 1 created!'
+
+push_week2 = Workout.create!(
+  name: 'Push Day',
+  date: Date.today + 5,
+  duration: 90,
+  week: 2,
+  workout_program: max_gainz
+)
+pull_week2 = Workout.create!(
+  name: 'Pull day',
+  date: Date.today + 6,
+  duration: 75,
+  week: 2,
+  workout_program: max_gainz
+)
+legs_week2 = Workout.create!(
+  name: 'Leg day',
+  date: Date.today + 7,
+  duration: 93,
+  week: 2,
+  workout_program: max_gainz
+)
+puts 'Workouts for week 2 created!'
+
+push_week3 = Workout.create!(
+  name: 'Push Day',
+  date: Date.today + 12,
+  duration: 90,
+  week: 3,
+  workout_program: max_gainz
+)
+pull_week3 = Workout.create!(
+  name: 'Pull day',
+  date: Date.today + 13,
+  duration: 75,
+  week: 3,
+  workout_program: max_gainz
+)
+legs_week3 = Workout.create!(
+  name: 'Leg day',
+  date: Date.today + 14,
+  duration: 93,
+  week: 3,
+  workout_program: max_gainz
+)
+puts 'Workouts for week 3 created!'
+
+push_week4 = Workout.create!(
+  name: 'Push Day',
+  date: Date.today + 19,
+  duration: 90,
+  week: 4,
+  workout_program: max_gainz
+)
+pull_week4 = Workout.create!(
+  name: 'Pull day',
+  date: Date.today + 20,
+  duration: 75,
+  week: 4,
+  workout_program: max_gainz
+)
+legs_week4 = Workout.create!(
+  name: 'Leg day',
+  date: Date.today + 21,
+  duration: 93,
+  week: 4,
+  workout_program: max_gainz
+)
+puts 'Workouts for week 4 created!'
+puts 'All Workouts created!'
+
+# ----- Seeding instances of exercise -----
+puts 'Creating exercises...'
+bench_press1 = Exercise.create!(
+  name: 'Barbell Bench Press',
+  category: 'Chest',
+  sets: 3,
+  reps: 8,
+  weight: 80,
+  rest: 120,
+  rpe: 7,
+  workout: push_week1
+)
+puts 'Exercises for Week 1 of Push Day created!'
+
+lat_pulldown1 = Exercise.create!(
+  name: 'Lat Pulldown Machine',
+  category: 'Back',
   sets: 4,
   reps: 8,
-  weight: 25,
+  weight: 55,
   rest: 90,
-  rpe: 8
+  rpe: 7,
+  workout: pull_week1
 )
-puts "Exercise 2 created!"
+puts 'Exercises for Week 1 of Pull Day created!'
 
-exercise3 = Exercise.create!(
-  name: "Seated Rows",
-  category: "Back",
+squat1 = Exercise.create!(
+  name: 'Barbell High-Bar Squat',
+  category: 'Legs',
   sets: 3,
   reps: 5,
   weight: 225,
   rest: 120,
-  rpe: 9
+  rpe: 9,
+  workout: legs_week1
 )
-puts "Exercise 3 created!"
+puts 'Exercises for Week 1 of Leg Day created!'
 
-exercise4 = Exercise.create!(
-  name: "Bench Press",
-  category: "Chest",
+bench_press2 = Exercise.create!(
+  name: 'Barbell Bench Press',
+  category: 'Chest',
   sets: 3,
-  reps: 8,
-  weight: 155,
-  rest: 90,
-  rpe: 7
+  reps: 9,
+  weight: 80,
+  rest: 120,
+  rpe: 8,
+  workout: push_week2
 )
-puts "Exercise 4 created!"
+puts 'Exercises for Week 2 of Push Day created!'
 
-exercise5 = Exercise.create!(
-  name: "Leg Press",
-  category: "Legs",
+lat_pulldown2 = Exercise.create!(
+  name: 'Lat Pulldown Machine',
+  category: 'Back',
+  sets: 4,
+  reps: 9,
+  weight: 55,
+  rest: 90,
+  rpe: 7,
+  workout: pull_week2
+)
+puts 'Exercises for Week 2 of Pull Day created!'
+
+squat1 = Exercise.create!(
+  name: 'Barbell High-Bar Squat',
+  category: 'Legs',
+  sets: 3,
+  reps: 5,
+  weight: 230,
+  rest: 120,
+  rpe: 9,
+  workout: legs_week2
+)
+puts 'Exercises for Week 2 of Leg Day created!'
+
+bench_press3 = Exercise.create!(
+  name: 'Barbell Bench Press',
+  category: 'Chest',
+  sets: 3,
+  reps: 10,
+  weight: 80,
+  rest: 120,
+  rpe: 9,
+  workout: push_week3
+)
+puts 'Exercises for Week 3 of Push Day created!'
+
+lat_pulldown3 = Exercise.create!(
+  name: 'Lat Pulldown Machine',
+  category: 'Back',
   sets: 4,
   reps: 10,
-  weight: 0,
-  rest: 60,
-  rpe: 7
+  weight: 55,
+  rest: 90,
+  rpe: 8,
+  workout: pull_week3
 )
-puts "Exercise 5 created!"
-puts "Finished creating exercises!"
+puts 'Exercises for Week 3 of Pull Day created!'
 
-puts "Creating achievements..."
-
-achievement1 = Achievement.create!(
-  name: "Newbie Gains",
-  badge_url: "https://img.freepik.com/free-vector/award-medal-with-red-ribbon_1284-42828.jpg?w=996&t=st=1693901682~exp=1693902282~hmac=ecd8b21a76bf86e7be6ee6ef2373a5918a50594185da93ddf3c9b9b922026366",
-  description: "Congratulations on finishing your first workout!"
-)
-
-puts "Achievement 1 created!"
-
-achievement2 = Achievement.create!(
-  name: "Cardio Master",
-  badge_url: "https://img.freepik.com/free-vector/award-ribbon_24908-54794.jpg?w=1380&t=st=1693901702~exp=1693902302~hmac=d558ef1018194f08eba0da64fb60838071e88311799969cd09d1bf8c018ffc6e",
-  description: "You have completed 100 hours of cardio, wow!"
-)
-
-puts "Achievement 2 created!"
-
-achievement3 = Achievement.create!(
-  name: "Bicep Boss",
-  badge_url: "https://img.freepik.com/free-vector/award-ribbon_24908-54753.jpg?w=1380&t=st=1693901721~exp=1693902321~hmac=532174ad81cb3bfb195a5fe0e559dc81fe8e3343b8281edf8c9186ce8240019f",
-  description: "Congratulations, you finished 50 bicep exercise sets!"
-)
-
+<<<<<<< HEAD
 puts "Achievement 3 created!"
 puts "Finished creating achievements!"
 
@@ -113,15 +233,66 @@ workout_split: "PPL",
 weekly_frequency: 3,
 start_date: Date.today,
 end_date: Date.today + 30.days
+=======
+squat3 = Exercise.create!(
+  name: 'Barbell High-Bar Squat',
+  category: 'Legs',
+  sets: 3,
+  reps: 6,
+  weight: 230,
+  rest: 120,
+  rpe: 9,
+  workout: legs_week3
 )
+puts 'Exercises for Week 3 of Leg Day created!'
 
+bench_press4 = Exercise.create!(
+  name: 'Barbell Bench Press',
+  category: 'Chest',
+  sets: 3,
+  reps: 12,
+  weight: 80,
+  rest: 120,
+  rpe: 10,
+  workout: push_week4
+>>>>>>> master
+)
+puts 'Exercises for Week 4 of Push Day created!'
+
+<<<<<<< HEAD
 program2= WorkoutProgram.create!(
 workout_split: "PPP",
 weekly_frequency: 5,
 start_date: Date.today,
 end_date: Date.today + 32.days
+=======
+lat_pulldown4 = Exercise.create!(
+  name: 'Lat Pulldown Machine',
+  category: 'Back',
+  sets: 4,
+  reps: 12,
+  weight: 55,
+  rest: 90,
+  rpe: 9,
+  workout: pull_week4
 )
+puts 'Exercises for Week 4 of Pull Day created!'
 
+squat4 = Exercise.create!(
+  name: 'Barbell High-Bar Squat',
+  category: 'Legs',
+  sets: 3,
+  reps: 6,
+  weight: 235,
+  rest: 120,
+  rpe: 10,
+  workout: legs_week4
+>>>>>>> master
+)
+puts 'Exercises for Week 4 of Leg Day created!'
+puts 'Finished creating exercises!'
+
+<<<<<<< HEAD
 puts "Workout program 1 created!"
 puts "Finished creating workout programs!"
 puts "Creating workouts..."
@@ -133,3 +304,26 @@ workout2 = program2.workouts.create(name: "Leg Day", date: Date.today, duration:
 puts "Workout 2 created for Program 2!"
 puts "Finished creating workouts!"
 
+=======
+# ----- Seeding instances of Achievement -----
+puts 'Creating achievements...'
+achievement1 = Achievement.create!(
+  name: 'Newbie Gains',
+  badge_url: 'https://img.freepik.com/free-vector/award-medal-with-red-ribbon_1284-42828.jpg?w=996&t=st=1693901682~exp=1693902282~hmac=ecd8b21a76bf86e7be6ee6ef2373a5918a50594185da93ddf3c9b9b922026366',
+  description: 'Congratulations on finishing your first workout!'
+)
+puts 'Achievement 1 created!'
+achievement2 = Achievement.create!(
+  name: 'Cardio Master',
+  badge_url: 'https://img.freepik.com/free-vector/award-ribbon_24908-54794.jpg?w=1380&t=st=1693901702~exp=1693902302~hmac=d558ef1018194f08eba0da64fb60838071e88311799969cd09d1bf8c018ffc6e',
+  description: 'You have completed 100 hours of cardio, wow!'
+)
+puts 'Achievement 2 created!'
+achievement3 = Achievement.create!(
+  name: 'Bicep Boss',
+  badge_url: 'https://img.freepik.com/free-vector/award-ribbon_24908-54753.jpg?w=1380&t=st=1693901721~exp=1693902321~hmac=532174ad81cb3bfb195a5fe0e559dc81fe8e3343b8281edf8c9186ce8240019f',
+  description: 'Congratulations, you finished 50 bicep exercise sets!'
+)
+puts 'Achievement 3 created!'
+puts 'Finished creating achievements!'
+>>>>>>> master

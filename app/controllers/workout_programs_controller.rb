@@ -41,4 +41,5 @@ class WorkoutProgramsController < ApplicationController
         @workout_program = WorkoutProgram.find(params[:id])
     end
 
+  # We always need to authorize the instance variable!
 end
