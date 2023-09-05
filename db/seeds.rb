@@ -12,9 +12,11 @@ pedro = User.create!(
   username: 'Peeta98',
   email: 'pedro@gmail.com',
   password: 'secret',
-  gender: 'male',
+  gender: 'Male',
   height: 175,
-  weight: 82
+  age: 27,
+  weight: 82,
+  goal: 'Get shredded'
 )
 puts 'User 1 created!'
 
