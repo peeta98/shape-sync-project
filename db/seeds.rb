@@ -14,7 +14,10 @@ pedro = User.create!(
   password: 'secret',
   gender: 'male',
   height: 175,
-  weight: 82
+  weight: 82,
+  age: 30,
+  goal: "Get shredded",
+  gender: "Male"
 )
 puts 'User 1 created!'
 
@@ -222,18 +225,6 @@ lat_pulldown3 = Exercise.create!(
 )
 puts 'Exercises for Week 3 of Pull Day created!'
 
-<<<<<<< HEAD
-puts "Achievement 3 created!"
-puts "Finished creating achievements!"
-
-puts "Creating workout programs..."
-
-program1= WorkoutProgram.create!(
-workout_split: "PPL",
-weekly_frequency: 3,
-start_date: Date.today,
-end_date: Date.today + 30.days
-=======
 squat3 = Exercise.create!(
   name: 'Barbell High-Bar Squat',
   category: 'Legs',
@@ -255,17 +246,9 @@ bench_press4 = Exercise.create!(
   rest: 120,
   rpe: 10,
   workout: push_week4
->>>>>>> master
 )
 puts 'Exercises for Week 4 of Push Day created!'
 
-<<<<<<< HEAD
-program2= WorkoutProgram.create!(
-workout_split: "PPP",
-weekly_frequency: 5,
-start_date: Date.today,
-end_date: Date.today + 32.days
-=======
 lat_pulldown4 = Exercise.create!(
   name: 'Lat Pulldown Machine',
   category: 'Back',
@@ -287,24 +270,10 @@ squat4 = Exercise.create!(
   rest: 120,
   rpe: 10,
   workout: legs_week4
->>>>>>> master
 )
 puts 'Exercises for Week 4 of Leg Day created!'
 puts 'Finished creating exercises!'
 
-<<<<<<< HEAD
-puts "Workout program 1 created!"
-puts "Finished creating workout programs!"
-puts "Creating workouts..."
-
-workout1 = program1.workouts.create(name: "Chest Day", date: Date.today, duration: 45, week: 1)
-puts "Workout 1 created for Program 1!"
-
-workout2 = program2.workouts.create(name: "Leg Day", date: Date.today, duration: 60, week: 2)
-puts "Workout 2 created for Program 2!"
-puts "Finished creating workouts!"
-
-=======
 # ----- Seeding instances of Achievement -----
 puts 'Creating achievements...'
 achievement1 = Achievement.create!(
@@ -326,4 +295,3 @@ achievement3 = Achievement.create!(
 )
 puts 'Achievement 3 created!'
 puts 'Finished creating achievements!'
->>>>>>> master
