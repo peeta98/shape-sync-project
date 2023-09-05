@@ -3,8 +3,8 @@ class ApplicationController < ActionController::Base
   include Pundit::Authorization
 
   # Pundit: allow-list approach
-  after_action :verify_authorized, unless: :skip_pundit?
-  after_action :very_policy_scoped, unless: :skip_pundit? # Don't know what this line does exactly
+  after_action :verify_authorized, except: :index,  unless: :skip_pundit?
+  after_action :verify_policy_scoped, only: :index, unless: :skip_pundit? # Don't know what this line does exactly
 
   private
 
