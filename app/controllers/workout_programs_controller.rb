@@ -11,6 +11,7 @@ class WorkoutProgramsController < ApplicationController
         else
           render 'edit', status: :unprocessable_entity
         end
+    end
     def new
         @workout_programs = WorkoutProgram.new
     end
@@ -26,7 +27,7 @@ class WorkoutProgramsController < ApplicationController
 
     private 
     def workout_program_params
-        params.require(:workout_program).permit(:total_duration, :weekly_frequency, :workout_split, :week, :start_date, :end_date)
+        params.require(:workout_program).permit( :weekly_frequency, :workout_split, :start_date, :end_date)
     end
 
     def find_workout_program

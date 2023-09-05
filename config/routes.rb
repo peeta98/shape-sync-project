@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :workout_programs do
+  resources :workout_programs, only: %i[show edit update create new ] do
     resources :workouts, shallow: true do
       resources :exercises, shallow: true
     end
