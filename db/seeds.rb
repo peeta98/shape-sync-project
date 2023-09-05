@@ -2,7 +2,7 @@ require 'open-uri'
 
 puts "Deleting seeds..."
 User.destroy_all
-Excercise.destroy_all
+Exercise.destroy_all
 Achievement.destroy_all
 Workout.destroy_all
 WorkoutProgram.destroy_all
@@ -10,7 +10,7 @@ puts "Seeds deleted!"
 
 #  ----- Seeding instances of User -----
 puts "Creating 5 users..."
-pedro = User.create!(username: "PedroPullup", email: "pedro@gmail.com", password: "secret", gender: "male", height: 175, weight: 82)
+pedro = User.create!(username: "PedroPullup", email: "pedro@gmail.com", password: "secret", gender: "Male", height: 175, weight: 82, age: 30, goal: 'Get shredded',)
 puts "User 1 created!"
 # klevion = User.create!(username: "KettlebellKlevion", email: "klevion@gmail.com", password: "secret", gender: "male", height: 181, weight: 87, goal: "strength")
 # puts "User 2 created!"
@@ -105,35 +105,31 @@ achievement3 = Achievement.create!(
 
 puts "Achievement 3 created!"
 puts "Finished creating achievements!"
-puts "Creating workouts..."
-
-workout1 = Workout.create!(
-  name: "Chest Day",
-  date: Date.today,
-  duration: 45,
-  week: 1
-)
-
-puts "Workout 1 created!"
-
-workout2 = Workout.create!(
-  name: "Leg Day",
-  date: Date.today,
-  duration: 60,
-  week: 2
-)
-
-puts "Workout 2 created!"
-puts "Finished creating workouts!"
 
 puts "Creating workout programs..."
 
-workout_program = WorkoutProgram.create!(
-  workout_split: "PPL",
-  weekly_frequency: 3,
-  start_date: Date.today,
-  end_date: Date.today + 30.days
+program1= WorkoutProgram.create!(
+workout_split: "PPL",
+weekly_frequency: 3,
+start_date: Date.today,
+end_date: Date.today + 30.days
+)
+
+program2= WorkoutProgram.create!(
+workout_split: "PPP",
+weekly_frequency: 5,
+start_date: Date.today,
+end_date: Date.today + 32.days
 )
 
 puts "Workout program 1 created!"
 puts "Finished creating workout programs!"
+puts "Creating workouts..."
+
+workout1 = program1.workouts.create(name: "Chest Day", date: Date.today, duration: 45, week: 1)
+puts "Workout 1 created for Program 1!"
+
+workout2 = program2.workouts.create(name: "Leg Day", date: Date.today, duration: 60, week: 2)
+puts "Workout 2 created for Program 2!"
+puts "Finished creating workouts!"
+

@@ -1,5 +1,5 @@
 class WorkoutProgramsController < ApplicationController
-    before_action :find_workout_program, only: [:show, :edit, :update]
+    before_action :find_workout_program, only: [:show, :edit, :update, :destroy]
     def show
     end
     
@@ -7,7 +7,7 @@ class WorkoutProgramsController < ApplicationController
     end
     def update
         if @workout_program.update(workout_program_params)
-          redirect_to workout_program_path(@workout_program), notice: "Successfully updated your workout program"
+          redirect_to @workout_program, notice: "Successfully updated your workout program"
         else
           render 'edit', status: :unprocessable_entity
         end
@@ -19,10 +19,17 @@ class WorkoutProgramsController < ApplicationController
     def create
         @workout_programs = WorkoutProgram.new(workout_program_params)
         if @workout_programs.save
-            redirect_to   new_workout_program_workout_path notice: "You have successfully created your workout program"
+            redirect_to  @workout_programs notice: "You have successfully created your workout program"
         else 
             render :new, status: :unprocessable_entity
         end
+    end
+
+    def destroy
+        if @workout_program.destroy
+            redirect_back(fallback_location: root_path)
+        else
+            render :show, status: :unprocessable_entity
     end
 
     private 
