@@ -1,0 +1,81 @@
+.container {
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: #c6f8a1;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.trophy-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    margin-right: 20px;
+    display: inline;
+  }
+}
+
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+  height: 100%;
+
+  div {
+    background: rgb(67, 66, 66);
+    color: white;
+  }
+}
+
+#workedHours {
+  font-size: 80px;
+  display: block;
+}
+
+#trophyAmount {
+  font-size: 80px;
+  display: block;
+}
+
+.achievement {
+  grid-template-columns: 1fr;
+  margin-top: 5px;
+  background-color:  rgb(67, 66, 66);
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  border-radius: 10px;
+
+  div {
+    background: rgb(67, 66, 66);
+    color: white;
+  }
+}
+
+.achievements {
+  font-weight: bold;
+  grid-template-columns: 1fr;
+  margin-top: 5px;
+  background-color:  rgb(67, 66, 66);
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-top: 5px;
+  border-radius: 10px;
+}
