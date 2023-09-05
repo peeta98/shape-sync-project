@@ -5,6 +5,7 @@ class WorkoutProgramPolicy < ApplicationPolicy
     #   scope.all
     # end
   end
+  
 
   def create?
     true # All users should be able to create a new workout program

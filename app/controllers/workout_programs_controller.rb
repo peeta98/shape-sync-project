@@ -1,35 +1,43 @@
 class WorkoutProgramsController < ApplicationController
     before_action :find_workout_program, only: [:show, :edit, :update, :destroy]
+
+
     def show
+        authorize @workout_program
     end
     
     def edit
+        authorize @workout_program
     end
+
     def update
+        authorize @workout_program
         if @workout_program.update(workout_program_params)
           redirect_to @workout_program, notice: "Successfully updated your workout program"
         else
           render 'edit', status: :unprocessable_entity
         end
     end
+
     def new
         @workout_programs = WorkoutProgram.new
+        authorize @workout_programs 
     end
      
     def create
         @workout_programs = WorkoutProgram.new(workout_program_params)
+        authorize @workout_programs 
         if @workout_programs.save
-            redirect_to  @workout_programs notice: "You have successfully created your workout program"
+            redirect_to  @workout_programs,  notice: "You have successfully created your workout program"
         else 
             render :new, status: :unprocessable_entity
         end
     end
 
     def destroy
-        if @workout_program.destroy
-            redirect_back(fallback_location: root_path)
-        else
-            render :show, status: :unprocessable_entity
+        authorize @workout_program
+        @workout_program.destroy
+            redirect_to root_path
     end
 
     private 

@@ -4,6 +4,7 @@ class CreateWorkouts < ActiveRecord::Migration[7.0]
       t.string :name
       t.date :date
       t.integer :duration
+      t.integer :week
       t.references :workout_program, null: false, foreign_key: true
 
       t.timestamps

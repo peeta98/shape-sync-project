@@ -4,6 +4,5 @@
 <%= @workout_program.start_date %>
 <%= @workout_program.end_date %>
 <%= link_to "Delete",
-            workout_program_path(@workout_program),
-            method: :delete,
+             workout_program_path(@workout_program),
             data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
