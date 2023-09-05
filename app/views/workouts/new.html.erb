@@ -1,0 +1,14 @@
+<h1>New Workout</h1>
+
+<%= form_with(model: @workout, local: true) do |form| %>
+
+  <h2>Exercises</h2>
+  <% Exercise.all.each do |exercise| %>
+    <div>
+      <%= form.check_box :exercise_ids, { multiple: true }, exercise.id, nil %>
+      <%= exercise.name %>
+    </div>
+  <% end %>
+
+  <%= form.submit %>
+<% end %>
