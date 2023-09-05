@@ -50,6 +50,7 @@ gem "sassc-rails"
 
 gem "bootstrap", "~> 5.2"
 gem "devise"
+gem "pundit"
 gem 'psych', '~>3.0'
 gem "autoprefixer-rails"
 gem "font-awesome-sass", "~> 6.1"
