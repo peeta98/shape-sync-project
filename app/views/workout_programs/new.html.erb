@@ -1,0 +1,9 @@
+<%= simple_form_for @workout_programs do |f| %>
+<%= f.input :total_duration %>
+<%= f.input :weekly_frequency %>
+<%= f.input :workout_split %>
+<%= f.input :week %>
+<%= f.input :start_date %>
+<%= f.input :end_date %>
+  <%= f.button :submit %>
+<% end %>
