@@ -1,11 +1,10 @@
 class WorkoutProgramPolicy < ApplicationPolicy
   class Scope < Scope
     # NOTE: Be explicit about which records you allow access to!
-    # def resolve
-    #   scope.all
-    # end
+    def resolve
+      scope.where(user:) # Users can only see their workout programs
+    end
   end
-  
 
   def create?
     true # All users should be able to create a new workout program
