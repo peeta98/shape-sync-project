@@ -110,7 +110,8 @@ puts "Creating workouts..."
 workout1 = Workout.create!(
   name: "Chest Day",
   date: Date.today,
-  duration: 45
+  duration: 45,
+  week: 1
 )
 
 puts "Workout 1 created!"
@@ -118,7 +119,8 @@ puts "Workout 1 created!"
 workout2 = Workout.create!(
   name: "Leg Day",
   date: Date.today,
-  duration: 60
+  duration: 60,
+  week: 2
 )
 
 puts "Workout 2 created!"
@@ -128,9 +130,7 @@ puts "Creating workout programs..."
 
 workout_program = WorkoutProgram.create!(
   workout_split: "PPL",
-  total_duration: 45,
   weekly_frequency: 3,
-  week: [1, 2, 3, 4],
   start_date: Date.today,
   end_date: Date.today + 30.days
 )
