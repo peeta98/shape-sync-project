@@ -1,0 +1,7 @@
+<h1>Exercise Library Page 🏋️</h1>
+<ul>
+  <!-- Exercises with the same name will not be repeated -->
+  <% @exercises.group_by(&:name).map do |k, v| %>
+  <li><%= v.first.name %></li>
+  <% end %>
+</ul>
