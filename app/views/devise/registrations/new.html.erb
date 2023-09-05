@@ -1,6 +1,7 @@
 <div class="gx-0" id="authentication">
   <div class="row gx-0">
     <div class="col-12">
+    <img src="logo.png" />
       <h2>Join ShapeSync now!</h2>
       <h3>Save your settings, workout progress and more.</h3>
 
@@ -8,14 +9,14 @@
         <%= f.error_notification %>
 
         <div class="form-inputs">
-          <%= f.input :email,
+          <%= f.input :email, label: false,
                       required: true,
                       autofocus: true,
                       input_html: { autocomplete: "email", class: "transparent", placeholder: "Email" } %>
-          <%= f.input :password,
+          <%= f.input :password, label: false,
                       required: true,
                       input_html: { autocomplete: "new-password", class: "transparent", placeholder: "Password" } %>
-          <%= f.input :password_confirmation,
+          <%= f.input :password_confirmation, label: false,
                       required: true,
                       input_html: { autocomplete: "new-password", class: "transparent", placeholder: "Confirm Password" } %>
         </div>
