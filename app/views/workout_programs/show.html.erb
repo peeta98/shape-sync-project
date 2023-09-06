@@ -1,8 +1,34 @@
 
-<%=@workout_program.weekly_frequency %>
-<%=@workout_program.workout_split %>
-<%= @workout_program.start_date %>
-<%= @workout_program.end_date %>
-<%= link_to "Delete",
-             workout_program_path(@workout_program),
-            data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+
+<div class="workout-cards" data-controller="add-exercises-to-workout">
+  <div>
+    <h2>Current Workouts</h2>
+    <%= link_to "Delete This Workout Program",
+                workout_program_path(@workout_program),
+                data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+                class: "button-green" %>
+  </div>
+  <% @workout_program.workouts.each do |workout| %>
+    <%= render 'workouts/workout', workout: workout %>
+  <% end %>
+</div>
+
+<hr>
+<% unless @workout_program.workouts.any?(&:persisted?) %>
+  <div class="workout-program">
+    <h1>Add workouts:</h1>
+    <%= simple_form_for @workout_program do |f| %>
+      <% @workout_program.errors.full_messages.each do |e| %>
+        <p class="text-danger"><%= e %></p>
+      <% end %>
+      <!-- Nested Workout fields (using fields_for) -->
+      <% @workout_program.weekly_frequency.times do |i| %>
+        <h2>Workout #<%= i + 1 %></h2>
+        <%= f.simple_fields_for :workouts, @workout_program.workouts[i] || Workout.new do |workout_fields| %>
+          <%= workout_fields.input :categories, collection: ['Chest', 'Back', 'Legs', 'Shoulders', 'Biceps', 'Triceps', 'Abs', 'Cardio', 'UpperBody', 'LowerBody', 'FullBody'] %>
+        <% end %>
+      <% end %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+<% end %>

@@ -75,7 +75,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_04_123741) do
   end
 
   create_table "workouts", force: :cascade do |t|
-    t.string "categories", array: true
+    t.string "categories"
     t.date "date"
     t.integer "duration"
     t.bigint "workout_program_id", null: false
