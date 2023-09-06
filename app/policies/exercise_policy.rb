@@ -21,11 +21,11 @@ class ExercisePolicy < ApplicationPolicy
   end
 
   def show?
-    record.workout.user == user # User can only see HIS workout
+    record.workout.workout_program.user == user # User can only see HIS workout
   end
 
   def update?
-    record.workout.user == user # User can only update HIS workout 
+    record.workout.workout_program.user == user # User can only update HIS workout    # User can only update HIS workout 
   end
 
   def destroy?
