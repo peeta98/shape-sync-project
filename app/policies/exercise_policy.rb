@@ -6,8 +6,9 @@ class ExercisePolicy < ApplicationPolicy
   class Scope < Scope
     # NOTE: Be explicit about which records you allow access to!
     def resolve
-      scope.where(user: user)
+      #scope.joins(workout: :workout_program).joins(workout_program: :user).where(user: user)
        # Users can only see their workout programs
+       scope.all 
     end
   end
 

@@ -1,5 +1,6 @@
 class Exercise < ApplicationRecord
   belongs_to :workout
+  has_one :workout_program, through: :workout
 
   validates :name, :weight, :sets, :reps, presence: true
   validates :category, inclusion: { in: ['Chest', 'Back', 'Legs', 'Shoulders', 'Biceps', 'Triceps', 'Abs', 'Cardio', 'UpperBody','LowerBody', 'FullBody'] }
