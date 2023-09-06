@@ -1,6 +1,9 @@
 <div class="gx-0" id="authentication">
   <div class="row gx-0">
     <div class="col-12">
+     <%= link_to root_path, class: "navbar-brand" do%>
+      <% image_tag 'logo2.png', class: "center" %>
+        <% end %>
       <h2>Log in</h2>
 
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
