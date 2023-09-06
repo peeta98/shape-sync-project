@@ -1,0 +1,55 @@
+.workout-cards{
+  padding: 1rem;
+  color: #C4ED6D;
+  i{
+    color: #C4ED6D;
+  }
+}
+
+.workout-card{
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #C4ED6D;
+  border-radius: 16px;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-top: 2rem;
+  h4{
+    margin-bottom: 0;
+    color: white;
+    padding-bottom: 0;
+  }
+  i{
+    color: #C4ED6D;
+  }
+  .workout-card-links{
+    display: none;
+    button{
+      background-color: transparent;
+      border: 0;
+    }
+  }
+
+  .add-exercise{
+    display: flex;
+    justify-content: center;
+    p{
+      margin-bottom: 0.5rem;
+      padding-bottom: 0;
+      margin-top: 1rem;
+    }
+
+  }
+  .text-center{
+    i{
+      margin-top: 0;
+      padding-top: 0;
+    }
+  }
+}
+
+.workout-card:hover .workout-card-links{
+  display: block;
+}

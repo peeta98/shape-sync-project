@@ -3,6 +3,7 @@ class WorkoutProgramsController < ApplicationController
   # We always need to authorize the instance variable!
 
   def show
+    @workout = Workout.new
     authorize @workout_program
   end
 
@@ -15,10 +16,11 @@ class WorkoutProgramsController < ApplicationController
     if @workout_program.update(workout_program_params)
       redirect_to @workout_program, notice: 'Successfully updated your workout program'
     else
-      render 'edit', status: :unprocessable_entity
+      render :show, status: :unprocessable_entity
     end
   end
 
+  # GET workout_programs/new
   def new
     @workout_program = WorkoutProgram.new
     authorize @workout_program
@@ -44,7 +46,7 @@ class WorkoutProgramsController < ApplicationController
   private
 
   def workout_program_params
-    params.require(:workout_program).permit(:weekly_frequency, :start_date, :end_date)
+    params.require(:workout_program).permit(:weekly_frequency, :start_date, :end_date, workouts_attributes: [:id, :date, :categories, :duration, :_destroy])
   end
 
   def find_workout_program

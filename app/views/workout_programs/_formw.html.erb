@@ -1,0 +1,7 @@
+<h1>New Workout</h1>
+
+<%= simple_form_for [workout_program , workout] do |f| %>
+  <%= f.input :categories, collection: [['Chest'], ['Back'], ['Legs'], ['Shoulders'], ['Biceps'], ['Triceps'], ['Abs'], ['Cardio'], ['UpperBody'],['LowerBody'], ['FullBody']] %>
+  <%= f.input :date %>
+  <%= f.submit %>
+<% end %>

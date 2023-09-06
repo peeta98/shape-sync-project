@@ -1,0 +1,27 @@
+<%# dom_id(workout) => "workout_1" %>
+<%= turbo_frame_tag dom_id(workout) do %>
+  <div class="workout-card">
+    <h4><%= workout.categories %></h4>
+    <div class="workout-card-links">
+      <%= link_to edit_workout_path(workout) do %>
+        <i class="fa-solid fa-pen-to-square fa-sm"></i>
+      <% end %>
+      <button data-action="click->add-exercises-to-workout#show"><i class="fa-solid fa-list fa-sm"></i></button>
+    </div>
+  </div>
+  <div class="workout-card-exercises d-none" data-add-exercises-to-workout-target="div">
+    <div class="exercises">
+      <% workout.exercises.each do |exercise| %>
+        <p><%= exercise.name %><%= exercise.weight %><%= exercise.sets %><%= exercise.reps %></p>
+      <% end %>
+    </div>
+    <div class="add-exercise">
+      <div class="text-center">
+        <strong><p>Add New Exercise</p></strong>
+        <%= link_to new_workout_exercise_path(workout) do %>
+          <i class="fa-solid fa-circle-plus fa-2xl"></i>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>

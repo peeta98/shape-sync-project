@@ -23,5 +23,5 @@ class WorkoutPolicy < ApplicationPolicy
     record.workout_program.user == user # User can only destroy HIS workout program
   end
 
-  
+
 end

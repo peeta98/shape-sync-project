@@ -1,18 +1,9 @@
-<div>
-  <div>
-    <%= simple_form_for @workout_program do |f| %>
-      <%= f.input :weekly_frequency %>
-      <%= f.input :start_date %>
-      <%= f.input :end_date %>
-      <%= f.button :submit %>
-    <% end %>
-  </div>
-  <div class="d-none">
-    <h1>New Workout</h1>
-    <%= simple_form_for [ @workout_program , @workout] do |f| %>
-    <%= f.text_field :categories %>
-    <%= f.date_field :date %>
-    <%= f.button :submit %>
-    <% end %>
-  </div>
+<div class="workout-program">
+  <h1>Create a workout program</h1>
+  <%= form_with model: @workout_program do |f| %>
+    <%= f.text_field :weekly_frequency %>
+    <%= f.date_field :start_date %>
+    <%= f.date_field :end_date %>
+    <%= f.submit %>
+  <% end %>
 </div>
