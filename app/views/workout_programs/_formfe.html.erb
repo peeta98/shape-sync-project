@@ -1,0 +1,13 @@
+<div class="d-none">
+  <h1>New Exercise</h1>
+  <%= simple_form_for [workout , exercise] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :category %>
+  <%= f.input :sets %>
+  <%= f.input :reps %>
+  <%= f.input :weight %>
+  <%= f.input :rest %>
+  <%= f.input :rpe %>
+  <%= f.button :submit %>
+  <% end %>
+</div>
