@@ -32,34 +32,63 @@
           </ul></div>
     </div>
     <h2 class="text-center mt-4">Unlockable Achievements</h2>
+
     <div class="achievements">
       <div>Achievement</div>
-      <div>Current level</div>
+      <div>Category</div>
       <div>Progress</div>
       <div>Status</div>
     </div>
+
     <div class="achievement">
-      <div>Bicep curls</div>
-      <div>Silver</div>
+      <div>Bicep Beginner</div>
+      <div>Biceps</div>
+      <div>5/5</div>
+      <div>Unlocked</div>
+    </div>
+     <div class="description">
+        <div>Description: Do 5 biceps exercises</div>
+    </div>
+
+
+    <div class="achievement">
+      <div>Bicep Apprentice</div>
+      <div>Biceps</div>
       <div>9/10</div>
-      <div>90%</div>
+      <div>Locked</div>
     </div>
-    <div class="achievement">
-      <div>Squats</div>
-      <div>N/A</div>
-      <div>1/10</div>
-      <div>10%</div>
+     <div class="description">
+        <div>Description: Do 25 biceps exercises</div>
     </div>
+
     <div class="achievement">
-      <div>Deadlifts</div>
-      <div>Bronze</div>
-      <div>9/10</div>
-      <div>90%</div>
+      <div>Bicep Boss</div>
+      <div>Biceps</div>
+      <div>9/80</div>
+      <div>Locked</div>
     </div>
+     <div class="description">
+        <div>Description: Do 80 biceps exercises</div>
+    </div>
+
     <div class="achievement">
-      <div>Skullcrushers</div>
-      <div>Silver</div>
-      <div>17/20</div>
-      <div>85%</div>
+      <div>Bicep Grandmaster</div>
+      <div>Biceps</div>
+      <div>9/200</div>
+      <div>Locked</div>
+    </div>
+     <div class="description">
+        <div>Description: Do 200 biceps exercises</div>
     </div>
 </div>
+
+
+ <h1>Achievements</h1>
+ <% @achievements.each do |achievement| %>
+     <div class="achievement">
+         <div>Name: <%= achievement.name %></div>
+        <div>Category: <%= achievement.category %></div>
+       <div>Progress: 0/<%= achievement.goal %></div>
+       <div class="description">Description: <%= achievement.description %></div>
+   </div>
+ <% end %>

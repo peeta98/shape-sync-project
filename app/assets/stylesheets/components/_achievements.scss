@@ -55,10 +55,11 @@ h1 {
   color: white;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   padding-left: 10px;
-  border-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 
   div {
     background: rgb(67, 66, 66);
@@ -67,7 +68,7 @@ h1 {
 }
 
 .achievements {
-  font-weight: bold;
+  font-weight: bolder;
   grid-template-columns: 1fr;
   margin-top: 5px;
   background-color:  rgb(67, 66, 66);
@@ -78,4 +79,18 @@ h1 {
   padding-left: 10px;
   padding-top: 5px;
   border-radius: 10px;
+}
+
+.description {
+  font-weight: lighter;
+  background-color:  rgb(67, 66, 66);
+  color: white;
+  display: block;
+  grid-template-columns: 1fr;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-left: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top: 2px solid rgb(0, 0, 0);
 }
