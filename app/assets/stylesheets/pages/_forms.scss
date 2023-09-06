@@ -27,7 +27,7 @@
 
   .button-green {
     align-items: center;
-    background-image: linear-gradient(144deg,#C4ED6D, #C4ED6D 50%,#C4ED6D);
+    background-image: linear-gradient(144deg, #8aaa46, #8aaa46 50%, #8aaa46);
     border: 0;
     border-radius: 16px;
     box-sizing: border-box;
@@ -47,6 +47,7 @@
     touch-action: manipulation;
     white-space: nowrap;
     cursor: pointer;
+    height: 50px;
   }
   .btn-already {
     align-items: center;
@@ -70,6 +71,7 @@
     touch-action: manipulation;
     white-space: nowrap;
     cursor: pointer;
+    height: 50px;
   }
   .transparent {
     background-color: transparent;

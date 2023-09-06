@@ -1,7 +1,10 @@
-<h1>Exercise Library Page 🏋️</h1>
-<ul>
-  <!-- Exercises with the same name will not be repeated -->
-  <% @exercises.group_by(&:name).map do |k, v| %>
-  <li><%= v.first.name %></li>
-  <% end %>
-</ul>
+<div class="library" data-controller="library-exercises">
+  <h1>Exercises Library 🏋️</h1>
+  <div class="my-4 mx-0 gx-0">
+    <%= form_with url: library_path, method: :get, html: {class: "search-form transparent", data: {library_exercises_target: "form"}} do |form| %>
+      <%= form.text_field :search, class: "transparent py-2", placeholder: "Search for exercises...",value: params[:search] ,data: {library_exercises_target: "search", action:"keyup->library-exercises#search"}%>
+    <% end %>
+  </div>
+
+  <%= render "pages/list", exercises: @exercises %>
+</div>
