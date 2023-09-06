@@ -6,8 +6,8 @@
       <%= pluralize exercises.count, "result" %> for "<em><%= params[:search] %></em>"
     <% end %>
   </p>
-  <% exercises.each do |exercise| %>
-    <p><%= exercise.name %></p>
+  <% exercises_name.each do |exercise| %>
+    <p><%= exercise %></p>
   <% end %>
   <% categories = ['Chest', 'Back', 'Legs', 'Shoulders', 'Biceps', 'Triceps', 'Abs', 'Cardio'] %>
   <% categories.each do |category| %>
