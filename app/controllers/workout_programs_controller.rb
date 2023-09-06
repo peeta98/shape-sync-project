@@ -20,15 +20,16 @@ class WorkoutProgramsController < ApplicationController
   end
 
   def new
-    @workout_programs = WorkoutProgram.new
-    authorize @workout_programs
+    @workout_program = WorkoutProgram.new
+    authorize @workout_program
   end
 
   def create
-    @workout_programs = WorkoutProgram.new(workout_program_params)
-    authorize @workout_programs
-    if @workout_programs.save
-      redirect_to @workout_programs, notice: 'You have successfully created your workout program'
+    @workout_program = WorkoutProgram.new(workout_program_params)
+    @workout_program.user = current_user
+    authorize @workout_program
+    if @workout_program.save
+      redirect_to workout_program_path(@workout_program), notice: 'You have successfully created your workout program'
     else
       render :new, status: :unprocessable_entity
     end
