@@ -303,8 +303,9 @@ seated_leg_curl1 = Exercise.create!(
 puts '4th Exercise for Week 1 of Leg Day created!'
 puts 'All Exercises for Week 1 of Leg Day created!'
 
+# ----- CREATING THE SAME EXERCISES FOR THE REMAINING WEEKS! -----
+puts 'Creating exercises for remaining weeks of Push Day...'
 [push_week2, push_week3, push_week4].each do |push_week|
-  puts 'Creating exercises for remaining weeks of Push Day...'
   bench_press = bench_press1.dup
   bench_press.workout = push_week
   bench_press.save!
@@ -324,9 +325,10 @@ puts 'All Exercises for Week 1 of Leg Day created!'
   triceps_cable_pressdown.workout = push_week
   triceps_cable_pressdown.save!
 end
+puts 'Created all exercises for the remaining weeks of Push Day!'
 
+puts 'Creating exercises for remaining weeks of Pull Day...'
 [pull_week2, pull_week3, pull_week4].each do |pull_week|
-  puts 'Creating exercises for remaining weeks of pull Day...'
   lat_pulldown = lat_pulldown1.dup
   lat_pulldown.workout = pull_week
   lat_pulldown.save!
@@ -343,9 +345,10 @@ end
   db_preacher_curls.workout = pull_week
   db_preacher_curls.save!
 end
+puts 'Created all exercises for the remaining weeks of Pull Day!'
 
+puts 'Creating exercises for remaining weeks of legs Day...'
 [legs_week2, legs_week3, legs_week4].each do |legs_week|
-  puts 'Creating exercises for remaining weeks of legs Day...'
   squat = squat1.dup
   squat.workout = legs_week
   squat.save!
@@ -359,6 +362,7 @@ end
   seated_leg_curl.workout = legs_week
   seated_leg_curl.save!
 end
+puts 'Created all exercises for the remaining weeks of Legs Day!'
 puts 'All exercises for all workous created!'
 
 # ----- Seeding instances of Achievement -----

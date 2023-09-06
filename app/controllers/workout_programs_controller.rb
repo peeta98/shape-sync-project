@@ -21,6 +21,8 @@ class WorkoutProgramsController < ApplicationController
 
   def new
     @workout_program = WorkoutProgram.new
+    # @workout = Workout.new
+    # authorize @workout
     authorize @workout_program
   end
 
