@@ -12,7 +12,12 @@
           <a class="nav-link" href="/profile">Profile</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/workouts">Workouts</a>
+        <% if @workout_program %>
+    <%= link_to "Workout Programs", workout_program_path(@workout_program) %>
+  <% else %>
+    <%= link_to "Create Workout Program", new_workout_program_path %>
+  <% end %>
+
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/achievements">Achievements</a>
