@@ -23,7 +23,6 @@ puts 'User 1 created!'
 # ----- Seeding instances of Workout Program -----
 puts 'Creating 1 Workout Program...'
 max_gainz = WorkoutProgram.create!(
-  workout_split: 'PPL',
   weekly_frequency: 3,
   start_date: Date.today,
   end_date: Date.today + 30.days,
@@ -34,93 +33,81 @@ puts 'Workout Program created!'
 # ----- Seeding istances of Workout -----
 puts 'Creating all the workouts...'
 push_week1 = Workout.create!(
-  name: 'Push Day',
+  categories: 'Chest',
   date: Date.today,
   duration: 90,
-  week: 1,
   workout_program: max_gainz
 )
 pull_week1 = Workout.create!(
-  name: 'Pull day',
+  categories: 'Back',
   date: Date.today + 1,
   duration: 75,
-  week: 1,
   workout_program: max_gainz
 )
 legs_week1 = Workout.create!(
-  name: 'Leg day',
+  categories: 'Leg day',
   date: Date.today + 2,
   duration: 93,
-  week: 1,
   workout_program: max_gainz
 )
 puts 'Workouts for week 1 created!'
 
 push_week2 = Workout.create!(
-  name: 'Push Day',
+  categories: 'Push Day',
   date: Date.today + 5,
   duration: 90,
-  week: 2,
   workout_program: max_gainz
 )
 pull_week2 = Workout.create!(
-  name: 'Pull day',
+  categories: 'Pull day',
   date: Date.today + 6,
   duration: 75,
-  week: 2,
   workout_program: max_gainz
 )
 legs_week2 = Workout.create!(
-  name: 'Leg day',
+  categories: 'Leg day',
   date: Date.today + 7,
   duration: 93,
-  week: 2,
   workout_program: max_gainz
 )
 puts 'Workouts for week 2 created!'
 
 push_week3 = Workout.create!(
-  name: 'Push Day',
+  categories: 'Push Day',
   date: Date.today + 12,
   duration: 90,
-  week: 3,
   workout_program: max_gainz
 )
 pull_week3 = Workout.create!(
-  name: 'Pull day',
+  categories: 'Pull day',
   date: Date.today + 13,
   duration: 75,
-  week: 3,
   workout_program: max_gainz
 )
 legs_week3 = Workout.create!(
-  name: 'Leg day',
+  categories: 'Leg day',
   date: Date.today + 14,
   duration: 93,
-  week: 3,
   workout_program: max_gainz
 )
 puts 'Workouts for week 3 created!'
 
 push_week4 = Workout.create!(
-  name: 'Push Day',
+  categories: 'Push Day',
   date: Date.today + 19,
   duration: 90,
-  week: 4,
   workout_program: max_gainz
 )
 pull_week4 = Workout.create!(
-  name: 'Pull day',
+  categories: 'Pull day',
   date: Date.today + 20,
   duration: 75,
-  week: 4,
   workout_program: max_gainz
 )
 legs_week4 = Workout.create!(
-  name: 'Leg day',
+  categories: 'Leg day',
   date: Date.today + 21,
   duration: 93,
-  week: 4,
   workout_program: max_gainz
 )
 puts 'Workouts for week 4 created!'

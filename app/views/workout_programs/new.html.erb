@@ -1,7 +1,18 @@
-<%= simple_form_for @workout_program do |f| %>
-<%= f.input :weekly_frequency %>
-<%= f.input :workout_split %>
-<%= f.input :start_date %>
-<%= f.input :end_date %>
-  <%= f.button :submit %>
-<% end %>
+<div>
+  <div>
+    <%= simple_form_for @workout_program do |f| %>
+      <%= f.input :weekly_frequency %>
+      <%= f.input :start_date %>
+      <%= f.input :end_date %>
+      <%= f.button :submit %>
+    <% end %>
+  </div>
+  <div class="d-none">
+    <h1>New Workout</h1>
+    <%= simple_form_for [ @workout_program , @workout] do |f| %>
+    <%= f.text_field :categories %>
+    <%= f.date_field :date %>
+    <%= f.button :submit %>
+    <% end %>
+  </div>
+</div>

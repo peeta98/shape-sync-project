@@ -1,10 +1,8 @@
 <h1>New Workout</h1>
 
 <%= form_with(model: [ @workout_program , @workout], local: true) do |form| %>
-<%= form.text_field :name %>
-<%= form.number_field :duration %>
+<%= form.text_field :categories %>
 <%= form.date_field :date %>
-<%= form.number_field :week %>
   <h2>Exercises</h2>
   <% Exercise.all.each do |exercise| %>
     <div>
