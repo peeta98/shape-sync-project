@@ -1,0 +1,25 @@
+<div class="categories" data-library-exercises-target="list">
+  <p class="text-end">
+    <% if params[:search].blank? %>
+      <%= pluralize exercises.count, "exercise" %> available
+    <% else %>
+      <%= pluralize exercises.count, "result" %> for "<em><%= params[:search] %></em>"
+    <% end %>
+  </p>
+  <% exercises.each do |exercise| %>
+    <p><%= exercise.name %></p>
+  <% end %>
+  <% categories = ['Chest', 'Back', 'Legs', 'Shoulders', 'Biceps', 'Triceps', 'Abs', 'Cardio'] %>
+  <% categories.each do |category| %>
+    <div class="category-card" data-library-exercises-target="button" data-action="click->library-exercises#showExercises">
+      <h2><%= category %></h2>
+    </div>
+    <div class="d-none" data-library-exercises-target="exercises">
+      <% exercises.each do |exercise| %>
+        <% if exercise.category == category %>
+          <p><%= exercise.name %></p>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+</div>

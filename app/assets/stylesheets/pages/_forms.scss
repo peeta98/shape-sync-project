@@ -8,7 +8,7 @@
 
   .col-12{
     h2{
-      color: #39FF14;
+      color: #C4ED6D;
       font-size: 26px;
     }
     h3{
@@ -27,15 +27,15 @@
 
   .button-green {
     align-items: center;
-    background-image: linear-gradient(144deg,#39FF14, #39FF14 50%,#39FF14);
+    background-image: linear-gradient(144deg, #8aaa46, #8aaa46 50%, #8aaa46);
     border: 0;
-    border-radius: 8px;
-    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+    border-radius: 16px;
     box-sizing: border-box;
     color: #FFFFFF;
     display: flex;
     font-family: Phantomsans, sans-serif;
     font-size: 18px;
+    font-weight: bold;
     justify-content: center;
     line-height: 1em;
     max-width: 100%;
@@ -47,6 +47,44 @@
     touch-action: manipulation;
     white-space: nowrap;
     cursor: pointer;
+    height: 50px;
+  }
+  .btn-already {
+    align-items: center;
+    background-image: linear-gradient(144deg,#818181, #818181 50%,#818181);
+    border: 0;
+    border-radius: 16px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    display: flex;
+    font-family: Phantomsans, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    justify-content: center;
+    line-height: 1em;
+    max-width: 100%;
+    min-width: 140px;
+    padding: 10px;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    cursor: pointer;
+    height: 50px;
+  }
+  .transparent {
+    background-color: transparent;
+    border: 1px solid #C4ED6D;
+    color: white;
+    border-radius: 16px;
   }
 
+  .transparent::placeholder {
+    color: white;
+  }
+
+  .form-actions {
+    border-color: #C4ED6D;
+  }
 }
