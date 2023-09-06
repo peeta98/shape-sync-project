@@ -11,11 +11,8 @@
   <% end %>
   <% categories = ['Chest', 'Back', 'Legs', 'Shoulders', 'Biceps', 'Triceps', 'Abs', 'Cardio'] %>
   <% categories.each do |category| %>
-    <div class="category-card">
+    <div class="category-card" data-library-exercises-target="button" data-action="click->library-exercises#showExercises">
       <h2><%= category %></h2>
-      <button class="show-exercises" aria-label="View Exercises" data-library-exercises-target="button" data-action="click->library-exercises#showExercises">
-        <i class="fa-solid fa-bars"></i>
-      </button>
     </div>
     <div class="d-none" data-library-exercises-target="exercises">
       <% exercises.each do |exercise| %>
