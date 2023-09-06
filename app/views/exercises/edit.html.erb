@@ -1,0 +1,23 @@
+<%= form_with(model: @exercise, local: true) do |f| %>
+  <h1>Edit Exercise</h1>
+<%= f.label :name %>
+<%= f.text_field :name %>
+<%= f.label :category %>
+<%= f.text_field :category %>
+<% if @exercise.errors[:category].any? %>
+<div class="alert alert-danger">
+    <%= @exercise.errors[:category].first %>
+</div>
+<% end %>
+<%= f.label :sets%>
+<%= f.number_field :sets %>
+ <%= f.label :reps%>
+<%= f.number_field :reps %>
+<%= f.label :weight %>
+<%= f.number_field :weight, step: 0.1, placeholder: "Enter weight in kg" %>
+<%= f.label :rest %>
+<%= f.number_field :rest, step: 1, placeholder: "Enter duration in minutes" %>
+ <%= f.label :rpe %>
+<%= f.number_field :rpe, step: 1, placeholder: "Rate the intensity of your workout" %>
+<%= f.submit %>
+<% end %>
