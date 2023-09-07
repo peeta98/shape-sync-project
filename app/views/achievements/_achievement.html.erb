@@ -1,0 +1,19 @@
+<div class="achievement" data-controller="achievement">
+  <div style="color: #C4ED6D;"><strong><%= achievement.name %></strong></div>
+  <div><%= achievement.category %></div>
+  <div data-target="achievement.progress">
+    Progress:
+    <span data-target="achievement.progressValue">0</span>
+    <span>/</span>
+    <span data-target="achievement.goal"><%= achievement.goal %></span>
+  </div>
+  <div data-target="achievement.status"><%= achievement.status %></div>
+  <div data-action="click->achievement#completeWorkout" data-target="achievement.completeButton">
+    <% unless achievement.status == 'Unlocked' %>
+      Complete Workout
+    <% else %>
+      Achievement Unlocked
+    <% end %>
+  </div>
+</div>
+<div class="description"><p>Description: <%= achievement.description %></p></div>

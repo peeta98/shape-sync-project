@@ -373,7 +373,7 @@ achievement2 = Achievement.create!(
   description: 'Create your first workout',
   goal: 1,
   trophy: 'bronze',
-  category: 'cardio'
+  category: 'Cardio'
 )
 
 achievement3 = Achievement.create!(

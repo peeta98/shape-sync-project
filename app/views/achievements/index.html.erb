@@ -32,10 +32,11 @@
           </ul></div>
     </div>
     <h2 class="text-center mt-4"><i class="fa-solid fa-dumbbell"></i> Unlockable Achievements <i class="fa-solid fa-dumbbell"></i></h2>
+    <div data-controller="controller">
     <div class="sort-buttons text-center my-4">
-  <button id="sort-by-name">Sort by Category</button>
-  <button id="sort-by-category">Sort by Completion</button>
-  <button id="sort-by-status">Sort by Status</button>
+ <button  data-action="click->controller#sort" data-url="/achievements/category"  data-sort="category">Sort by Category</button>
+  <button  data-action="click->controller#sort" data-url="/achievements/completion"  data-sort="completion">Sort by Completion</button>
+  <button  data-action="click->controller#sort" data-url="/achievements/status"  data-sort="status">Sort by Status</button>
 </div>
 
     <div class="achievements">
@@ -45,12 +46,9 @@
       <div>Status</div>
     </div>
 
- <% @achievements.each do |achievement| %>
-     <div class="achievement">
-         <div style="color: #C4ED6D;"><strong><%= achievement.name %></strong></div>
-        <div><%= achievement.category %></div>
-       <div>Progress: 0/<%= achievement.goal %></div>
-       <div>Locked</div>
-   </div>
-    <div class="description"><p>Description: <%= achievement.description %><p></div>
- <% end %>
+<div  data-controller-target="achievements">
+<% @achievements.each do |achievement| %>
+<%= render 'achievement', achievement: achievement  %>
+<% end %>
+</div>
+</div>

@@ -7,6 +7,10 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get '/library', to: 'pages#library'
   get '/achievements', to: 'achievements#index'
+
+post '/achievements/completion', to: 'achievements#completion'
+post '/achievements/category', to: 'achievements#category' 
+post '/achievements/status', to: 'achievements#status'     
   get '/profile', to: 'pages#profile'
   get '/workouts_history', to: 'pages#workout_history'
 
@@ -23,4 +27,5 @@ Rails.application.routes.draw do
   resources :workouts, only: [] do
     resources :exercises
   end
+
 end

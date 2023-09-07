@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_06_115818) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_07_130204) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -23,6 +23,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_06_115818) do
     t.string "message"
     t.string "category"
     t.string "trophy"
+    t.string "status", default: "Locked"
   end
 
   create_table "active_storage_attachments", force: :cascade do |t|
@@ -96,6 +97,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_06_115818) do
   end
 
   create_table "workout_programs", force: :cascade do |t|
+    t.string "workout_split"
     t.integer "weekly_frequency"
     t.date "start_date"
     t.date "end_date"
@@ -106,12 +108,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_06_115818) do
   end
 
   create_table "workouts", force: :cascade do |t|
-    t.string "categories"
+    t.string "name"
     t.date "date"
     t.integer "duration"
+    t.integer "week"
     t.bigint "workout_program_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "categories"
     t.index ["workout_program_id"], name: "index_workouts_on_workout_program_id"
   end
 
