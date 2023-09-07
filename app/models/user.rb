@@ -9,7 +9,7 @@ class User < ApplicationRecord
   validates :age, presence: true
   validates :height, presence: true
   validates :weight, presence: true
-  validates :goal, inclusion: { in: ['Lose weight', 'Gain muscle', 'Get shredded', 'Improve Flexibility'] }
+  validates :goal, inclusion: { in: ['Lose weight', 'Gain muscle', 'Get shredded', 'Improve Flexibility'] }, allow_blank: true;
   validates :gender, inclusion: { in: %w[Male Female Other] }
 
   # Include default devise modules. Others available are:

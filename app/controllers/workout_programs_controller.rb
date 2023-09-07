@@ -5,6 +5,7 @@ class WorkoutProgramsController < ApplicationController
   def show
     @workout = Workout.new
     authorize @workout_program
+    @exercise = Exercise.new
   end
 
   def edit
