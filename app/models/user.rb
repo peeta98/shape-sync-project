@@ -10,7 +10,7 @@ class User < ApplicationRecord
   validates :height, presence: true
   validates :weight, presence: true
   validates :goal, inclusion: { in: ['Lose weight', 'Gain muscle', 'Get shredded', 'Improve Flexibility'] }, allow_blank: true;
-  validates :gender, inclusion: { in: %w[Male Female Other] }
+  validates :gender, inclusion: { in: %w[Male Female Other] }, allow_blank: true;
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
