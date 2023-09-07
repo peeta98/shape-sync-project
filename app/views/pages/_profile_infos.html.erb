@@ -1,0 +1,9 @@
+<%= simple_form_for user,
+  html: {
+    class: "d-none",
+    data: {
+      edit_profile_target: "form",
+      action: "submit->edit-profie#update"
+    }
+  } do |f|
+%>
