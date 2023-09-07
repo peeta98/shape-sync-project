@@ -18,9 +18,18 @@
     <div class="add-exercise">
       <div class="text-center">
         <strong><p>Add New Exercise</p></strong>
-        <%= link_to new_workout_exercise_path(workout) do %>
+        <%= link_to new_workout_exercise_path(workout), data: {action:"submit->add-exercises-to-workout#display"}do %>
           <i class="fa-solid fa-circle-plus fa-2xl"></i>
         <% end %>
+        <div class="d-none" data-add-exercises-to-workout-target="exerciseForm">
+          <%= simple_form_for [@workout_program.workout, @exercise], do |f| %>
+            <%= f.input :name %>
+            <%= f.input :weight %>
+            <%= f.input :sets %>
+            <%= f.input :reps %>
+            <%= f.submit "Add", class: "btn btn-primary" %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>

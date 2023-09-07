@@ -18,7 +18,6 @@ class WorkoutsController < ApplicationController
   def new
     @workout = @workout_program.workouts.build
     authorize @workout
-
   end
 
   def create
