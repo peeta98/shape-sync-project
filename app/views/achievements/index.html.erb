@@ -1,4 +1,4 @@
-<div class="container mt-5">
+<div class="container mt-5 mb-4">
      <h2 class="text-center">Achievements Overview</h2>
     <div class="wrapper">
       <div class="py-3 px-3"> <h1>This year you worked out for <span id="workedHours">X</span> hours.</h1>
@@ -15,51 +15,42 @@
           <ul class="trophy-list">
             <li>
               <img src="/goldtrophy.png" alt="Platinum Trophy" width="50" height="50">
-              <span>x<span id="platinumCount">X</span></span>
+             <span id="platinumCount">X</span>
           </li>
           <li>
               <img src="gold_trophy.jpg" alt="Gold Trophy" width="50" height="50">
-              <span>x<span id="goldCount">X</span></span>
+              <span id="goldCount">X</span>
           </li>
           <li>
               <img src="silver_trophy.jpg" alt="Silver Trophy" width="50" height="50">
-              <span>x<span id="silverCount">X</span></span>
+              <span id="silverCount">X</span>
           </li>
           <li>
               <img src="bronze_trophy.jpg" alt="Bronze Trophy" width="50" height="50">
-              <span>x<span id="bronzeCount">X</span></span>
+           <span id="bronzeCount">X</span>
           </li>
           </ul></div>
     </div>
-    <h2 class="text-center mt-4">Unlockable Achievements</h2>
+    <h2 class="text-center mt-4"><i class="fa-solid fa-dumbbell"></i> Unlockable Achievements <i class="fa-solid fa-dumbbell"></i></h2>
+    <div class="sort-buttons text-center my-4">
+  <button id="sort-by-name">Sort by Category</button>
+  <button id="sort-by-category">Sort by Completion</button>
+  <button id="sort-by-status">Sort by Status</button>
+</div>
+
     <div class="achievements">
       <div>Achievement</div>
-      <div>Current level</div>
+      <div>Category</div>
       <div>Progress</div>
       <div>Status</div>
     </div>
-    <div class="achievement">
-      <div>Bicep curls</div>
-      <div>Silver</div>
-      <div>9/10</div>
-      <div>90%</div>
-    </div>
-    <div class="achievement">
-      <div>Squats</div>
-      <div>N/A</div>
-      <div>1/10</div>
-      <div>10%</div>
-    </div>
-    <div class="achievement">
-      <div>Deadlifts</div>
-      <div>Bronze</div>
-      <div>9/10</div>
-      <div>90%</div>
-    </div>
-    <div class="achievement">
-      <div>Skullcrushers</div>
-      <div>Silver</div>
-      <div>17/20</div>
-      <div>85%</div>
-    </div>
-</div>
+
+ <% @achievements.each do |achievement| %>
+     <div class="achievement">
+         <div style="color: #C4ED6D;"><strong><%= achievement.name %></strong></div>
+        <div><%= achievement.category.capitalize %></div>
+       <div>Progress: 0/<%= achievement.goal %></div>
+       <div>Locked</div>
+   </div>
+    <div class="description"><p>Description: <%= achievement.description %><p></div>
+ <% end %>

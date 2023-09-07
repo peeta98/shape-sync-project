@@ -1,7 +1,7 @@
 .container {
   justify-content: space-between;
   align-items: flex-start;
-  background-color: #c6f8a1;
+  background-color: #C4ED6D;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -55,10 +55,11 @@ h1 {
   color: white;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   padding-left: 10px;
-  border-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 
   div {
     background: rgb(67, 66, 66);
@@ -67,7 +68,7 @@ h1 {
 }
 
 .achievements {
-  font-weight: bold;
+  font-weight: bolder;
   grid-template-columns: 1fr;
   margin-top: 5px;
   background-color:  rgb(67, 66, 66);
@@ -78,4 +79,32 @@ h1 {
   padding-left: 10px;
   padding-top: 5px;
   border-radius: 10px;
+}
+
+.description {
+  font-weight: lighter;
+  background-color:  rgb(67, 66, 66);
+  color: white;
+  display: block;
+  grid-template-columns: 1fr;
+  padding-top: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top: 2px solid rgb(0, 0, 0);
+  text-align: center;
+  justify-content: center;
+
+  p {
+    padding-top: 10px;
+  }
+}
+
+
+#sort-by-name,
+#sort-by-category,
+#sort-by-status {
+  background-color: rgb(97, 96, 96);
+  color: white;
+  border: none;
+  cursor: pointer;
 }

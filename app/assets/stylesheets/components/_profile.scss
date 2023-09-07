@@ -1,0 +1,93 @@
+.container1 {
+  margin-top: 5px;
+  background-color: #C4ED6D;
+  color: white;
+  padding-left: 10px;
+  padding-top: 5px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.container2 {
+  margin-top: 5px;
+  background-color: #C4ED6D;
+  color: white;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-top: 5px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.container3 {
+  background-color: #272726;
+  color: white;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-top: 5px;
+}
+
+
+.user-info {
+  background-color: rgb(65, 65, 65);
+  display: inline-block;
+  grid-template-columns: 1fr, 1fr;
+  width: 50%;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15px;
+  justify-content: left;
+
+  i {
+    color: #C4ED6D;
+    margin-right: 0;
+    font-size: 15px;
+    vertical-align: super;
+  }
+}
+
+.user-goal {
+  background-color: rgb(65, 65, 65);
+  display: inline-block;
+  grid-template-columns: 1fr, 1fr;
+  width: 50%;
+  padding-left: 15px;
+  padding-top: 15px;
+  margin-right: 10px;
+  margin-left: 20px;
+  justify-content: left;
+
+  i {
+    color: #C4ED6D;
+    margin-right: 0;
+    font-size: 15px;
+    vertical-align: super;
+  }
+
+  p {
+    margin-right: 10px;
+  }
+}
+
+.user-achievements {
+  background-color: rgb(65, 65, 65);
+  display: inline-block;
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15px;
+  margin-right: 20px;
+}
+
+.workoutbtn {
+  background-color: #C4ED6D;
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  display: inline-block;
+  margin-top: 10px;
+  border-radius: 10px;
+}
