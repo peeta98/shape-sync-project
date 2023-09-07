@@ -12,6 +12,10 @@
 @import "components/index";
 @import "pages/index";
 
+html,body {
+  height: 100%;
+  width: 100%;
+}
 body{
   background-color: rgba(54, 55, 62, 1);
   h1, h2, h3, h4, h5, h6{

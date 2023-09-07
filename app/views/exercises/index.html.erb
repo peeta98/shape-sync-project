@@ -1,24 +1,46 @@
 <%= turbo_frame_tag dom_id(@workout, :exercises) do %>
-  <%= link_to 'Hide exercises', workout_program_path(@workout.workout_program), data: { turbo_frame: :_top } %>
-  <div class="d-flex align-items-center justify-space-between">
-    <strong><p>Exercises:</p></strong>
+  <div class="d-flex justify-content-between mt-3">
+    <div class="d-flex align-items-center justify-space-between">
+      <strong><h6>Your Exercises:</h6></strong>
+    </div>
+    <%= link_to 'Hide exercises', workout_program_path(@workout.workout_program), data: { turbo_frame: :_top }, class:"text-decoration-none text-white mb-2" %>
   </div>
-  <% if @exercises.any? %>
-    <% @exercises.each do |exercise|  %>
-      <div class="border p-2 rounded mb-1">
-        <div class="text-center">
-          <p><%= exercise.name %></p>
-        </div>
-        <div class="d-flex justify-content-around">
-          <p>Sets: <%= exercise.sets %> </p>
-          <p>Reps: <%= exercise.reps %> </p>
-          <p>Weight: <%= exercise.weight %> kg</p>
-        </div>
-      </div>
-    <%end %>
-  <% else %>
-    <p>No exercises yet...</p>
-  <% end %>
+  <div class="exercises-div">
+    <table>
+      <tr>
+        <th>
+          <strong><h6>Name</h6></strong>
+        </th>
+        <th>
+          <strong><h6>Sets</h6></strong>
+        </th>
+        <th>
+          <strong><h6>Reps</h6></strong>
+        </th>
+        <th>
+          <strong><h6>Weights</h6></strong>
+        </th>
+      </tr>
+      <% if @exercises.any? %>
+        <% @exercises.each do |exercise|  %>
+          <%= turbo_frame_tag dom_id(exercise) do %>
+            <tr>
+              <td>
+                <%#= link_to edit_workout_exercise_path(@exercise.workout) do %>
+                  <p><%= exercise.name %></p>
+                <%# end %>
+              </td>
+              <td><p><%= exercise.sets %></p></td>
+              <td><p><%= exercise.reps %></p></td>
+              <td><p><%= exercise.weight %>kg</p></td>
+            </tr>
+          <% end %>
+        <%end %>
+      <% else %>
+        <p>No exercises yet...</p>
+      <% end %>
+    </table>
+  </div>
   <div class="d-flex justify-content-center">
     <div class="text-center">
       <strong><p>Add new Exercise</p></strong>
