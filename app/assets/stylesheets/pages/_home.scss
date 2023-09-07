@@ -13,28 +13,20 @@
 }
 
 .info-card {
-  margin-top: 5px;
+  margin: 5px 0;
   background-color: #262626;
   color: white;
-  padding-bottom: 40px;
-  padding-left: 10px;
-  padding-top: 40px;
+  padding: 40px 10px 0;
   justify-content: space-between;
 }
 
 .info-card2 {
-  margin-top: 5px;
   background-color: #1f201e;
   color: white;
-  padding-bottom: 40px;
-  padding-left: 10px;
-  padding-top: 40px;
+  padding: 40px 20px;
   justify-content: space-between;
   border: 1px solid #C4ED6D;
-  margin-left: 50px;
-  margin-right: 50px;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin: 15px 0;
 }
 
 .info-card4 {
@@ -53,4 +45,20 @@
     font-size: 35px;
     color: #C4ED6D;
   }
+}
+
+.workout-name-card {
+  margin-top: 5px;
+  background-color:  rgb(67, 66, 66);
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  border-radius: 10px;
+  justify-content: space-between;
+}
+
+#home-background {
+  background-color: #36373e;
 }

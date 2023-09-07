@@ -17,20 +17,20 @@ class ExercisesController < ApplicationController
     @exercise = @workout.exercises.build(exercise_params)
     authorize @exercise
     if @exercise.save
-      redirect_to workout_exercises_path(@workout), notice: 'Exercise was successfully added to the workout!'
+      redirect_to workout_programs_path(@workout), notice: 'Exercise was successfully added to the workout!'
     else
       render :new, status: :unprocessable_entity
     end
   end
 
   def edit
-
+    @workout = @exercise.workout
     authorize @exercise
   end
 
   def update
     if @exercise.update(exercise_params)
-      redirect_to workout_path(@exercise.workout), notice: 'Exercise was successfully updated!'
+      redirect_to workout_exercises_path(@exercise.workout), notice: 'Exercise was successfully updated!'
     else
       render :edit, status: :unprocessable_entity
     end

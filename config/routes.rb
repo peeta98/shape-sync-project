@@ -25,7 +25,11 @@ post '/achievements/status', to: 'achievements#status'
   end
 
   resources :workouts, only: [] do
-    resources :exercises
+    resources :exercises, only: [:index, :new, :create]
   end
+<<<<<<< HEAD
 
+=======
+  resources :exercises, only: [:edit, :update]
+>>>>>>> master
 end

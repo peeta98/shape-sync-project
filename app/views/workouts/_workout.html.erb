@@ -6,14 +6,15 @@
       <%= link_to edit_workout_path(workout) do %>
         <i class="fa-solid fa-pen-to-square fa-sm"></i>
       <% end %>
-      <%= link_to workout_exercises_path(workout), data: { turbo_frame: dom_id(workout, :exercises) } do %>
+      <%= link_to workout_exercises_path(workout), data: { turbo_frame: dom_id(workout, :exercises), id: "list" } do %>
         <i class="fa-solid fa-list fa-sm"></i>
       <% end %>
     </div>
   </div>
-  <%= turbo_frame_tag dom_id(workout, :exercises) do %>
-    <p>List will go here</p>
-  <% end %>
+  <div>
+    <%= turbo_frame_tag dom_id(workout, :exercises) do %>
+    <% end %>
+  </div>
 <% end %>
 
 <% if false %>
