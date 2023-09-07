@@ -1,30 +1,18 @@
-<%= form_for [@workout, @exercise] do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :category %>
-  <%= f.text_field :category %>
-  <% if @exercise.errors[:category].any? %>
-    <div class="alert alert-danger">
-        <%= @exercise.errors[:category].first %>
-    </div>
+<%= turbo_frame_tag dom_id(@workout, :exercises) do %>
+  <%= link_to 'Back', workout_exercises_path(@workout) %>
+  <%= simple_form_for [@workout, @exercise] do |f| %>
+    <%= f.input :name %>
+    <%= f.input :category, collection: ['Chest', 'Back', 'Legs', 'Shoulders', 'Biceps', 'Triceps', 'Abs', 'Cardio', 'UpperBody', 'LowerBody', 'FullBody'] %>
+    <% if @exercise.errors[:category].any? %>
+      <div class="alert alert-danger">
+          <%= @exercise.errors[:category].first %>
+      </div>
+    <% end %>
+    <%= f.input :sets %>
+    <%= f.input :reps %>
+    <%= f.input :weight, step: 0.1, placeholder: "Enter weight in kg" %>
+    <%= f.input :rest, step: 1, placeholder: "Enter duration in minutes" %>
+    <%= f.input :rpe, step: 1, placeholder: "Rate the intensity of your workout" %>
+    <%= f.submit %>
   <% end %>
-  <%= f.label :sets%>
-  <%= f.number_field :sets %>
-  <%= f.label :reps%>
-  <%= f.number_field :reps %>
-  <%= f.label :weight %>
-  <%= f.number_field :weight, step: 0.1, placeholder: "Enter weight in kg" %>
-  <%= f.label :rest %>
-  <%= f.number_field :rest, step: 1, placeholder: "Enter duration in minutes" %>
-  <%= f.label :rpe %>
-  <%= f.number_field :rpe, step: 1, placeholder: "Rate the intensity of your workout" %>
-  <%= f.submit %>
-<% end %>
-
-<%= simple_form_for [@workout, @exercise] do |f| %>
-  <%= f.input :name %>
-  <%= f.input :weight %>
-  <%= f.input :sets %>
-  <%= f.input :reps %>
-  <%= f.submit "Add", class: "btn btn-primary" %>
 <% end %>

@@ -6,9 +6,17 @@
       <%= link_to edit_workout_path(workout) do %>
         <i class="fa-solid fa-pen-to-square fa-sm"></i>
       <% end %>
-      <button data-action="click->add-exercises-to-workout#show"><i class="fa-solid fa-list fa-sm"></i></button>
+      <%= link_to workout_exercises_path(workout), data: { turbo_frame: dom_id(workout, :exercises) } do %>
+        <i class="fa-solid fa-list fa-sm"></i>
+      <% end %>
     </div>
   </div>
+  <%= turbo_frame_tag dom_id(workout, :exercises) do %>
+    <p>List will go here</p>
+  <% end %>
+<% end %>
+
+<% if false %>
   <div class="workout-card-exercises d-none" data-add-exercises-to-workout-target="div">
     <div class="exercises">
       <% workout.exercises.each do |exercise| %>
@@ -18,11 +26,11 @@
     <div class="add-exercise">
       <div class="text-center">
         <strong><p>Add New Exercise</p></strong>
-        <%= link_to new_workout_exercise_path(workout), data: {action:"submit->add-exercises-to-workout#display"}do %>
+        <%= link_to new_workout_exercise_path(workout), target: :_top, html:{data: {action:"submit->add-exercises-to-workout#display"}} do %>
           <i class="fa-solid fa-circle-plus fa-2xl"></i>
         <% end %>
         <div class="d-none" data-add-exercises-to-workout-target="exerciseForm">
-          <%= simple_form_for [@workout_program.workout, @exercise], do |f| %>
+          <%= simple_form_for [@workout_program, @exercise] do |f| %>
             <%= f.input :name %>
             <%= f.input :weight %>
             <%= f.input :sets %>
