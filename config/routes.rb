@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get '/workouts_history', to: 'pages#workout_history'
 
   resources :achievements, only: [:index]
-  resources :users, only: %i[show] do
+  resources :users, only: %i[show update] do
     member do
       post 'achievements'
     end
