@@ -1,7 +1,7 @@
 <h1>Edit Exercise</h1>
-<%= turbo_frame_tag dom_id(exercise) do %>
+<%= turbo_frame_tag dom_id(@exercise) do %>
   <%= link_to 'Back', workout_exercises_path(@workout) %>
-  <%= simple_form_for [@workout, @exercise] do |f| %>
+  <%= simple_form_for @exercise do |f| %>
     <%= f.input :name %>
     <%#= f.input :category, collection: ['Chest', 'Back', 'Legs', 'Shoulders', 'Biceps', 'Triceps', 'Abs', 'Cardio', 'UpperBody', 'LowerBody', 'FullBody'] %>
     <%= f.input :sets %>

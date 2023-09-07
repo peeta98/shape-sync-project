@@ -6,7 +6,7 @@
     <%= link_to 'Hide exercises', workout_program_path(@workout.workout_program), data: { turbo_frame: :_top }, class:"text-decoration-none text-white mb-2" %>
   </div>
   <div class="exercises-div">
-    <table>
+    <table id="table">
       <tr>
         <th>
           <strong><h6>Name</h6></strong>
@@ -26,13 +26,28 @@
           <%= turbo_frame_tag dom_id(exercise) do %>
             <tr>
               <td>
-                <%#= link_to edit_workout_exercise_path(@exercise.workout) do %>
-                  <p><%= exercise.name %></p>
-                <%# end %>
+                <p><%= exercise.name %></p>
               </td>
-              <td><p><%= exercise.sets %></p></td>
-              <td><p><%= exercise.reps %></p></td>
-              <td><p><%= exercise.weight %>kg</p></td>
+              <td>
+                <div class="edit-exercise d-flex">
+                  <%= link_to '-', exercise_path(exercise, exercise: {sets: (exercise.sets - 1)}), data: {turbo_method: :patch}, class:"links"%>
+                  <p><%= exercise.sets %></p>
+                  <%= link_to '+', exercise_path(exercise, exercise: {sets: (exercise.sets + 1)}), data: {turbo_method: :patch}, class:"links"%>
+                </div>
+              </td>
+              <td>
+                <div class="edit-exercise d-flex">
+                  <%= link_to '-', exercise_path(exercise, exercise: {reps: (exercise.reps - 1)}), data: {turbo_method: :patch}, class:"links"%>
+                  <p><%= exercise.reps %></p>
+                  <%= link_to '+', exercise_path(exercise, exercise: {reps: (exercise.reps + 1)}), data: {turbo_method: :patch}, class:"links"%>
+                </div>
+              <td>
+                <div class="edit-exercise d-flex">
+                  <%= link_to '-', exercise_path(exercise, exercise: {weight: (exercise.weight - 1)}), data: {turbo_method: :patch}, class:"links"%>
+                  <p><%= exercise.weight %>kg</p>
+                  <%= link_to '+', exercise_path(exercise, exercise: {weight: (exercise.weight + 1)}), data: {turbo_method: :patch}, class:"links"%>
+                </div>
+              </td>
             </tr>
           <% end %>
         <%end %>
