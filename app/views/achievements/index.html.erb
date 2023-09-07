@@ -48,7 +48,7 @@
  <% @achievements.each do |achievement| %>
      <div class="achievement">
          <div style="color: #C4ED6D;"><strong><%= achievement.name %></strong></div>
-        <div><%= achievement.category.capitalize %></div>
+        <div><%= achievement.category %></div>
        <div>Progress: 0/<%= achievement.goal %></div>
        <div>Locked</div>
    </div>
