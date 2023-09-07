@@ -3,17 +3,17 @@
 <div class="workout-cards" data-controller="add-exercises-to-workout">
   <div>
     <h2>Current Workouts</h2>
-    <%= link_to "Delete This Workout Program",
-                workout_program_path(@workout_program),
-                data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
-                class: "button-green" %>
   </div>
+
   <% @workout_program.workouts.each do |workout| %>
     <%= render 'workouts/workout', workout: workout %>
   <% end %>
+  <%= link_to "Delete This Workout Program",
+                workout_program_path(@workout_program),
+                data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+                class: "button-green" %>
 </div>
 
-<hr>
 <% unless @workout_program.workouts.any?(&:persisted?) %>
   <div class="workout-program">
     <h1>Add workouts:</h1>

@@ -1,8 +1,16 @@
 .workout-cards{
   padding: 1rem;
-  color: #C4ED6D;
+  h1,h2,h3,h4,h5,h6{
+    color: #C4ED6D;
+  }
+  p{
+    color: white;
+  }
   i{
     color: #C4ED6D;
+  }
+  .button-green{
+    margin-top: 2rem;
   }
 }
 
@@ -52,4 +60,24 @@
 
 .workout-card:hover .workout-card-links{
   display: block;
+}
+
+.exercises-div{
+  border: 1px solid #C4ED6D;
+  border-radius: 2px;
+  padding: 0.5rem;
+  h6{
+    color: white;
+    font-size: 14px;
+  }
+  p{
+    font-size: 12px;
+    margin-bottom: 0;
+  }
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 15px 0;
+  text-align: center;
 }
