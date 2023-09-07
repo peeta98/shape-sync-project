@@ -3,7 +3,7 @@
     <%= link_to root_path, class: "navbar-brand" do%>
      <i class="fa-solid fa-dumbbell"></i>
     <% end %>
-    <div class="collapse navbar-collapse" id="navbarNav">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
           <a class="nav-link" href="/">Home</a>
@@ -17,43 +17,25 @@
   <% else %>
     <%= link_to "Create Workout Program", new_workout_program_path %>
   <% end %>
-
         </li>
+
         <li class="nav-item">
           <a class="nav-link" href="/achievements">Achievements</a>
         </li>
         <li class="nav-item">
            <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
         </li>
+        <li class="nav-item dropdown">
+          <i class="fa-solid fa-gear dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="/">Home</a>
+              <a class="dropdown-item" href="/profile">Profile</a>
+              <a href="/achievements" class="dropdown-item">Achievements</a>
+              <a class="dropdown-item" data-turbo-method="delete" href="#">Log out</a>
+          </div>
+        </li>
+
       </ul>
     </div>
   </div>
 </div>
-
-<br><br><br><br>
-
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="container-fluid">
-    <%= link_to root_path, class: "navbar-brand" do%>
-      <% image_tag 'logo.png', width: "65px" %>
-    <% end %>
-    <button class="navbar-toggler" type="button" data-bs-toggle="dropdown" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-          <li class="nav-item active mt-2 mx-2">
-          <li class="nav-item dropdown">
-            <%= image_tag "goldtrophy.png",width: "10px", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "My Profile", profile_path, class: "dropdown-item text-decoration-none text-dark" %>
-              <%= link_to "Achievements", achievements_path, class: "dropdown-item text-decoration-none text-dark" %>
-              <%= link_to "My workouts", user_path(current_user), class: "dropdown-item text-decoration-none text-dark" %>
-              <%= link_to "Sign Out", destroy_user_session_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},  class: "dropdown-item text-decoration-none text-dark" %>
-            </div>
-          </li>
-      </ul>
-      </div>
-    </div>
-  </div>
