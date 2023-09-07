@@ -5,4 +5,5 @@ class Achievement < ApplicationRecord
   validates :trophy, inclusion: { in: ['bronze', 'silver', 'gold', 'platinum'] }
   validates :name, presence: true, uniqueness: true
   validates :description, presence: true, uniqueness: true
+  validates :status, inclusion: { in: ['Locked', 'Unlocked'] }
 end
