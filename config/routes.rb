@@ -15,8 +15,10 @@ Rails.application.routes.draw do
     end
   end
   resources :workout_programs, only: %i[show edit update create new destroy]do
-    resources :workouts, shallow: true do
-      resources :exercises, shallow: true
-    end
+    resources :workouts, shallow: true
+  end
+
+  resources :workouts, only: [] do
+    resources :exercises
   end
 end

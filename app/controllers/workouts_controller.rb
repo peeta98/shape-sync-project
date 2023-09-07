@@ -12,6 +12,7 @@ class WorkoutsController < ApplicationController
     @workout = find_workout
     authorize @workout
     @exercises = @workout.exercises
+    @exercise = Exercise.new
   end
 
   # GET /workout_programs/:workout_program_id/workouts/new
@@ -35,10 +36,11 @@ class WorkoutsController < ApplicationController
   end
 
   def update
+    authorize @workout
     if @workout.update(workout_params)
-      redirect_to @workout_program, notice: 'Weekly workout was successfully updated!'
+      redirect_to workout_program_path(@workout.workout_program), notice: 'Weekly workout was successfully updated!'
     else
-      render :edit
+      render 'workout_programs/show'
     end
   end
 
