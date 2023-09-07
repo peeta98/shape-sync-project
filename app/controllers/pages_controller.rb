@@ -1,4 +1,9 @@
 class PagesController < ApplicationController
+  def home
+    start_date = params.fetch(:start_date, Date.today).to_date
+    @workouts = Workout.where(start_time: start_date.beginning_of_week..start_date.end_of_week)
+  end
+
   def library
     @exercises = Exercise.order(name: :asc, category: :desc)
     authorize @exercises

@@ -21,7 +21,16 @@
       1409 workouts all time
     </div>
     <div class="info-card4 w-100 text-center">
-      *Add Calendar Feature*
+      <!-- START OF CALENDAR FEATURE -->
+      <%= week_calendar(events: @workouts, start_date_param: :start_date) do |date, workouts| %>
+        <%= date %>
+        <% workouts.each do |workout| %>
+          <div class="workout">  <!-- We will add some style to the workout class later so let's add it now -->
+            <p><%= workout.categories %></p>
+          </div>
+        <% end %>
+      <% end %>
+      <!-- END OF CALENDAR FEATURE -->
     </div>
     <div class="info-card4 w-100 text-center  py-4">
       Upcoming Training Session: Monday 11th of September
