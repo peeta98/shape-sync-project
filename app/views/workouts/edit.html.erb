@@ -1,4 +1,9 @@
-<%= turbo_frame_tag dom_id(@workout) do %>
-  <p>Todo... Display form here</p>
-  <%= link_to "Cancel", workout_program_path(@workout.workout_program) %>
-<% end %>
+<div>
+  <%= turbo_frame_tag dom_id(@workout) do %>
+    <%= simple_form_for @workout do |f|%>
+      <%= f.input :categories, collection: ['Chest', 'Back', 'Legs', 'Shoulders', 'Biceps', 'Triceps', 'Abs', 'Cardio', 'UpperBody', 'LowerBody', 'FullBody'] %>
+      <%= f.submit %>
+    <% end %>
+    <%= link_to "Cancel", workout_program_path(@workout.workout_program), class:"text-decoration-none text-white" %>
+  <% end %>
+</div>

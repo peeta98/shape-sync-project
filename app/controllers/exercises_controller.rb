@@ -2,26 +2,25 @@ class ExercisesController < ApplicationController
   #before_action :authenticate_user!
   before_action :find_workout, only: [:new, :create, :index]
   before_action :find_exercise, only: [:edit, :update, :destroy]
+
   def index
     @workout = Workout.find(params[:workout_id])
     @exercises = policy_scope(@workout.exercises)
-
   end
 
   def new
     @exercise = @workout.exercises.build
     authorize @exercise
-    redirect_to workout_program_path(@workout)
   end
 
   def create
     @exercise = @workout.exercises.build(exercise_params)
+    authorize @exercise
     if @exercise.save
-      redirect_to workout_path(@workout), notice: 'Exercise was successfully added to the workout!'
+      redirect_to workout_exercises_path(@workout), notice: 'Exercise was successfully added to the workout!'
     else
       render :new, status: :unprocessable_entity
     end
-    authorize @exercise
   end
 
   def edit
@@ -56,5 +55,5 @@ class ExercisesController < ApplicationController
 
   def find_exercise
     @exercise = Exercise.find(params[:id])
-  end 
+  end
 end
