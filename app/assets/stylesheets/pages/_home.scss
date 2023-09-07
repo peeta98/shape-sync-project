@@ -1,1 +1,63 @@
 // Specific CSS for your home-page
+.createworkout {
+  margin-top: 5px;
+  background-color: #C4ED6D;
+  color: white;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-top: 5px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.info-card {
+  margin: 5px 0;
+  background-color: #262626;
+  color: white;
+  padding: 40px 10px 0;
+  justify-content: space-between;
+}
+
+.info-card2 {
+  background-color: #1f201e;
+  color: white;
+  padding: 40px 20px;
+  justify-content: space-between;
+  border: 1px solid #C4ED6D;
+  margin: 15px 0;
+}
+
+.info-card4 {
+  margin-top: 5px;
+  background-color: #1f201e;
+  color: #C4ED6D;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.info-card3 {
+  margin-top: 5px;
+  background-color: none;
+
+  i {
+    font-size: 35px;
+    color: #C4ED6D;
+  }
+}
+
+.workout-name-card {
+  margin-top: 5px;
+  background-color:  rgb(67, 66, 66);
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  border-radius: 10px;
+}
+
+#home-background {
+  background-color: #36373e;
+}
