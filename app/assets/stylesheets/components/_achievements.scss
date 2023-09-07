@@ -1,7 +1,7 @@
 .container {
   justify-content: space-between;
   align-items: flex-start;
-  background-color: #c6f8a1;
+  background-color: #C4ED6D;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -87,10 +87,24 @@ h1 {
   color: white;
   display: block;
   grid-template-columns: 1fr;
-  padding-bottom: 10px;
   padding-top: 10px;
-  padding-left: 10px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   border-top: 2px solid rgb(0, 0, 0);
+  text-align: center;
+  justify-content: center;
+
+  p {
+    padding-top: 10px;
+  }
+}
+
+
+#sort-by-name,
+#sort-by-category,
+#sort-by-status {
+  background-color: rgb(97, 96, 96);
+  color: white;
+  border: none;
+  cursor: pointer;
 }

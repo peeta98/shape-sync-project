@@ -290,7 +290,7 @@ achievement3 = Achievement.create!(
   description: 'Create 50 workouts',
   goal: 50,
   trophy: 'silver',
-  category: 'cardio'
+  category: 'Cardio'
 )
 
 achievement4 = Achievement.create!(
@@ -299,7 +299,7 @@ achievement4 = Achievement.create!(
   description: 'Create 100 workouts',
   goal: 100,
   trophy: 'gold',
-  category: 'cardio'
+  category: 'Cardio'
 )
 
 achievement6 = Achievement.create!(
@@ -308,7 +308,7 @@ achievement6 = Achievement.create!(
   description: 'Do a total of 100 hours of cardio exercises',
   goal: 100,
   trophy: 'gold',
-  category: 'cardio'
+  category: 'Cardio'
 )
 
 achievement7 = Achievement.create!(
@@ -317,7 +317,7 @@ achievement7 = Achievement.create!(
   description: 'Do a total of 5 bicep exercises',
   goal: 5,
   trophy: 'bronze',
-  category: 'biceps'
+  category: 'Biceps'
 )
 
 achievement8 = Achievement.create!(
@@ -326,7 +326,7 @@ achievement8 = Achievement.create!(
   description: 'Do a total of 25 bicep exercises',
   goal: 25,
   trophy: 'silver',
-  category: 'biceps'
+  category: 'Biceps'
 )
 
 achievement9 = Achievement.create!(
@@ -335,7 +335,7 @@ achievement9 = Achievement.create!(
   description: 'Do a total of 80 bicep exercises',
   goal: 80,
   trophy: 'gold',
-  category: 'biceps'
+  category: 'Biceps'
 )
 
 achievement10 = Achievement.create!(
@@ -344,7 +344,7 @@ achievement10 = Achievement.create!(
   description: 'Do a total of 200 bicep exercises',
   goal: 200,
   trophy: 'platinum',
-  category: 'biceps'
+  category: 'Biceps'
 )
 
 achievement11 = Achievement.create!(
@@ -353,7 +353,7 @@ achievement11 = Achievement.create!(
   description: 'Do a total of 5 abs exercises',
   goal: 5,
   trophy: 'bronze',
-  category: 'abs'
+  category: 'Abs'
 )
 
 achievement12 = Achievement.create!(
@@ -362,7 +362,7 @@ achievement12 = Achievement.create!(
   description: 'Do a total of 25 abs exercises',
   goal: 25,
   trophy: 'silver',
-  category: 'abs'
+  category: 'Abs'
 )
 
 achievement13 = Achievement.create!(
@@ -371,7 +371,7 @@ achievement13 = Achievement.create!(
   description: 'Do a total of 80 abs exercises',
   goal: 80,
   trophy: 'gold',
-  category: 'abs'
+  category: 'Abs'
 )
 
 achievement14 = Achievement.create!(
@@ -380,7 +380,7 @@ achievement14 = Achievement.create!(
   description: 'Do a total of 200 abs exercises',
   goal: 200,
   trophy: 'platinum',
-  category: 'abs'
+  category: 'Abs'
 )
 
 achievement15 = Achievement.create!(
@@ -389,7 +389,7 @@ achievement15 = Achievement.create!(
   description: 'Do a total of 5 triceps exercises',
   goal: 5,
   trophy: 'bronze',
-  category: 'triceps'
+  category: 'Triceps'
 )
 
 achievement16 = Achievement.create!(
@@ -398,7 +398,7 @@ achievement16 = Achievement.create!(
   description: 'Do a total of 25 triceps exercises',
   goal: 25,
   trophy: 'silver',
-  category: 'triceps'
+  category: 'Triceps'
 )
 
 achievement17 = Achievement.create!(
@@ -407,7 +407,7 @@ achievement17 = Achievement.create!(
   description: 'Do a total of 80 triceps exercises',
   goal: 80,
   trophy: 'gold',
-  category: 'triceps'
+  category: 'Triceps'
 )
 
 achievement18 = Achievement.create!(
@@ -416,7 +416,7 @@ achievement18 = Achievement.create!(
   description: 'Do a total of 200 triceps exercises',
   goal: 200,
   trophy: 'platinum',
-  category: 'triceps'
+  category: 'Triceps'
 )
 
 achievement19 = Achievement.create!(
@@ -425,7 +425,7 @@ achievement19 = Achievement.create!(
   description: 'Do a total of 5 back exercises',
   goal: 5,
   trophy: 'bronze',
-  category: 'back'
+  category: 'Back'
 )
 
 achievement20 = Achievement.create!(
@@ -434,7 +434,7 @@ achievement20 = Achievement.create!(
   description: 'Do a total of 25 back exercises',
   goal: 25,
   trophy: 'silver',
-  category: 'back'
+  category: 'Back'
 )
 
 achievement21 = Achievement.create!(
@@ -443,7 +443,7 @@ achievement21 = Achievement.create!(
   description: 'Do a total of 80 back exercises',
   goal: 80,
   trophy: 'gold',
-  category: 'back'
+  category: 'Back'
 )
 
 achievement22 = Achievement.create!(
@@ -452,7 +452,7 @@ achievement22 = Achievement.create!(
   description: 'Do a total of 200 back exercises',
   goal: 200,
   trophy: 'platinum',
-  category: 'back'
+  category: 'Back'
 )
 
 achievement23 = Achievement.create!(
@@ -461,7 +461,7 @@ achievement23 = Achievement.create!(
   description: 'Do a total of 5 leg exercises',
   goal: 5,
   trophy: 'bronze',
-  category: 'legs'
+  category: 'Legs'
 )
 
 achievement24 = Achievement.create!(
@@ -470,7 +470,7 @@ achievement24 = Achievement.create!(
   description: 'Do a total of 25 leg exercises',
   goal: 25,
   trophy: 'silver',
-  category: 'legs'
+  category: 'Legs'
 )
 
 achievement25 = Achievement.create!(
@@ -479,7 +479,7 @@ achievement25 = Achievement.create!(
   description: 'Do a total of 80 leg exercises',
   goal: 80,
   trophy: 'gold',
-  category: 'legs'
+  category: 'Legs'
 )
 
 achievement26 = Achievement.create!(
@@ -488,7 +488,7 @@ achievement26 = Achievement.create!(
   description: 'Do a total of 200 leg exercises',
   goal: 200,
   trophy: 'platinum',
-  category: 'legs'
+  category: 'Legs'
 )
 
 achievement27 = Achievement.create!(
@@ -497,7 +497,7 @@ achievement27 = Achievement.create!(
   description: 'Do a total of 5 chest exercises',
   goal: 5,
   trophy: 'bronze',
-  category: 'chest'
+  category: 'Chest'
 )
 
 achievement28 = Achievement.create!(
@@ -506,7 +506,7 @@ achievement28 = Achievement.create!(
   description: 'Do a total of 25 chest exercises',
   goal: 25,
   trophy: 'silver',
-  category: 'chest'
+  category: 'Chest'
 )
 
 achievement29 = Achievement.create!(
@@ -515,7 +515,7 @@ achievement29 = Achievement.create!(
   description: 'Do a total of 80 chest exercises',
   goal: 80,
   trophy: 'gold',
-  category: 'chest'
+  category: 'Chest'
 )
 
 achievement30 = Achievement.create!(
@@ -524,7 +524,7 @@ achievement30 = Achievement.create!(
   description: 'Do a total of 200 chest exercises',
   goal: 200,
   trophy: 'platinum',
-  category: 'chest'
+  category: 'Chest'
 )
 
 achievement31 = Achievement.create!(
@@ -533,7 +533,7 @@ achievement31 = Achievement.create!(
   description: 'Do a total of 5 shoulder exercises',
   goal: 5,
   trophy: 'bronze',
-  category: 'shoulders'
+  category: 'Shoulders'
 )
 
 achievement32 = Achievement.create!(
@@ -542,7 +542,7 @@ achievement32 = Achievement.create!(
   description: 'Do a total of 25 shoulder exercises',
   goal: 25,
   trophy: 'silver',
-  category: 'shoulders'
+  category: 'Shoulders'
 )
 
 achievement33 = Achievement.create!(
@@ -551,7 +551,7 @@ achievement33 = Achievement.create!(
   description: 'Do a total of 80 shoulder exercises',
   goal: 80,
   trophy: 'gold',
-  category: 'shoulders'
+  category: 'Shoulders'
 )
 
 achievement34 = Achievement.create!(
@@ -560,7 +560,7 @@ achievement34 = Achievement.create!(
   description: 'Do a total of 200 shoulder exercises',
   goal: 200,
   trophy: 'platinum',
-  category: 'shoulders'
+  category: 'Shoulders'
 )
 
 puts 'Finished creating achievements!'

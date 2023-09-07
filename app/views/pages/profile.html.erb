@@ -1,0 +1,30 @@
+<div class="container2 mx-4 my-4 justify-content-center">
+  <h2 class="text-center">My Profile</h2>
+</div>
+
+<div class="container2 mx-4 my-4">
+  <div class="user-info my-3">
+    <h2 class="mb-4">My Metrics <i class="fa-solid fa-pen-to-square"></i></h2>
+      <p>PROFILE PICTURE HERE</p>
+      <p><strong>Name: </strong> <%= current_user.username %></p>
+      <p><strong>Email: </strong><%= current_user.email %></p>
+      <p><strong>Age: </strong><%= current_user.age %></p>
+      <p><strong>Weight: </strong><%= current_user.weight %></p>
+      <p><strong>Height: </strong><%= current_user.height %></p>
+    </div>
+    <div class="user-goal my-3">
+    <h2>My Goals <i class="fa-solid fa-pen-to-square"></i></h2>
+      <p>Weight Loss</p>
+      <p>For those aiming to achieve their weight loss goals through our gym app, it's essential to design a workout routine that focuses on calorie burn, muscle toning, and overall fitness. To start, prioritize cardio exercises like running, cycling, or jumping rope, as they are excellent for torching calories and improving cardiovascular health. These activities help create a calorie deficit, which is crucial for shedding pounds.</p>
+      <p>You have a total of X cardio exercises planned this month. Go and create a workout now!<a href="/workout" class="workoutbtn mb-2">Create Workout</a></p>
+    </div>
+</div>
+
+
+<div class="container1 mx-4 justify-content-center">
+  <h2 class="text-center">Latest Achievements</h2>
+</div>
+
+<div class="container3 mx-4 justify-content-center bg-dark">
+  <p class="text-center">No achievements yet</p>
+</div>

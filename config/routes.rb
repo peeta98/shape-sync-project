@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get '/library', to: 'pages#library'
   get '/achievements', to: 'achievements#index'
+  get '/profile', to: 'pages#profile'
   get '/workouts_history', to: 'pages#workout_history'
 
   resources :achievements, only: [:index]
