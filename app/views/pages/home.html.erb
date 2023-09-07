@@ -21,7 +21,16 @@
       1409 workouts all time
     </div>
     <div class="info-card4 w-100 text-center">
-      *Add Calendar Feature*
+      <!-- START OF CALENDAR FEATURE -->
+      <%= week_calendar(events: @workouts, start_date_param: :start_date) do |date, workouts| %>
+        <%= date %>
+        <% workouts.each do |workout| %>
+          <div class="workout">  <!-- We will add some style to the workout class later so let's add it now -->
+            <p><%= workout.categories %></p>
+          </div>
+        <% end %>
+      <% end %>
+      <!-- END OF CALENDAR FEATURE -->
     </div>
     <div class="info-card4 w-100 text-center  py-4">
       Upcoming Training Session: Monday 11th of September
@@ -35,17 +44,31 @@
         <div>Chest day</div>
       </div>
 
-      <div class="info-card2 text-center">
-        <p>Volume | Sets | Reps</p>
-        <p>400kg 8  40</p>
-      </div>
+     <div class="info-card2 text-center">
+  <div class="d-inline">
+    <div class="row">
+      <div class="col"><p>Volume</p></div>
+      <div class="col"><p>Sets</p></div>
+      <div class="col"><p>Reps</p></div>
+    </div>
+    <div class="row">
+      <div class="col"><i class="fa-solid fa-arrow-down-long mb-3"></i></div>
+      <div class="col"><i class="fa-solid fa-arrow-down-long mb-3"></i></div>
+      <div class="col"><i class="fa-solid fa-arrow-down-long mb-3"></i></div>
+    </div>
+    <div class="row">
+      <div class="col"><p>400kg</p></div>
+      <div class="col"><p>8</p></div>
+      <div class="col"><p>40</p></div>
+    </div>
   </div>
+</div>
     <div class="info-card3 d-flex justify-content-center">
       <i class="fa-solid fa-arrow-down-long"></i>
     </div>
 
   <div class="info-card2 justify-content-center py-4">
-    <div class="info-card text-center">
+    <div class="info-card text-center align-items-center pb-4">
       1. Barbell Bench Press
     </div>
     <div class="info-card text-center">
