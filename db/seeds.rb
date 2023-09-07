@@ -1,9 +1,9 @@
 puts 'Deleting seeds...'
-User.destroy_all
 Exercise.destroy_all
-Achievement.destroy_all
 Workout.destroy_all
 WorkoutProgram.destroy_all
+User.destroy_all
+Achievement.destroy_all
 puts 'Seeds deleted!'
 
 #  ----- Seeding instances of User -----
@@ -34,19 +34,19 @@ puts 'Workout Program created!'
 puts 'Creating all the workouts...'
 push_week1 = Workout.create!(
   categories: 'UpperBody',
-  date: Date.today,
+  start_time: Date.today,
   duration: 90,
   workout_program: max_gainz
 )
 pull_week1 = Workout.create!(
   categories: 'UpperBody',
-  date: Date.today + 1,
+  start_time: Date.today + 1,
   duration: 75,
   workout_program: max_gainz
 )
 legs_week1 = Workout.create!(
   categories: 'LowerBody',
-  date: Date.today + 2,
+  start_time: Date.today + 2,
   duration: 93,
   workout_program: max_gainz
 )
@@ -54,19 +54,19 @@ puts 'Workouts for week 1 created!'
 
 push_week2 = Workout.create!(
   categories: 'UpperBody',
-  date: Date.today + 5,
+  start_time: Date.today + 5,
   duration: 90,
   workout_program: max_gainz
 )
 pull_week2 = Workout.create!(
   categories: 'UpperBody',
-  date: Date.today + 6,
+  start_time: Date.today + 6,
   duration: 75,
   workout_program: max_gainz
 )
 legs_week2 = Workout.create!(
   categories: 'LowerBody',
-  date: Date.today + 7,
+  start_time: Date.today + 7,
   duration: 93,
   workout_program: max_gainz
 )
@@ -74,19 +74,19 @@ puts 'Workouts for week 2 created!'
 
 push_week3 = Workout.create!(
   categories: 'UpperBody',
-  date: Date.today + 12,
+  start_time: Date.today + 12,
   duration: 90,
   workout_program: max_gainz
 )
 pull_week3 = Workout.create!(
   categories: 'UpperBody',
-  date: Date.today + 13,
+  start_time: Date.today + 13,
   duration: 75,
   workout_program: max_gainz
 )
 legs_week3 = Workout.create!(
   categories: 'LowerBody',
-  date: Date.today + 14,
+  start_time: Date.today + 14,
   duration: 93,
   workout_program: max_gainz
 )
@@ -94,19 +94,19 @@ puts 'Workouts for week 3 created!'
 
 push_week4 = Workout.create!(
   categories: 'UpperBody',
-  date: Date.today + 19,
+  start_time: Date.today + 19,
   duration: 90,
   workout_program: max_gainz
 )
 pull_week4 = Workout.create!(
   categories: 'UpperBody',
-  date: Date.today + 20,
+  start_time: Date.today + 20,
   duration: 75,
   workout_program: max_gainz
 )
 legs_week4 = Workout.create!(
   categories: 'LowerBody',
-  date: Date.today + 21,
+  start_time: Date.today + 21,
   duration: 93,
   workout_program: max_gainz
 )
@@ -373,7 +373,7 @@ achievement2 = Achievement.create!(
   description: 'Create your first workout',
   goal: 1,
   trophy: 'bronze',
-  category: 'cardio'
+  category: 'Cardio'
 )
 
 achievement3 = Achievement.create!(
