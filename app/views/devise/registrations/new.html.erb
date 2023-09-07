@@ -1,7 +1,9 @@
 <div class="gx-0" id="authentication">
   <div class="row gx-0">
     <div class="col-12">
-    <img src="logo.png" />
+      <%= link_to root_path, class: "navbar-brand" do%>
+      <% image_tag 'logo2.png', class: "center" %>
+    <% end %>
       <h2>Join ShapeSync now!</h2>
       <h3>Save your settings, workout progress and more.</h3>
 
@@ -13,14 +15,43 @@
                       required: true,
                       autofocus: true,
                       input_html: { autocomplete: "email", class: "transparent", placeholder: "Email" } %>
+          <%= f.input :username, label: false,
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "username", class: "transparent", placeholder: "Username" } %>
           <%= f.input :password, label: false,
                       required: true,
                       input_html: { autocomplete: "new-password", class: "transparent", placeholder: "Password" } %>
           <%= f.input :password_confirmation, label: false,
                       required: true,
                       input_html: { autocomplete: "new-password", class: "transparent", placeholder: "Confirm Password" } %>
+          <%= f.input :weight, label: false,
+                      required: true,
+                      input_html: { autocomplete: "weight", class: "transparent", placeholder: "Weight kg" } %>
+          <%= f.input :age, label: false,
+                      required: true,
+                      input_html: { autocomplete: "age", class: "transparent", placeholder: "Age" } %>
+          <%= f.input :height, label: false,
+                      required: true,
+                      input_html: { autocomplete: "height", class: "transparent", placeholder: "Height cm" } %>
         </div>
+                  <div class="form-check form-check-inline text-white ">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="femaleGender"
+                      value="option1" checked />
+                    <label class="form-check-label" for="femaleGender">Female</label>
+                  </div>
 
+                  <div class="form-check form-check-inline text-white">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="maleGender"
+                      value="option2" />
+                    <label class="form-check-label" for="maleGender">Male</label>
+                  </div>
+
+                  <div class="form-check form-check-inline text-white">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="otherGender"
+                      value="option3" />
+                    <label class="form-check-label" for="otherGender">Other</label>
+                  </div>
         <div class="form-actions">
           <%= f.button :submit, "Create my account", class:"button-green w-100 mt-4 mb-3 " %>
         </div>

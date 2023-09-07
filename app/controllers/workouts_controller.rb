@@ -5,8 +5,8 @@ class WorkoutsController < ApplicationController
 
   def index
     @workout_program = WorkoutProgram.find(params[:workout_program_id])
-    @workouts = policy_scope(current_user.workouts) 
-end
+    @workouts = policy_scope(current_user.workouts)
+  end
 
   def show
     @workout = find_workout
@@ -14,15 +14,15 @@ end
     @exercises = @workout.exercises
   end
 
+  # GET /workout_programs/:workout_program_id/workouts/new
   def new
-    @workout = current_user.workouts.build
+    @workout = @workout_program.workouts.build
     authorize @workout
-   
+
   end
 
   def create
-    @workout = current_user.workouts.build(workout_params)
-    @workout.workout_program = @workout_program
+    @workout = @workout_program.workouts.build(workout_params)
     authorize @workout
     if @workout.save
       redirect_to @workout, notice: 'Workout was successfully created!'
@@ -31,7 +31,8 @@ end
     end
   end
 
-  def edit 
+  def edit
+    authorize @workout
   end
 
   def update
@@ -46,12 +47,12 @@ end
     @workout.destroy
     redirect_to @workout_program, notice: 'Weekly workout was successfully deleted.'
   end
-  
+
 
   private
 
   def workout_params
-    params.require(:workout).permit(:name, :date, :duration, :week, exercise_ids: [])
+    params.require(:workout).permit(:categories, :date, :duration)
   end
 
   def find_workout

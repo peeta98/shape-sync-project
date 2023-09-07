@@ -96,7 +96,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_06_115818) do
   end
 
   create_table "workout_programs", force: :cascade do |t|
-    t.string "workout_split"
     t.integer "weekly_frequency"
     t.date "start_date"
     t.date "end_date"
@@ -107,10 +106,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_06_115818) do
   end
 
   create_table "workouts", force: :cascade do |t|
-    t.string "name"
+    t.string "categories"
     t.date "date"
     t.integer "duration"
-    t.integer "week"
     t.bigint "workout_program_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

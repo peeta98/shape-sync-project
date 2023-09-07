@@ -1,17 +1,10 @@
 <h1>New Workout</h1>
-
-<%= form_with(model: [ @workout_program , @workout], local: true) do |form| %>
-<%= form.text_field :name %>
-<%= form.number_field :duration %>
-<%= form.date_field :date %>
-<%= form.number_field :week %>
-  <h2>Exercises</h2>
+ <h2>Exercises</h2>
   <% Exercise.all.each do |exercise| %>
     <div>
       <%= form.check_box :exercise_ids, { multiple: true }, exercise.id, nil %>
       <%= exercise.name %>
     </div>
-  <% end %>
 
   <%= form.submit %>
 <% end %>
