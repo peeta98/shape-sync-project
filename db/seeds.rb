@@ -33,19 +33,19 @@ puts 'Workout Program created!'
 # ----- Seeding istances of Workout -----
 puts 'Creating all the workouts...'
 push_week1 = Workout.create!(
-  categories: ['UpperBody'],
+  categories: 'UpperBody',
   date: Date.today,
   duration: 90,
   workout_program: max_gainz
 )
 pull_week1 = Workout.create!(
-  categories: ['UpperBody'],
+  categories: 'UpperBody',
   date: Date.today + 1,
   duration: 75,
   workout_program: max_gainz
 )
 legs_week1 = Workout.create!(
-  categories: ['LowerBody'],
+  categories: 'LowerBody',
   date: Date.today + 2,
   duration: 93,
   workout_program: max_gainz
@@ -53,19 +53,19 @@ legs_week1 = Workout.create!(
 puts 'Workouts for week 1 created!'
 
 push_week2 = Workout.create!(
-  categories: ['UpperBody'],
+  categories: 'UpperBody',
   date: Date.today + 5,
   duration: 90,
   workout_program: max_gainz
 )
 pull_week2 = Workout.create!(
-  categories: ['UpperBody'],
+  categories: 'UpperBody',
   date: Date.today + 6,
   duration: 75,
   workout_program: max_gainz
 )
 legs_week2 = Workout.create!(
-  categories: ['LowerBody'],
+  categories: 'LowerBody',
   date: Date.today + 7,
   duration: 93,
   workout_program: max_gainz
@@ -73,19 +73,19 @@ legs_week2 = Workout.create!(
 puts 'Workouts for week 2 created!'
 
 push_week3 = Workout.create!(
-  categories: ['UpperBody'],
+  categories: 'UpperBody',
   date: Date.today + 12,
   duration: 90,
   workout_program: max_gainz
 )
 pull_week3 = Workout.create!(
-  categories: ['UpperBody'],
+  categories: 'UpperBody',
   date: Date.today + 13,
   duration: 75,
   workout_program: max_gainz
 )
 legs_week3 = Workout.create!(
-  categories: ['LowerBody'],
+  categories: 'LowerBody',
   date: Date.today + 14,
   duration: 93,
   workout_program: max_gainz
@@ -93,19 +93,19 @@ legs_week3 = Workout.create!(
 puts 'Workouts for week 3 created!'
 
 push_week4 = Workout.create!(
-  categories: ['UpperBody'],
+  categories: 'UpperBody',
   date: Date.today + 19,
   duration: 90,
   workout_program: max_gainz
 )
 pull_week4 = Workout.create!(
-  categories: ['UpperBody'],
+  categories: 'UpperBody',
   date: Date.today + 20,
   duration: 75,
   workout_program: max_gainz
 )
 legs_week4 = Workout.create!(
-  categories: ['LowerBody'],
+  categories: 'LowerBody',
   date: Date.today + 21,
   duration: 93,
   workout_program: max_gainz
@@ -367,22 +367,292 @@ puts 'All exercises for all workous created!'
 
 # ----- Seeding instances of Achievement -----
 puts 'Creating achievements...'
-achievement1 = Achievement.create!(
-  name: 'Newbie Gains',
-  badge_url: 'https://img.freepik.com/free-vector/award-medal-with-red-ribbon_1284-42828.jpg?w=996&t=st=1693901682~exp=1693902282~hmac=ecd8b21a76bf86e7be6ee6ef2373a5918a50594185da93ddf3c9b9b922026366',
-  description: 'Congratulations on finishing your first workout!'
-)
-puts 'Achievement 1 created!'
 achievement2 = Achievement.create!(
-  name: 'Cardio Master',
-  badge_url: 'https://img.freepik.com/free-vector/award-ribbon_24908-54794.jpg?w=1380&t=st=1693901702~exp=1693902302~hmac=d558ef1018194f08eba0da64fb60838071e88311799969cd09d1bf8c018ffc6e',
-  description: 'You have completed 100 hours of cardio, wow!'
+  name: 'Newbie Gains',
+  message: 'Congratulations on finishing your first workout!',
+  description: 'Create your first workout',
+  goal: 1,
+  trophy: 'bronze',
+  category: 'cardio'
 )
-puts 'Achievement 2 created!'
+
 achievement3 = Achievement.create!(
-  name: 'Bicep Boss',
-  badge_url: 'https://img.freepik.com/free-vector/award-ribbon_24908-54753.jpg?w=1380&t=st=1693901721~exp=1693902321~hmac=532174ad81cb3bfb195a5fe0e559dc81fe8e3343b8281edf8c9186ce8240019f',
-  description: 'Congratulations, you finished 50 bicep exercise sets!'
+  name: 'Pro Gains',
+  message: 'Congratulations on finishing 50 workouts!',
+  description: 'Create 50 workouts',
+  goal: 50,
+  trophy: 'silver',
+  category: 'Cardio'
 )
-puts 'Achievement 3 created!'
+
+achievement4 = Achievement.create!(
+  name: 'Master Gains',
+  message: 'Congratulations on finishing 100 workouts!',
+  description: 'Create 100 workouts',
+  goal: 100,
+  trophy: 'gold',
+  category: 'Cardio'
+)
+
+achievement6 = Achievement.create!(
+  name: 'Cardio Master',
+  message: 'You have completed 100 hours of cardio, wow!',
+  description: 'Do a total of 100 hours of cardio exercises',
+  goal: 100,
+  trophy: 'gold',
+  category: 'Cardio'
+)
+
+achievement7 = Achievement.create!(
+  name: 'Bicep Beginner',
+  message: 'Congratulations, you finished 5 bicep exercises!',
+  description: 'Do a total of 5 bicep exercises',
+  goal: 5,
+  trophy: 'bronze',
+  category: 'Biceps'
+)
+
+achievement8 = Achievement.create!(
+  name: 'Bicep Enthusiast',
+  message: 'Congratulations, you finished 25 bicep exercises!',
+  description: 'Do a total of 25 bicep exercises',
+  goal: 25,
+  trophy: 'silver',
+  category: 'Biceps'
+)
+
+achievement9 = Achievement.create!(
+  name: 'Bicep Boss',
+  message: 'Congratulations, you finished 80 bicep exercises!',
+  description: 'Do a total of 80 bicep exercises',
+  goal: 80,
+  trophy: 'gold',
+  category: 'Biceps'
+)
+
+achievement10 = Achievement.create!(
+  name: 'Bicep Grandmaster',
+  message: 'Congratulations, you finished 200 bicep exercises!',
+  description: 'Do a total of 200 bicep exercises',
+  goal: 200,
+  trophy: 'platinum',
+  category: 'Biceps'
+)
+
+achievement11 = Achievement.create!(
+  name: 'Abs Amateur',
+  message: 'Congratulations, you finished 5 abs exercises!',
+  description: 'Do a total of 5 abs exercises',
+  goal: 5,
+  trophy: 'bronze',
+  category: 'Abs'
+)
+
+achievement12 = Achievement.create!(
+  name: 'Abs Apprentice',
+  message: 'Congratulations, you finished 25 abs exercises!',
+  description: 'Do a total of 25 abs exercises',
+  goal: 25,
+  trophy: 'silver',
+  category: 'Abs'
+)
+
+achievement13 = Achievement.create!(
+  name: 'Abs Pro',
+  message: 'Congratulations, you finished 80 abs exercises!',
+  description: 'Do a total of 80 abs exercises',
+  goal: 80,
+  trophy: 'gold',
+  category: 'Abs'
+)
+
+achievement14 = Achievement.create!(
+  name: 'Abs Grandmaster',
+  message: 'Congratulations, you finished 200 abs exercises!',
+  description: 'Do a total of 200 abs exercises',
+  goal: 200,
+  trophy: 'platinum',
+  category: 'Abs'
+)
+
+achievement15 = Achievement.create!(
+  name: 'Triceps Novice',
+  message: 'Congratulations, you finished 5 triceps exercises!',
+  description: 'Do a total of 5 triceps exercises',
+  goal: 5,
+  trophy: 'bronze',
+  category: 'Triceps'
+)
+
+achievement16 = Achievement.create!(
+  name: 'Tricep Trooper',
+  message: 'Congratulations, you finished 25 triceps exercises!',
+  description: 'Do a total of 25 triceps exercises',
+  goal: 25,
+  trophy: 'silver',
+  category: 'Triceps'
+)
+
+achievement17 = Achievement.create!(
+  name: 'Triceps Tank',
+  message: 'Congratulations, you finished 80 triceps exercises!',
+  description: 'Do a total of 80 triceps exercises',
+  goal: 80,
+  trophy: 'gold',
+  category: 'Triceps'
+)
+
+achievement18 = Achievement.create!(
+  name: 'Triceps Grandmaster',
+  message: 'Congratulations, you finished 200 triceps exercises!',
+  description: 'Do a total of 200 triceps exercises',
+  goal: 200,
+  trophy: 'platinum',
+  category: 'Triceps'
+)
+
+achievement19 = Achievement.create!(
+  name: 'Back Beginner',
+  message: 'Congratulations, you finished 5 back exercises!',
+  description: 'Do a total of 5 back exercises',
+  goal: 5,
+  trophy: 'bronze',
+  category: 'Back'
+)
+
+achievement20 = Achievement.create!(
+  name: 'Back Builder',
+  message: 'Congratulations, you finished 25 back exercises!',
+  description: 'Do a total of 25 back exercises',
+  goal: 25,
+  trophy: 'silver',
+  category: 'Back'
+)
+
+achievement21 = Achievement.create!(
+  name: 'Broadback Brother',
+  message: 'Congratulations, you finished 80 back exercises!',
+  description: 'Do a total of 80 back exercises',
+  goal: 80,
+  trophy: 'gold',
+  category: 'Back'
+)
+
+achievement22 = Achievement.create!(
+  name: 'Back Grandmaster',
+  message: 'Congratulations, you finished 200 back exercises!',
+  description: 'Do a total of 200 back exercises',
+  goal: 200,
+  trophy: 'platinum',
+  category: 'Back'
+)
+
+achievement23 = Achievement.create!(
+  name: 'Leg Day Survivor',
+  message: 'Congratulations, you finished 5 leg exercises!',
+  description: 'Do a total of 5 leg exercises',
+  goal: 5,
+  trophy: 'bronze',
+  category: 'Legs'
+)
+
+achievement24 = Achievement.create!(
+  name: 'Leg Connoisseur',
+  message: 'Congratulations, you finished 25 leg exercises!',
+  description: 'Do a total of 25 leg exercises',
+  goal: 25,
+  trophy: 'silver',
+  category: 'Legs'
+)
+
+achievement25 = Achievement.create!(
+  name: 'Leg Luminary',
+  message: 'Congratulations, you finished 80 leg exercises!',
+  description: 'Do a total of 80 leg exercises',
+  goal: 80,
+  trophy: 'gold',
+  category: 'Legs'
+)
+
+achievement26 = Achievement.create!(
+  name: 'Leg Grandmaster',
+  message: 'Congratulations, you finished 200 leg exercises!',
+  description: 'Do a total of 200 leg exercises',
+  goal: 200,
+  trophy: 'platinum',
+  category: 'Legs'
+)
+
+achievement27 = Achievement.create!(
+  name: 'Chest Cub',
+  message: 'Congratulations, you finished 5 chest exercises!',
+  description: 'Do a total of 5 chest exercises',
+  goal: 5,
+  trophy: 'bronze',
+  category: 'Chest'
+)
+
+achievement28 = Achievement.create!(
+  name: 'Chest Challenger',
+  message: 'Congratulations, you finished 25 chest exercises!',
+  description: 'Do a total of 25 chest exercises',
+  goal: 25,
+  trophy: 'silver',
+  category: 'Chest'
+)
+
+achievement29 = Achievement.create!(
+  name: 'Pecs Professional',
+  message: 'Congratulations, you finished 80 chest exercises!',
+  description: 'Do a total of 80 chest exercises',
+  goal: 80,
+  trophy: 'gold',
+  category: 'Chest'
+)
+
+achievement30 = Achievement.create!(
+  name: 'Chest Grandmaster',
+  message: 'Congratulations, you finished 200 chest exercises!',
+  description: 'Do a total of 200 chest exercises',
+  goal: 200,
+  trophy: 'platinum',
+  category: 'Chest'
+)
+
+achievement31 = Achievement.create!(
+  name: 'Shoulder Scout',
+  message: 'Congratulations, you finished 5 shoulder exercises!',
+  description: 'Do a total of 5 shoulder exercises',
+  goal: 5,
+  trophy: 'bronze',
+  category: 'Shoulders'
+)
+
+achievement32 = Achievement.create!(
+  name: 'Shoulder Impressionist',
+  message: 'Congratulations, you finished 25 shoulder exercises!',
+  description: 'Do a total of 25 shoulder exercises',
+  goal: 25,
+  trophy: 'silver',
+  category: 'Shoulders'
+)
+
+achievement33 = Achievement.create!(
+  name: 'Shoulder Samurai',
+  message: 'Congratulations, you finished 80 shoulder exercises!',
+  description: 'Do a total of 80 shoulder exercises',
+  goal: 80,
+  trophy: 'gold',
+  category: 'Shoulders'
+)
+
+achievement34 = Achievement.create!(
+  name: 'Shoulder Grandmaster',
+  message: 'Congratulations, you finished 200 shoulder exercises!',
+  description: 'Do a total of 200 shoulder exercises',
+  goal: 200,
+  trophy: 'platinum',
+  category: 'Shoulders'
+)
+
 puts 'Finished creating achievements!'

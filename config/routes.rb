@@ -6,10 +6,12 @@ Rails.application.routes.draw do
   # root "articles#index"
   root to: 'pages#home'
   get '/library', to: 'pages#library'
-  get '/achievements', to: 'pages#achievements'
+  get '/achievements', to: 'achievements#index'
+  get '/profile', to: 'pages#profile'
   get '/workouts_history', to: 'pages#workout_history'
 
-  resources :users, only: %i[show] do
+  resources :achievements, only: [:index]
+  resources :users, only: %i[show update] do
     member do
       post 'achievements'
     end
