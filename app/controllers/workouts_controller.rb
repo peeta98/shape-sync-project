@@ -14,15 +14,14 @@ class WorkoutsController < ApplicationController
     @exercises = @workout.exercises
   end
 
+  # GET /workout_programs/:workout_program_id/workouts/new
   def new
-    @workout = current_user.workouts.build
+    @workout = @workout_program.workouts.build
     authorize @workout
-
   end
 
   def create
-    @workout = current_user.workouts.build(workout_params)
-    @workout.workout_program = @workout_program
+    @workout = @workout_program.workouts.build(workout_params)
     authorize @workout
     if @workout.save
       redirect_to @workout, notice: 'Workout was successfully created!'
@@ -32,6 +31,7 @@ class WorkoutsController < ApplicationController
   end
 
   def edit
+    authorize @workout
   end
 
   def update

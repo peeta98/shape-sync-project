@@ -5,12 +5,13 @@ class ExercisesController < ApplicationController
   def index
     @workout = Workout.find(params[:workout_id])
     @exercises = policy_scope(@workout.exercises)
-    
+
   end
 
   def new
     @exercise = @workout.exercises.build
     authorize @exercise
+    redirect_to workout_program_path(@workout)
   end
 
   def create
@@ -24,7 +25,7 @@ class ExercisesController < ApplicationController
   end
 
   def edit
-   
+
     authorize @exercise
   end
 
@@ -55,5 +56,5 @@ class ExercisesController < ApplicationController
 
   def find_exercise
     @exercise = Exercise.find(params[:id])
-end
+  end 
 end
