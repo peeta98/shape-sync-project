@@ -15,7 +15,7 @@ class WorkoutProgramsController < ApplicationController
   def update
     authorize @workout_program
     if @workout_program.update(workout_program_params)
-      redirect_to @workout_path, notice: 'Successfully updated your workout program'
+      redirect_to @workout_program, notice: 'Successfully updated your workout program'
     else
       render :show, status: :unprocessable_entity
     end
@@ -49,7 +49,7 @@ class WorkoutProgramsController < ApplicationController
   private
 
   def workout_program_params
-    params.require(:workout_program).permit(:weekly_frequency, :start_date, :end_date, workouts_attributes: [:id, :date, :categories, :duration, :_destroy])
+    params.require(:workout_program).permit(:weekly_frequency, :start_date, :end_date, workouts_attributes: [:id, :start_time, :categories, :duration, :_destroy])
   end
 
   def find_workout_program
