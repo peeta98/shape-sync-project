@@ -9,8 +9,8 @@ Rails.application.routes.draw do
   get '/achievements', to: 'achievements#index'
 
 post '/achievements/completion', to: 'achievements#completion'
-post '/achievements/category', to: 'achievements#category' 
-post '/achievements/status', to: 'achievements#status'     
+post '/achievements/category', to: 'achievements#category'
+post '/achievements/status', to: 'achievements#status'
   get '/profile', to: 'pages#profile'
   get '/workouts_history', to: 'pages#workout_history'
 
@@ -27,9 +27,5 @@ post '/achievements/status', to: 'achievements#status'
   resources :workouts, only: [] do
     resources :exercises, only: [:index, :new, :create]
   end
-<<<<<<< HEAD
-
-=======
   resources :exercises, only: [:edit, :update]
->>>>>>> master
 end
