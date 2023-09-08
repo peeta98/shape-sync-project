@@ -4,7 +4,10 @@ class WorkoutProgram < ApplicationRecord
   has_many :exercises, through: :workouts, dependent: :destroy
 
   validates :weekly_frequency, presence: true
+<<<<<<< HEAD
+=======
   # validates :end_date, comparison: { greater_than: :start_date }
+>>>>>>> master
   validates :weekly_frequency, numericality: true, comparison: { greater_than_or_equal_to: 1, less_than_or_equal_to: 7 }
 
   accepts_nested_attributes_for :workouts

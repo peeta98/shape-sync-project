@@ -15,7 +15,7 @@ class WorkoutProgramsController < ApplicationController
   def update
     authorize @workout_program
     if @workout_program.update(workout_program_params)
-      redirect_to workout_program_path(@workout_program), notice: 'Successfully updated your workout program'
+      redirect_to @workout_program, notice: 'Successfully updated your workout program'
     else
       render :show, status: :unprocessable_entity
     end
