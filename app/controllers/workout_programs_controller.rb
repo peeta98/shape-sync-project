@@ -49,7 +49,7 @@ class WorkoutProgramsController < ApplicationController
   private
 
   def workout_program_params
-    params.require(:workout_program).permit(:weekly_frequency, :start_date, :end_date, workouts_attributes: [:id, :start_time, :categories, :duration, :_destroy])
+    params.require(:workout_program).permit(:weekly_frequency, :start_date, :end_date, workouts_attributes: [:id, :categories, :duration, :_destroy])
   end
 
   def find_workout_program
