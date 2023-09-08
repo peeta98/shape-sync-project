@@ -27,5 +27,6 @@ post '/achievements/status', to: 'achievements#status'
   resources :workouts, only: [] do
     resources :exercises, only: [:index, :new, :create]
   end
+
   resources :exercises, only: [:edit, :update]
 end

@@ -4,34 +4,26 @@
   <%= render 'visitor_navbar' %>
 <% end %>
 
+<!-- Also don't know the reason behind this link, shouldn't this be ONLY in the Navbar? (Pedro)
 <div>
-  <% if user_signed_in? && current_user.workout_program.nil? %>
+  <% if current_user.workout_program.nil? %>
     <h1 class="text-center text-white">Create your workout program</h1>
     <%= link_to "Create Workout Program", new_workout_program_path, class: "button-green" %>
   <% end %>
 </div>
+-->
 
 <div class="container" id="home-background">
+  <!-- Don't know why this h2 is here, what's the reason behind it? (Pedro)
   <div class="createworkout mx-4 my-4 justify-content-center">
     <h2 class="text-center">Create your first workout!</h2>
   </div>
-
+  -->
   <div class="border border-danger">
     <div class="info-card4 w-100 text-center">
       1409 workouts all time
     </div>
-    <div class="info-card4 w-100 text-center">
-      <!-- START OF CALENDAR FEATURE -->
-      <%= week_calendar(events: @workouts, start_date_param: :start_date) do |date, workouts| %>
-        <%= date %>
-        <% workouts.each do |workout| %>
-          <div class="workout">  <!-- We will add some style to the workout class later so let's add it now -->
-            <p><%= workout.categories %></p>
-          </div>
-        <% end %>
-      <% end %>
-      <!-- END OF CALENDAR FEATURE -->
-    </div>
+  
     <div class="info-card4 w-100 text-center  py-4">
       Upcoming Training Session: Monday 11th of September
     </div>
