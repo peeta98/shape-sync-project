@@ -3,8 +3,11 @@
     <%= link_to root_path, class: "navbar-brand" do%>
      <i class="fa-solid fa-dumbbell"></i>
     <% end %>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto d-flex align-items-center">
+      <ul class="d-flex navbar-nav ml-auto d-flex align-items-center">
         <li class="me-3">
           <% if current_user.workout_program %>
             <%= link_to "My Workout Program", workout_program_path(current_user.workout_program), class: "dropdown-item text-white fw-bold" %>
