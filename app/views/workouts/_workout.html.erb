@@ -1,13 +1,15 @@
 <%# dom_id(workout) => "workout_1" %>
 <%= turbo_frame_tag dom_id(workout) do %>
   <div class="workout-card">
-    <h4><%= workout.categories %></h4>
-    <div class="workout-card-links">
+    <div class="d-flex">
+      <h4><%= workout.categories %></h4>
       <%= link_to edit_workout_path(workout) do %>
-        <i class="fa-solid fa-pen-to-square fa-sm"></i>
+        <i class="fa-solid fa-pen-to-square fa-xl"></i>
       <% end %>
+    </div>
+    <div class="workout-card-links">
       <%= link_to workout_exercises_path(workout), data: { turbo_frame: dom_id(workout, :exercises), id: "list" } do %>
-        <i class="fa-solid fa-list fa-sm"></i>
+        <i class="fa-solid fa-dumbbell fa-xl"></i>
       <% end %>
     </div>
   </div>
@@ -30,9 +32,9 @@
         <%= link_to new_workout_exercise_path(workout), target: :_top, html:{data: {action:"submit->add-exercises-to-workout#display"}} do %>
           <i class="fa-solid fa-circle-plus fa-2xl"></i>
         <% end %>
-        <div class="d-none" data-add-exercises-to-workout-target="exerciseForm">
+        <div class="d-none form-exercise" data-add-exercises-to-workout-target="exerciseForm">
           <%= simple_form_for [@workout_program, @exercise] do |f| %>
-            <%= f.input :name %>
+            <%= f.input :name , input_html: { autocomplete: "email", class: "transparent", placeholder: "Email" } %>
             <%= f.input :weight %>
             <%= f.input :sets %>
             <%= f.input :reps %>

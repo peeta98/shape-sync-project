@@ -5,7 +5,7 @@
 <% end %>
 
 <div>
-  <% if user_signed_in? && current_user.workout_program.nil? %>
+  <% if current_user.workout_program.nil? %>
     <h1 class="text-center text-white">Create your workout program</h1>
     <%= link_to "Create Workout Program", new_workout_program_path, class: "button-green" %>
   <% end %>
