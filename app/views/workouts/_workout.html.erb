@@ -3,7 +3,7 @@
   <div class="workout-card">
     <h4><%= workout.categories %></h4>
     <div class="workout-card-links">
-      <%= link_to edit_workout_path(workout) do %>
+      <%= link_to edit_workout_path(@workout_program[:id]) do %>
         <i class="fa-solid fa-pen-to-square fa-sm"></i>
       <% end %>
       <%= link_to workout_exercises_path(workout), data: { turbo_frame: dom_id(workout, :exercises), id: "list" } do %>
