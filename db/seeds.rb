@@ -439,23 +439,23 @@ achievement10 = Achievement.create!(
   category: 'Biceps'
 )
 
-achievement11 = Achievement.create!(
-  name: 'Abs Amateur',
-  message: 'Congratulations, you finished 5 abs exercises!',
-  description: 'Do a total of 5 abs exercises',
-  goal: 5,
-  trophy: 'bronze',
-  category: 'Abs'
-)
+# achievement11 = Achievement.create!(
+#  name: 'Abs Amateur',
+#  message: 'Congratulations, you finished 5 abs exercises!',
+#  description: 'Do a total of 5 abs exercises',
+#  goal: 5,
+#  trophy: 'bronze',
+#  category: 'Abs'
+# )
 
-achievement12 = Achievement.create!(
-  name: 'Abs Apprentice',
-  message: 'Congratulations, you finished 25 abs exercises!',
-  description: 'Do a total of 25 abs exercises',
-  goal: 25,
-  trophy: 'silver',
-  category: 'Abs'
-)
+#achievement12 = Achievement.create!(
+  #name: 'Abs Apprentice',
+ # message: 'Congratulations, you finished 25 abs exercises!',
+ # description: 'Do a total of 25 abs exercises',
+ # goal: 25,
+ # trophy: 'silver',
+ # category: 'Abs'
+#)
 
 achievement13 = Achievement.create!(
   name: 'Abs Pro',
@@ -547,32 +547,32 @@ achievement22 = Achievement.create!(
   category: 'Back'
 )
 
-achievement23 = Achievement.create!(
-  name: 'Leg Day Survivor',
-  message: 'Congratulations, you finished 5 leg exercises!',
-  description: 'Do a total of 5 leg exercises',
-  goal: 5,
-  trophy: 'bronze',
-  category: 'Legs'
-)
+#achievement23 = Achievement.create!(
+#  name: 'Leg Day Survivor',
+#  message: 'Congratulations, you finished 5 leg exercises!',
+#  description: 'Do a total of 5 leg exercises',
+#  goal: 5,
+#  trophy: 'bronze',
+#  category: 'Legs'
+# )
 
-achievement24 = Achievement.create!(
-  name: 'Leg Connoisseur',
-  message: 'Congratulations, you finished 25 leg exercises!',
-  description: 'Do a total of 25 leg exercises',
-  goal: 25,
-  trophy: 'silver',
-  category: 'Legs'
-)
+#achievement24 = Achievement.create!(
+#  name: 'Leg Connoisseur',
+#  message: 'Congratulations, you finished 25 leg exercises!',
+#  description: 'Do a total of 25 leg exercises',
+#  goal: 25,
+#  trophy: 'silver',
+#  category: 'Legs'
+#)
 
-achievement25 = Achievement.create!(
-  name: 'Leg Luminary',
-  message: 'Congratulations, you finished 80 leg exercises!',
-  description: 'Do a total of 80 leg exercises',
-  goal: 80,
-  trophy: 'gold',
-  category: 'Legs'
-)
+#achievement25 = Achievement.create!(
+#  name: 'Leg Luminary',
+#  message: 'Congratulations, you finished 80 leg exercises!',
+#  description: 'Do a total of 80 leg exercises',
+#  goal: 80,
+#  trophy: 'gold',
+#  category: 'Legs'
+# )
 
 achievement26 = Achievement.create!(
   name: 'Leg Grandmaster',
