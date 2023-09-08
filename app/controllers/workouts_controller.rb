@@ -22,8 +22,8 @@ class WorkoutsController < ApplicationController
   end
 
   def create
-    @workout = @workout_program.workouts.build(workout_params)
     authorize @workout
+    @workout = @workout_program.workouts.build(workout_params)
     if @workout.save
       redirect_to @workout, notice: 'Workout was successfully created!'
     else
@@ -49,11 +49,10 @@ class WorkoutsController < ApplicationController
     redirect_to @workout_program, notice: 'Weekly workout was successfully deleted.'
   end
 
-
   private
 
   def workout_params
-    params.require(:workout).permit(:categories, :date, :duration)
+    params.require(:workout).permit(:categories, :start_time, :duration)
   end
 
   def find_workout
