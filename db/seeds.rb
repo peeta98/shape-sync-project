@@ -1,3 +1,6 @@
+require 'uri'
+require 'net/http'
+
 puts 'Deleting seeds...'
 Exercise.destroy_all
 Library.destroy_all
@@ -259,6 +262,24 @@ seated_leg_curl = Exercise.create!(
 )
 puts '4th Exercise for Leg Day created!'
 puts 'All Exercises for Leg Day created!'
+
+# ----- Seeding Exercises from the API -----
+puts 'Creating the Exercises from the API...'
+url = URI('https://exercisedb.p.rapidapi.com/exercises')
+
+http = Net::HTTP.new(url.host, url.port)
+http.use_ssl = true
+
+request = Net::HTTP::Get.new(url)
+request['X-RapidAPI-Key'] = 'a5ec1d093cmshf3922a4cee2183fp1a6fa3jsnd3c0f77f2433'
+request['X-RapidAPI-Host'] = 'exercisedb.p.rapidapi.com'
+
+response = http.request(request)
+exercise_api = JSON.parse(response.read_body) # Returns an array of hashes with the keys 'name' and 'gifUrl'
+exercise_api.each do |exercise|
+  Exercise.create!(name: exercise['name'], gif: exercise['gifUrl'], library: muscle_library)
+end
+puts 'All exercises created!'
 
 # ----- Seeding instances of Achievement -----
 puts 'Creating achievements...'

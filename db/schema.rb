@@ -57,6 +57,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_07_130204) do
   create_table "exercises", force: :cascade do |t|
     t.string "name"
     t.string "category"
+    t.string "gif"
     t.integer "sets"
     t.integer "reps"
     t.integer "weight"

@@ -3,6 +3,7 @@ class CreateExercises < ActiveRecord::Migration[7.0]
     create_table :exercises do |t|
       t.string :name
       t.string :category
+      t.string :gif
       t.integer :sets
       t.integer :reps
       t.integer :weight
