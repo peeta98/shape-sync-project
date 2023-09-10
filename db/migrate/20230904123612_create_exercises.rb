@@ -11,7 +11,6 @@ class CreateExercises < ActiveRecord::Migration[7.0]
       t.integer :weight
       t.integer :rest
       t.integer :rpe
-      t.references :library, null: false, foreign_key: true
       t.references :workout, foreign_key: true
 
       t.timestamps

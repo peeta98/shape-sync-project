@@ -1,7 +1,6 @@
 class Exercise < ApplicationRecord
-  belongs_to :library
+  #belongs_to :library
   belongs_to :workout, optional: true
-  # has_one :workout_program, through: :workout
 
   # ----- API TESTING, NEED TO SEED INSTANCES WITH ONLY NAME PRESENT -----
   # validates :name, :weight, :sets, :reps, presence: true

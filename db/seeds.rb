@@ -3,7 +3,6 @@ require 'net/http'
 
 puts 'Deleting seeds...'
 Exercise.destroy_all
-Library.destroy_all
 Workout.destroy_all
 WorkoutProgram.destroy_all
 User.destroy_all
@@ -23,13 +22,6 @@ pedro = User.create!(
   goal: 'Get shredded'
 )
 puts 'User 1 created!'
-
-# ---- Seeding library -----
-puts 'Creating the Library...'
-muscle_library = Library.create!(
-  name: 'Exercise Library'
-)
-puts 'Library created!'
 
 # ----- Seeding instances of Workout Program -----
 puts 'Creating 1 Workout Program...'
@@ -69,7 +61,6 @@ bench_press = Exercise.create!(
   weight: 80,
   rest: 120,
   rpe: 7,
-  library: muscle_library,
   workout: push_week
 )
 puts '1st Exercise for Push Day created!'
@@ -82,7 +73,6 @@ chest_fly_machine = Exercise.create!(
   weight: 40,
   rest: 60,
   rpe: 7,
-  library: muscle_library,
   workout: push_week
 )
 puts '2nd Exercise for Push Day created!'
@@ -95,7 +85,6 @@ chest_dips = Exercise.create!(
   weight: 5,
   rest: 90,
   rpe: 8,
-  library: muscle_library,
   workout: push_week
 )
 puts '3rd Exercise for Push Day created!'
@@ -108,7 +97,6 @@ db_shoulder_press = Exercise.create!(
   weight: 20,
   rest: 75,
   rpe: 9,
-  library: muscle_library,
   workout: push_week
 )
 puts '4th Exercise for Push Day created!'
@@ -121,7 +109,6 @@ cable_lateral_raise = Exercise.create!(
   weight: 10,
   rest: 60,
   rpe: 8,
-  library: muscle_library,
   workout: push_week
 )
 puts '5th Exercise for Push Day created!'
@@ -134,7 +121,6 @@ triceps_cable_pressdown = Exercise.create!(
   weight: 50,
   rest: 90,
   rpe: 8,
-  library: muscle_library,
   workout: push_week
 )
 puts '6th Exercise for Push Day created!'
@@ -150,7 +136,6 @@ lat_pulldown = Exercise.create!(
   weight: 55,
   rest: 90,
   rpe: 7,
-  library: muscle_library,
   workout: pull_week
 )
 puts '1st Exercise for Pull Day created!'
@@ -163,7 +148,6 @@ machine_row1 = Exercise.create!(
   weight: 70,
   rest: 90,
   rpe: 8,
-  library: muscle_library,
   workout: pull_week
 )
 puts '2nd Exercise for Pull Day created!'
@@ -176,7 +160,6 @@ reverse_pec_deck = Exercise.create!(
   weight: 25,
   rest: 60,
   rpe: 6,
-  library: muscle_library,
   workout: pull_week
 )
 puts '3rd Exercise for Pull Day created!'
@@ -189,7 +172,6 @@ ezbar_curl = Exercise.create!(
   weight: 30,
   rest: 90,
   rpe: 8,
-  library: muscle_library,
   workout: pull_week
 )
 puts '4th Exercise for Pull Day created!'
@@ -202,7 +184,6 @@ db_preacher_curls = Exercise.create!(
   weight: 10,
   rest: 45,
   rpe: 8,
-  library: muscle_library,
   workout: pull_week
 )
 puts '5th Exercise for Pull Day created!'
@@ -218,7 +199,6 @@ squat = Exercise.create!(
   weight: 225,
   rest: 120,
   rpe: 9,
-  library: muscle_library,
   workout: legs_week
 )
 puts '1st Exercise for Leg Day created!'
@@ -231,7 +211,6 @@ bb_rdl = Exercise.create!(
   weight: 100,
   rest: 120,
   rpe: 9,
-  library: muscle_library,
   workout: legs_week
 )
 puts '2nd Exercise for Leg Day created!'
@@ -244,7 +223,6 @@ leg_extension = Exercise.create!(
   weight: 80,
   rest: 45,
   rpe: 9,
-  library: muscle_library,
   workout: legs_week
 )
 puts '3rd Exercise for Leg Day created!'
@@ -257,7 +235,6 @@ seated_leg_curl = Exercise.create!(
   weight: 70,
   rest: 45,
   rpe: 9,
-  library: muscle_library,
   workout: legs_week
 )
 puts '4th Exercise for Leg Day created!'
@@ -281,8 +258,7 @@ exercise_api.each do |exercise|
     name: exercise['name'].capitalize!,
     gif: exercise['gifUrl'],
     bodyPart: exercise['bodyPart'],
-    target: exercise['target'],
-    library: muscle_library
+    target: exercise['target']
   )
 end
 puts 'All exercises created!'
