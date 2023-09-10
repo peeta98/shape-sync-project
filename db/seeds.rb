@@ -275,9 +275,15 @@ request['X-RapidAPI-Key'] = 'a5ec1d093cmshf3922a4cee2183fp1a6fa3jsnd3c0f77f2433'
 request['X-RapidAPI-Host'] = 'exercisedb.p.rapidapi.com'
 
 response = http.request(request)
-exercise_api = JSON.parse(response.read_body) # Returns an array of hashes with the keys 'name' and 'gifUrl'
+exercise_api = JSON.parse(response.read_body) # Returns an array of hashes
 exercise_api.each do |exercise|
-  Exercise.create!(name: exercise['name'], gif: exercise['gifUrl'], library: muscle_library)
+  Exercise.create!(
+    name: exercise['name'].capitalize!,
+    gif: exercise['gifUrl'],
+    bodyPart: exercise['bodyPart'],
+    target: exercise['target'],
+    library: muscle_library
+  )
 end
 puts 'All exercises created!'
 
