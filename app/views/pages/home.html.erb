@@ -1,9 +1,3 @@
-<% if user_signed_in? %>
-  <%= render 'user_navbar' %>
-<% else %>
-  <%= render 'visitor_navbar' %>
-<% end %>
-
 <div class="container mt-0 rounded-0 text-center" id="home-background">
   <h1 class="text-white">Current Workout Program - <%= current_user.workout_program.weekly_frequency %> times per week</h1>
   <% current_user.workout_program.workouts.each do |workout| %>
