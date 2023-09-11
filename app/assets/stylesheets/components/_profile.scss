@@ -19,6 +19,13 @@
 
 .container2 {
   color: white;
+
+  a {
+    text-decoration: none;
+    font-size: 15px;
+    color: #C4ED6D;
+    font-weight: bold;
+  }
 }
 
 .container3 {
@@ -131,4 +138,12 @@
     padding: 5px;
     border-radius: 15px;
     border: 1px solid #C4ED6D;
+  }
+
+  #goals {
+    color: white;
+  }
+
+  #bottom {
+
   }
