@@ -8,9 +8,9 @@ Rails.application.routes.draw do
   get '/library', to: 'pages#library'
   get '/achievements', to: 'achievements#index'
 
-post '/achievements/completion', to: 'achievements#completion'
-post '/achievements/category', to: 'achievements#category'
-post '/achievements/status', to: 'achievements#status'
+  post '/achievements/completion', to: 'achievements#completion'
+  post '/achievements/category', to: 'achievements#category'
+  post '/achievements/status', to: 'achievements#status'
   get '/profile', to: 'pages#profile'
   get '/workouts_history', to: 'pages#workout_history'
 
@@ -20,7 +20,7 @@ post '/achievements/status', to: 'achievements#status'
       post 'achievements'
     end
   end
-  resources :workout_programs, only: %i[show edit update create new destroy]do
+  resources :workout_programs, only: %i[show edit update create new destroy] do
     resources :workouts, shallow: true
   end
 

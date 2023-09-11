@@ -4,68 +4,18 @@
   <%= render 'visitor_navbar' %>
 <% end %>
 
-<!-- Also don't know the reason behind this link, shouldn't this be ONLY in the Navbar? (Pedro)
-<div>
-  <% if current_user.workout_program.nil? %>
-    <h1 class="text-center text-white">Create your workout program</h1>
-    <%= link_to "Create Workout Program", new_workout_program_path, class: "button-green" %>
-  <% end %>
-</div>
--->
-
-<div class="container" id="home-background">
-  <!-- Don't know why this h2 is here, what's the reason behind it? (Pedro)
-  <div class="createworkout mx-4 my-4 justify-content-center">
-    <h2 class="text-center">Create your first workout!</h2>
-  </div>
-  -->
-  <div class="border border-danger">
-    <div class="info-card4 w-100 text-center">
-      1409 workouts all time
-    </div>
-  
-    <div class="info-card4 w-100 text-center  py-4">
-      Upcoming Training Session: Monday 11th of September
-    </div>
-  </div>
-
-  <div class="info-card2 justify-content-center py-4">
-    <div class="info-card">
-      <div class="workout-name-card">
-        <div class="ms-3">Picture</div>
-        <div>Chest day</div>
+<div class="container text-center" id="home-background">
+  <h1 class="text-white"> Current Workout Program - <%= current_user.workout_program.weekly_frequency %> times per week</h1>
+  <% current_user.workout_program.workouts.each do |workout| %>
+  <div class="text-white mb-5 border border-danger">
+    <p><%= workout.categories %></p>
+    <% workout.exercises.each do |exercise| %>
+      <div class="d-flex justify-content-between">
+        <p>Gif of exercise</p>
+       <!-- image_tag(exercise.gif) => Doesn't show anything because the first exercises that I seeded don't have any gifs from the API -->
+        <p><%= exercise.name %></p>
       </div>
-
-     <div class="info-card2 text-center">
-  <div class="d-inline">
-    <div class="row">
-      <div class="col"><p>Volume</p></div>
-      <div class="col"><p>Sets</p></div>
-      <div class="col"><p>Reps</p></div>
-    </div>
-    <div class="row">
-      <div class="col"><i class="fa-solid fa-arrow-down-long mb-3"></i></div>
-      <div class="col"><i class="fa-solid fa-arrow-down-long mb-3"></i></div>
-      <div class="col"><i class="fa-solid fa-arrow-down-long mb-3"></i></div>
-    </div>
-    <div class="row">
-      <div class="col"><p>400kg</p></div>
-      <div class="col"><p>8</p></div>
-      <div class="col"><p>40</p></div>
-    </div>
+    <% end %>
   </div>
-</div>
-    <div class="info-card3 d-flex justify-content-center">
-      <i class="fa-solid fa-arrow-down-long"></i>
-    </div>
-
-  <div class="info-card2 justify-content-center py-4">
-    <div class="info-card text-center align-items-center pb-4">
-      1. Barbell Bench Press
-    </div>
-    <div class="info-card text-center">
-      <p>Volume | Sets | Reps</p>
-      <p>400kg 8  40</p>
-    </div>
-  </div>
+  <% end %>
 </div>
