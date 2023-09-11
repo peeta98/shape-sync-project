@@ -10,7 +10,7 @@ export default class extends Controller {
     const token = document.getElementsByName("csrf-token")[0].content;
     const sortingCriteria = event.currentTarget.getAttribute("data-sort");
     let url;
-  
+
     switch (sortingCriteria) {
       case 'completion':
         url = '/achievements/completion';
@@ -24,14 +24,14 @@ export default class extends Controller {
       default:
         return;
     }
-  
+
     fetch(url, {
       method: "POST",
       credentials: "same-origin",
-      headers: { 
+      headers: {
         "X-CSRF-Token": token,
         "Content-Type": "application/json",
-        "Accept": "application/json" 
+        "Accept": "application/json"
       },
     })
     .then((response) => response.json())
@@ -40,26 +40,26 @@ export default class extends Controller {
       data
       const innerHTML = data.achievements.map(achievement =>`
         <div class="achievement">
-          <div style="color: #C4ED6D;"><strong>${achievement.name}</strong></div>
-          <div>Category: ${achievement.category}</div>
-          <div>Progress: ${achievement.goal}</div>
-          <div>Status: ${achievement.status}</div>
+          <div><strong>${achievement.name}</strong></div>
+          <div>${achievement.category}</div>
+          <div>0/${achievement.goal}</div>
         </div>
         <div class="description">
           <p>Description: ${achievement.description}</p>
+          <p>${achievement.status}</p>
         </div>
       `).join('')
-      
+
       this.achievementsTarget.innerHTML = innerHTML;
     });
   }
-  
+
 }
     /*fetch(url, {
       method: "GET",
       headers: {
-       
-        
+
+
         "Accept": "text/plain",
       },
     })
@@ -75,4 +75,3 @@ export default class extends Controller {
       //   console.log(data)
       //   //this.listTarget.outerHTML = data
       // })
-     

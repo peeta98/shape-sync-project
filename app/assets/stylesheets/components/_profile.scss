@@ -19,15 +19,14 @@
 
 .container2 {
   color: white;
-  display: flex;
 }
 
 .container3 {
   background-color: #272726;
   color: white;
-  padding-bottom: 5px;
   padding-left: 10px;
   padding-top: 5px;
+  border-radius: 15px;
 }
 
 
@@ -40,6 +39,7 @@
   padding-right: 15px;
   padding-top: 15px;
   justify-content: left;
+  border: 1px solid #C4ED6D;
 
   i {
     color: #C4ED6D;
@@ -57,11 +57,11 @@
   padding-right: 15px;
   padding-top: 15px;
   justify-content: left;
+  border: 1px solid #C4ED6D;
 
   i {
     color: #C4ED6D;
     font-size: 15px;
-    vertical-align: super;
   }
 }
 
@@ -93,6 +93,42 @@
     border-radius: 16px;
   }
 
+  .profile-input-pic {
+    background-color: transparent;
+    border:none;
+    color: white;
+    border-radius: 10px;
+    background-color: #272726;
+    margin-left: -5px;
+  }
+
   .profile-input::placeholder {
     color: white;
+  }
+
+  #profile_avatar {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 20px;
+    border: 10px solid transparent;
+    border-radius: 50%;
+  }
+
+  #goalSelect {
+    display: block;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .centered-select {
+    position: relative;
+    top: 20px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #272726;
+    color: white;
+    padding: 5px;
+    border-radius: 15px;
+    border: 1px solid #C4ED6D;
   }
