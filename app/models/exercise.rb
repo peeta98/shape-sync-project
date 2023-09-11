@@ -9,8 +9,10 @@ class Exercise < ApplicationRecord
   # validates :rest, numericality: true, comparison: { greater_than_or_equal_to: 0 }
   include PgSearch::Model
   pg_search_scope :search_by_name_and_category,
-    against: [ :name, :category ],
+    against: [ :name, :category, :target ],
     using: {
       tsearch: { prefix: true }
   }
+
+  
 end

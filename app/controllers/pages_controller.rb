@@ -9,8 +9,12 @@ class PagesController < ApplicationController
     authorize @exercises
     @exercise_names = @exercises.map(&:name).uniq
     if params[:search].present?
-      @exercises = @exercises.where("name || category ILIKE ?", "%#{params[:search]}%")
+      search_term = "%#{params[:search]}%"
+      @exercises = @exercises.where("name ILIKE :search OR category ILIKE :search OR target ILIKE :search ", search: search_term)
+    else
+      @exercises = []
     end
+
 
     respond_to do |format|
       format.html # Follow regular flow of Rails
