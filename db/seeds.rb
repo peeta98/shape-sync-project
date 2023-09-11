@@ -256,6 +256,11 @@ exercise_api = JSON.parse(response.read_body) # Returns an array of hashes
 exercise_api.each do |exercise|
   Exercise.create!(
     name: exercise['name'].capitalize!,
+    sets: 0,
+    reps: 0,
+    weight: 0,
+    rest: 0,
+    rpe: 0,
     gif: exercise['gifUrl'],
     bodyPart: exercise['bodyPart'],
     target: exercise['target']

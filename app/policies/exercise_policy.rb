@@ -8,7 +8,7 @@ class ExercisePolicy < ApplicationPolicy
     def resolve
       #scope.joins(workout: :workout_program).joins(workout_program: :user).where(user: user)
        # Users can only see their workout programs
-       scope.all 
+       scope.all
     end
   end
 
@@ -17,7 +17,7 @@ class ExercisePolicy < ApplicationPolicy
   end
 
   def create?
-    true # All users should be able to create a new workout 
+    true # All users should be able to create a new workout
   end
 
   def show?
@@ -25,13 +25,16 @@ class ExercisePolicy < ApplicationPolicy
   end
 
   def update?
-    record.workout.workout_program.user == user # User can only update HIS workout    # User can only update HIS workout 
+    record.workout.workout_program.user == user # User can only update HIS workout
   end
 
   def destroy?
-    record.workout.user == user # User can only destroy HIS workout 
+    record.workout.user == user # User can only destroy HIS workout
   end
 
+  def remove_association?
+    record.workout.workout_program.user == user
+  end
 
   def library?
     true

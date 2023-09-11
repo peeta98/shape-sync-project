@@ -1,0 +1,103 @@
+.modal-content{
+  border-radius: 16px;
+  background-color: #36373E;
+  .edit-exercise{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid #C4ED6D;
+    border-radius: 16px;
+    width: 60%;
+    margin: auto;
+    margin-top: 12px;
+    p{
+      margin: 0;
+      padding: 0;
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+    .links{
+      border-radius: 16px;
+      background-color: transparent;
+      text-decoration: none;
+      color: #C4ED6D;
+      font-weight: bold;
+      font-size: 50px;
+      padding: 0px 20px;
+      margin: 10px auto;
+    }
+
+  }
+}
+.modal-footer{
+  border-top: 1px solid #C4ED6D;
+  .button-green-modal {
+    align-items: center;
+    background-image: linear-gradient(144deg, #8aaa46, #8aaa46 50%, #8aaa46);
+    border: 0;
+    border-radius: 16px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    display: flex;
+    font-family: Phantomsans, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    justify-content: center;
+    line-height: 1em;
+    max-width: 100%;
+    min-width: 140px;
+    padding: 10px;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    cursor: pointer;
+    padding: 12px 45px;
+  }
+}
+
+.modal-header{
+  border-bottom:1px solid #C4ED6D;
+  .close{
+    background-color: transparent;
+    color: #C4ED6D;
+  }
+}
+
+.modal-footer-weight{
+  .button-green-modal {
+    align-items: center;
+    background-image: linear-gradient(144deg, #8aaa46, #8aaa46 50%, #8aaa46);
+    border: 0;
+    border-radius: 16px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    display: flex;
+    font-family: Phantomsans, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    justify-content: center;
+    line-height: 1em;
+    max-width: 100%;
+    min-width: 140px;
+    padding: 10px;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    cursor: pointer;
+    padding: 12px 45px;
+  }
+}
+
+.input-field{
+  text-align: center;
+  margin-top: 1rem;
+  background-color: transparent;
+  border: 1px solid #C4ED6D;
+  border-radius: 16px;
+  padding: 12px;
+  color: white;
+}

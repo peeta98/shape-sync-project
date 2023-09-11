@@ -1,10 +1,10 @@
 .library{
   padding-left: 1rem;
   padding-right: 1rem;
+  background-color:#36373E;
 
   h1{
     color: #C4ED6D;
-    margin-top: 2rem;
     text-align: center;
     margin-bottom: 0;
   }
@@ -28,9 +28,7 @@
   .transparent::placeholder {
     padding-left: 1rem;
   }
-  .transparent-focus{
-    border: 2px solid #C4ED6D;
-  }
+
 }
 
 .categories{

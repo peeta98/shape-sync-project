@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   post '/achievements/status', to: 'achievements#status'
   get '/profile', to: 'pages#profile'
   get '/workouts_history', to: 'pages#workout_history'
+  get '/add_exercise/:id', to: 'workouts#add_exercise', as: 'add_exercise'
 
   resources :achievements, only: [:index]
   resources :users, only: %i[show update] do
@@ -29,4 +30,5 @@ Rails.application.routes.draw do
   end
 
   resources :exercises, only: [:edit, :update]
+  patch 'remove_exercise_from_workout/:id', to: 'exercises#remove_association', as: 'remove_association'
 end
