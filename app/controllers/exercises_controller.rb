@@ -37,6 +37,15 @@ class ExercisesController < ApplicationController
     authorize @exercise
   end
 
+  def remove_association
+    @exercise = Exercise.find(params[:id])
+    authorize @exercise
+    @workout = @exercise.workout
+    @workout_program = @workout.workout_program
+    @exercise.update(workout_id: nil)
+    redirect_to workout_program_path(@workout_program), notice: 'Exercise was successfully removed from workout!'
+  end
+
   def destroy
     @exercise.destroy
     redirect_to workout_path(@exercise.workout), notice: 'Exercise was successfully removed from the workout.'

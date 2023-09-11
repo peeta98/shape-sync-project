@@ -38,8 +38,10 @@ class WorkoutsController < ApplicationController
   def update
     authorize @workout
     if params[:workout][:exercise_ids].present?
-      selected_exercise = Exercise.find(params[:workout][:exercise_ids])
-      selected_exercise.update(workout_id: @workout.id)
+      selected_exercises = Exercise.where(id: params[:workout][:exercise_ids])
+      selected_exercises.each do |selected_exercise|
+        selected_exercise.update(workout_id: @workout.id)
+      end
     end
     if @workout.update(workout_params)
       redirect_to workout_program_path(@workout.workout_program), notice: 'Weekly workout was successfully updated!'
@@ -61,7 +63,7 @@ class WorkoutsController < ApplicationController
   private
 
   def workout_params
-    params.require(:workout).permit(:categories, :start_time, :duration)
+    params.require(:workout).permit(:categories, :start_time, :duration, exercise_ids: [])
   end
 
   def find_workout

@@ -30,4 +30,5 @@ Rails.application.routes.draw do
   end
 
   resources :exercises, only: [:edit, :update]
+  patch 'remove_exercise_from_workout/:id', to: 'exercises#remove_association', as: 'remove_association'
 end
