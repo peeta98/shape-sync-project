@@ -6,17 +6,56 @@
       <%= pluralize exercises.count, "result" %> for "<em><%= params[:search] %></em>"
     <% end %>
   </p>
-  <% exercises_name.each do |exercise| %>
-    <p><%= exercise %></p>
+  <% exercises.each do |exercise| %>
+    <p><%= exercise.name %></p>
   <% end %>
-  <% categories = ['Chest', 'Back', 'Legs', 'Shoulders', 'Biceps', 'Triceps', 'Abs', 'Cardio'] %>
+  <% categories = ['Chest', 'Back', 'Legs', 'Shoulders', 'Biceps', 'Triceps', 'Abs', 'Cardio', 'All'] %>
   <% categories.each do |category| %>
     <div class="category-card" data-library-exercises-target="button" data-action="click->library-exercises#showExercises">
       <h2><%= category %></h2>
     </div>
+    <!-- DATA ACTION IS ONLY WORKIN FORM CHEST CATEGORY - NEEDS DEBUGGING -->
     <div class="d-none" data-library-exercises-target="exercises">
-      <% exercises.each do |exercise| %>
-        <% if exercise.category == category %>
+      <% case category %>
+      <% when 'Chest' %>
+        <% chest_exercises = exercises.select { |exercise| exercise.bodyPart == 'chest' } %>
+        <% chest_exercises.each do |chest_exercise| %>
+          <p><%= chest_exercise.name %></p>
+        <% end %>
+      <% when 'Back' %>
+        <% back_exercises = exercises.select { |exercise| exercise.bodyPart == 'back' } %>
+        <% back_exercises.each do |back_exercise| %>
+          <p><%= back_exercise.name %></p>
+        <% end %>
+      <% when 'Legs' %>
+        <% legs_exercises = exercises.select { |exercise| exercise.bodyPart == 'upper legs' || exercise.bodyPart == 'lower legs' } %>
+        <% legs_exercises.each do |legs_exercise| %>
+          <p><%= legs_exercise.name %></p>
+        <% end %>
+      <% when 'Shoulders' %>
+        <% shoulder_exercises = exercises.select { |exercise| exercise.bodyPart == 'shoulders'} %>
+        <% shoulder_exercises.each do |shoulder_exercise| %>
+          <p><%= shoulder_exercise.name %></p>
+        <% end %>
+      <% when 'Biceps' %>
+        <% biceps_exercises = exercises.select { |exercise| exercise.target == 'biceps'} %>
+        <% biceps_exercises.each do |biceps_exercise| %>
+          <p><%= biceps_exercise.name %></p>
+        <% end %>
+      <% when 'Triceps' %>
+        <% triceps_exercises = exercises.select { |exercise| exercise.target == 'triceps'} %>
+        <% triceps_exercises.each do |triceps_exercise| %>
+          <p><%= triceps_exercise.name %></p>
+        <% end %>
+      <% when 'Abs' %>
+        <% abs_exercises = exercises.select { |exercise| exercise.target == 'abs'} %>
+        <% abs_exercises.each do |abs_exercise| %>
+          <p><%= abs_exercise.name %></p>
+        <% end %>
+      <% when 'Cardio' %>
+        <p><%= 'Seed some Cardio exercises, because this API does not have that 🤣' %></p>
+      <% else %>
+        <% exercises.each do |exercise| %>
           <p><%= exercise.name %></p>
         <% end %>
       <% end %>

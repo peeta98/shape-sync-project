@@ -1,3 +1,6 @@
+require 'uri'
+require 'net/http'
+
 puts 'Deleting seeds...'
 Exercise.destroy_all
 Workout.destroy_all
@@ -24,99 +27,33 @@ puts 'User 1 created!'
 puts 'Creating 1 Workout Program...'
 max_gainz = WorkoutProgram.create!(
   weekly_frequency: 3,
-  start_date: Date.today,
-  end_date: Date.today + 30.days,
   user: pedro
 )
 puts 'Workout Program created!'
 
 # ----- Seeding istances of Workout -----
 puts 'Creating all the workouts...'
-push_week1 = Workout.create!(
+push_week = Workout.create!(
   categories: 'UpperBody',
-  start_time: Date.today,
   duration: 90,
   workout_program: max_gainz
 )
-pull_week1 = Workout.create!(
+pull_week = Workout.create!(
   categories: 'UpperBody',
-  start_time: Date.today + 1,
   duration: 75,
   workout_program: max_gainz
 )
-legs_week1 = Workout.create!(
+legs_week = Workout.create!(
   categories: 'LowerBody',
-  start_time: Date.today + 2,
   duration: 93,
   workout_program: max_gainz
 )
-puts 'Workouts for week 1 created!'
-
-push_week2 = Workout.create!(
-  categories: 'UpperBody',
-  start_time: Date.today + 5,
-  duration: 90,
-  workout_program: max_gainz
-)
-pull_week2 = Workout.create!(
-  categories: 'UpperBody',
-  start_time: Date.today + 6,
-  duration: 75,
-  workout_program: max_gainz
-)
-legs_week2 = Workout.create!(
-  categories: 'LowerBody',
-  start_time: Date.today + 7,
-  duration: 93,
-  workout_program: max_gainz
-)
-puts 'Workouts for week 2 created!'
-
-push_week3 = Workout.create!(
-  categories: 'UpperBody',
-  start_time: Date.today + 12,
-  duration: 90,
-  workout_program: max_gainz
-)
-pull_week3 = Workout.create!(
-  categories: 'UpperBody',
-  start_time: Date.today + 13,
-  duration: 75,
-  workout_program: max_gainz
-)
-legs_week3 = Workout.create!(
-  categories: 'LowerBody',
-  start_time: Date.today + 14,
-  duration: 93,
-  workout_program: max_gainz
-)
-puts 'Workouts for week 3 created!'
-
-push_week4 = Workout.create!(
-  categories: 'UpperBody',
-  start_time: Date.today + 19,
-  duration: 90,
-  workout_program: max_gainz
-)
-pull_week4 = Workout.create!(
-  categories: 'UpperBody',
-  start_time: Date.today + 20,
-  duration: 75,
-  workout_program: max_gainz
-)
-legs_week4 = Workout.create!(
-  categories: 'LowerBody',
-  start_time: Date.today + 21,
-  duration: 93,
-  workout_program: max_gainz
-)
-puts 'Workouts for week 4 created!'
 puts 'All Workouts created!'
 
 # ----- Seeding instances of exercise -----
 puts 'Creating exercises...'
 # ----- CREATING EXERCISES FOR PUSH DAY -----
-bench_press1 = Exercise.create!(
+bench_press = Exercise.create!(
   name: 'Barbell Bench Press',
   category: 'Chest',
   sets: 3,
@@ -124,11 +61,11 @@ bench_press1 = Exercise.create!(
   weight: 80,
   rest: 120,
   rpe: 7,
-  workout: push_week1
+  workout: push_week
 )
-puts '1st Exercise for Week 1 of Push Day created!'
+puts '1st Exercise for Push Day created!'
 
-chest_fly_machine1 = Exercise.create!(
+chest_fly_machine = Exercise.create!(
   name: 'Chest Fly Machine',
   category: 'Chest',
   sets: 3,
@@ -136,11 +73,11 @@ chest_fly_machine1 = Exercise.create!(
   weight: 40,
   rest: 60,
   rpe: 7,
-  workout: push_week1
+  workout: push_week
 )
-puts '2nd Exercise for Week 1 of Push Day created!'
+puts '2nd Exercise for Push Day created!'
 
-chest_dips1 = Exercise.create!(
+chest_dips = Exercise.create!(
   name: 'Chest Dips',
   category: 'Chest',
   sets: 3,
@@ -148,11 +85,11 @@ chest_dips1 = Exercise.create!(
   weight: 5,
   rest: 90,
   rpe: 8,
-  workout: push_week1
+  workout: push_week
 )
-puts '3rd Exercise for Week 1 of Push Day created!'
+puts '3rd Exercise for Push Day created!'
 
-db_shoulder_press1 = Exercise.create!(
+db_shoulder_press = Exercise.create!(
   name: 'Seated Dumbbell Shoulder Press',
   category: 'Shoulders',
   sets: 3,
@@ -160,11 +97,11 @@ db_shoulder_press1 = Exercise.create!(
   weight: 20,
   rest: 75,
   rpe: 9,
-  workout: push_week1
+  workout: push_week
 )
-puts '4th Exercise for Week 1 of Push Day created!'
+puts '4th Exercise for Push Day created!'
 
-cable_lateral_raise1 = Exercise.create!(
+cable_lateral_raise = Exercise.create!(
   name: 'Cable Shoulder Lateral Raise',
   category: 'Shoulders',
   sets: 3,
@@ -172,11 +109,11 @@ cable_lateral_raise1 = Exercise.create!(
   weight: 10,
   rest: 60,
   rpe: 8,
-  workout: push_week1
+  workout: push_week
 )
-puts '5th Exercise for Week 1 of Push Day created!'
+puts '5th Exercise for Push Day created!'
 
-triceps_cable_pressdown1 = Exercise.create!(
+triceps_cable_pressdown = Exercise.create!(
   name: 'Triceps Cable Pressdown',
   category: 'Triceps',
   sets: 3,
@@ -184,14 +121,14 @@ triceps_cable_pressdown1 = Exercise.create!(
   weight: 50,
   rest: 90,
   rpe: 8,
-  workout: push_week1
+  workout: push_week
 )
-puts '6th Exercise for Week 1 of Push Day created!'
-puts 'All Exercises for Week 1 of Push Day created!'
+puts '6th Exercise for Push Day created!'
+puts 'All Exercises for Push Day created!'
 
-puts 'Creating exercises for Week 1 of Pull Day...'
+puts 'Creating exercises for Pull Day...'
 # ----- CREATING EXERCISES FOR PULL DAY -----
-lat_pulldown1 = Exercise.create!(
+lat_pulldown = Exercise.create!(
   name: 'Lat Pulldown Machine',
   category: 'Back',
   sets: 4,
@@ -199,9 +136,9 @@ lat_pulldown1 = Exercise.create!(
   weight: 55,
   rest: 90,
   rpe: 7,
-  workout: pull_week1
+  workout: pull_week
 )
-puts '1st Exercise for Week 1 of Pull Day created!'
+puts '1st Exercise for Pull Day created!'
 
 machine_row1 = Exercise.create!(
   name: 'Seated Row Machine',
@@ -211,11 +148,11 @@ machine_row1 = Exercise.create!(
   weight: 70,
   rest: 90,
   rpe: 8,
-  workout: pull_week1
+  workout: pull_week
 )
-puts '2nd Exercise for Week 1 of Pull Day created!'
+puts '2nd Exercise for Pull Day created!'
 
-reverse_pec_deck1 = Exercise.create!(
+reverse_pec_deck = Exercise.create!(
   name: 'Reverse Pec Deck Machine',
   category: 'Back',
   sets: 4,
@@ -223,11 +160,11 @@ reverse_pec_deck1 = Exercise.create!(
   weight: 25,
   rest: 60,
   rpe: 6,
-  workout: pull_week1
+  workout: pull_week
 )
-puts '3rd Exercise for Week 1 of Pull Day created!'
+puts '3rd Exercise for Pull Day created!'
 
-ezbar_curl1 = Exercise.create!(
+ezbar_curl = Exercise.create!(
   name: 'EZ-Bar Curl',
   category: 'Biceps',
   sets: 3,
@@ -235,11 +172,11 @@ ezbar_curl1 = Exercise.create!(
   weight: 30,
   rest: 90,
   rpe: 8,
-  workout: pull_week1
+  workout: pull_week
 )
-puts '4th Exercise for Week 1 of Pull Day created!'
+puts '4th Exercise for Pull Day created!'
 
-db_preacher_curls1 = Exercise.create!(
+db_preacher_curls = Exercise.create!(
   name: 'One Arm Dumbbell Preacher Curls',
   category: 'Biceps',
   sets: 3,
@@ -247,14 +184,14 @@ db_preacher_curls1 = Exercise.create!(
   weight: 10,
   rest: 45,
   rpe: 8,
-  workout: pull_week1
+  workout: pull_week
 )
-puts '5th Exercise for Week 1 of Pull Day created!'
-puts 'All Exercises for Week 1 of Pull Day created!'
+puts '5th Exercise for Pull Day created!'
+puts 'All Exercises for Pull Day created!'
 
-puts 'Creating Exercises for Week 1 of Leg Day...'
+puts 'Creating Exercises for Leg Day...'
 # ----- CREATING EXERCISES FOR LEG DAY -----
-squat1 = Exercise.create!(
+squat = Exercise.create!(
   name: 'Barbell High-Bar Squat',
   category: 'Legs',
   sets: 3,
@@ -262,11 +199,11 @@ squat1 = Exercise.create!(
   weight: 225,
   rest: 120,
   rpe: 9,
-  workout: legs_week1
+  workout: legs_week
 )
-puts '1st Exercise for Week 1 of Leg Day created!'
+puts '1st Exercise for Leg Day created!'
 
-bb_rdl1 = Exercise.create!(
+bb_rdl = Exercise.create!(
   name: 'Barbell Romanian Dead Lift',
   category: 'Legs',
   sets: 3,
@@ -274,11 +211,11 @@ bb_rdl1 = Exercise.create!(
   weight: 100,
   rest: 120,
   rpe: 9,
-  workout: legs_week1
+  workout: legs_week
 )
-puts '2nd Exercise for Week 1 of Leg Day created!'
+puts '2nd Exercise for Leg Day created!'
 
-leg_extension1 = Exercise.create!(
+leg_extension = Exercise.create!(
   name: 'Leg Extension Machine',
   category: 'Legs',
   sets: 3,
@@ -286,11 +223,11 @@ leg_extension1 = Exercise.create!(
   weight: 80,
   rest: 45,
   rpe: 9,
-  workout: legs_week1
+  workout: legs_week
 )
-puts '3rd Exercise for Week 1 of Leg Day created!'
+puts '3rd Exercise for Leg Day created!'
 
-seated_leg_curl1 = Exercise.create!(
+seated_leg_curl = Exercise.create!(
   name: 'Seated Leg Curl Machine',
   category: 'Legs',
   sets: 3,
@@ -298,76 +235,37 @@ seated_leg_curl1 = Exercise.create!(
   weight: 70,
   rest: 45,
   rpe: 9,
-  workout: legs_week1
+  workout: legs_week
 )
-puts '4th Exercise for Week 1 of Leg Day created!'
-puts 'All Exercises for Week 1 of Leg Day created!'
+puts '4th Exercise for Leg Day created!'
+puts 'All Exercises for Leg Day created!'
 
-# ----- CREATING THE SAME EXERCISES FOR THE REMAINING WEEKS! -----
-puts 'Creating exercises for remaining weeks of Push Day...'
-[push_week2, push_week3, push_week4].each do |push_week|
-  bench_press = bench_press1.dup
-  bench_press.workout = push_week
-  bench_press.save!
-  chest_fly_machine = chest_fly_machine1.dup
-  chest_fly_machine.workout = push_week
-  chest_fly_machine.save!
-  chest_dips = chest_dips1.dup
-  chest_dips.workout = push_week
-  chest_dips.save!
-  cable_lateral_raise = cable_lateral_raise1.dup
-  cable_lateral_raise.workout = push_week
-  cable_lateral_raise.save!
-  db_shoulder_press = db_shoulder_press1.dup
-  db_shoulder_press.workout = push_week
-  db_shoulder_press.save!
-  triceps_cable_pressdown = triceps_cable_pressdown1.dup
-  triceps_cable_pressdown.workout = push_week
-  triceps_cable_pressdown.save!
-end
-puts 'Created all exercises for the remaining weeks of Push Day!'
+# ----- Seeding Exercises from the API -----
+puts 'Creating the Exercises from the API...'
+url = URI('https://exercisedb.p.rapidapi.com/exercises')
 
-puts 'Creating exercises for remaining weeks of Pull Day...'
-[pull_week2, pull_week3, pull_week4].each do |pull_week|
-  lat_pulldown = lat_pulldown1.dup
-  lat_pulldown.workout = pull_week
-  lat_pulldown.save!
-  machine_row = machine_row1.dup
-  machine_row.workout = pull_week
-  machine_row.save!
-  reverse_pec_deck = reverse_pec_deck1.dup
-  reverse_pec_deck.workout = pull_week
-  reverse_pec_deck.save!
-  ezbar_curl = ezbar_curl1.dup
-  ezbar_curl.workout = pull_week
-  ezbar_curl.save!
-  db_preacher_curls = db_preacher_curls1.dup
-  db_preacher_curls.workout = pull_week
-  db_preacher_curls.save!
-end
-puts 'Created all exercises for the remaining weeks of Pull Day!'
+http = Net::HTTP.new(url.host, url.port)
+http.use_ssl = true
 
-puts 'Creating exercises for remaining weeks of legs Day...'
-[legs_week2, legs_week3, legs_week4].each do |legs_week|
-  squat = squat1.dup
-  squat.workout = legs_week
-  squat.save!
-  bb_rdl = bb_rdl1.dup
-  bb_rdl.workout = legs_week
-  bb_rdl.save!
-  leg_extension = leg_extension1.dup
-  leg_extension.workout = legs_week
-  leg_extension.save!
-  seated_leg_curl = seated_leg_curl1.dup
-  seated_leg_curl.workout = legs_week
-  seated_leg_curl.save!
+request = Net::HTTP::Get.new(url)
+request['X-RapidAPI-Key'] = 'a5ec1d093cmshf3922a4cee2183fp1a6fa3jsnd3c0f77f2433'
+request['X-RapidAPI-Host'] = 'exercisedb.p.rapidapi.com'
+
+response = http.request(request)
+exercise_api = JSON.parse(response.read_body) # Returns an array of hashes
+exercise_api.each do |exercise|
+  Exercise.create!(
+    name: exercise['name'].capitalize!,
+    gif: exercise['gifUrl'],
+    bodyPart: exercise['bodyPart'],
+    target: exercise['target']
+  )
 end
-puts 'Created all exercises for the remaining weeks of Legs Day!'
-puts 'All exercises for all workous created!'
+puts 'All exercises created!'
 
 # ----- Seeding instances of Achievement -----
 puts 'Creating achievements...'
-achievement2 = Achievement.create!(
+achievement = Achievement.create!(
   name: 'Newbie Gains',
   message: 'Congratulations on finishing your first workout!',
   description: 'Create your first workout',
@@ -376,7 +274,7 @@ achievement2 = Achievement.create!(
   category: 'Cardio'
 )
 
-achievement3 = Achievement.create!(
+achievement = Achievement.create!(
   name: 'Pro Gains',
   message: 'Congratulations on finishing 50 workouts!',
   description: 'Create 50 workouts',
@@ -385,7 +283,7 @@ achievement3 = Achievement.create!(
   category: 'Cardio'
 )
 
-achievement4 = Achievement.create!(
+achievement = Achievement.create!(
   name: 'Master Gains',
   message: 'Congratulations on finishing 100 workouts!',
   description: 'Create 100 workouts',
@@ -394,7 +292,7 @@ achievement4 = Achievement.create!(
   category: 'Cardio'
 )
 
-achievement6 = Achievement.create!(
+achievement = Achievement.create!(
   name: 'Cardio Master',
   message: 'You have completed 100 hours of cardio, wow!',
   description: 'Do a total of 100 hours of cardio exercises',
@@ -403,7 +301,7 @@ achievement6 = Achievement.create!(
   category: 'Cardio'
 )
 
-achievement7 = Achievement.create!(
+achievement = Achievement.create!(
   name: 'Bicep Beginner',
   message: 'Congratulations, you finished 5 bicep exercises!',
   description: 'Do a total of 5 bicep exercises',
@@ -412,7 +310,7 @@ achievement7 = Achievement.create!(
   category: 'Biceps'
 )
 
-achievement8 = Achievement.create!(
+achievement = Achievement.create!(
   name: 'Bicep Enthusiast',
   message: 'Congratulations, you finished 25 bicep exercises!',
   description: 'Do a total of 25 bicep exercises',
@@ -421,7 +319,7 @@ achievement8 = Achievement.create!(
   category: 'Biceps'
 )
 
-achievement9 = Achievement.create!(
+achievement = Achievement.create!(
   name: 'Bicep Boss',
   message: 'Congratulations, you finished 80 bicep exercises!',
   description: 'Do a total of 80 bicep exercises',
@@ -430,7 +328,7 @@ achievement9 = Achievement.create!(
   category: 'Biceps'
 )
 
-achievement10 = Achievement.create!(
+achievement = Achievement.create!(
   name: 'Bicep Grandmaster',
   message: 'Congratulations, you finished 200 bicep exercises!',
   description: 'Do a total of 200 bicep exercises',
