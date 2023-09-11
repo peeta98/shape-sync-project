@@ -28,24 +28,91 @@
               <td>
                 <p><%= exercise.name %></p>
               </td>
-              <td>
-                <div class="edit-exercise d-flex">
-                  <%= link_to '-', exercise_path(exercise, exercise: {sets: (exercise.sets - 1)}), data: {turbo_method: :patch}, class:"links"%>
-                  <p><%= exercise.sets %></p>
-                  <%= link_to '+', exercise_path(exercise, exercise: {sets: (exercise.sets + 1)}), data: {turbo_method: :patch}, class:"links"%>
+              <td data-controller="set-sets" class="text-center">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn bg-transparent" data-bs-toggle="modal" data-bs-target="#setsModal<%= exercise.id %>">
+                  <p data-set-sets-target="sets"><%= exercise.sets %></p>
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="setsModal<%= exercise.id %>" tabindex="-1" aria-labelledby="setsModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="setsModalLabel">Sets</h5>
+                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">X</button>
+                      </div>
+                      <div class="modal-body">
+                          <p>Change Exercise Sets:</p>
+                        <div class="edit-exercise">
+                          <button type="button" class="links" data-action="click->set-sets#decrease">-</button>
+                          <p data-set-sets-target="set"><%= exercise.sets %></p>
+                          <button type="button" class="links" data-action="click->set-sets#increase">+</button>
+                        </div>
+                      </div>
+                      <%= simple_form_for exercise, html: {data:{set_sets_target:"form"}, class:"d-none"} do |f| %>
+                        <%= f.input :sets, input_html: {data: {set_sets_target: "input"}} %>
+                        <%= f.submit %>
+                      <% end %>
+                    </div>
+                  </div>
                 </div>
               </td>
-              <td>
-                <div class="edit-exercise d-flex">
-                  <%= link_to '-', exercise_path(exercise, exercise: {reps: (exercise.reps - 1)}), data: {turbo_method: :patch}, class:"links"%>
-                  <p><%= exercise.reps %></p>
-                  <%= link_to '+', exercise_path(exercise, exercise: {reps: (exercise.reps + 1)}), data: {turbo_method: :patch}, class:"links"%>
+              <td data-controller="set-reps" class="text-center">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn bg-transparent" data-bs-toggle="modal" data-bs-target="#repsModal<%= exercise.id %>">
+                  <p data-set-reps-target="reps"><%= exercise.reps %></p>
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="repsModal<%= exercise.id %>" tabindex="-1" aria-labelledby="repsModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="repsModalLabel">Reps</h5>
+                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">X</button>
+                      </div>
+                      <div class="modal-body">
+                          <p>Change Exercise Reps:</p>
+                        <div class="edit-exercise">
+                          <button type="button" class="links" data-action="click->set-reps#decrease">-</button>
+                          <p data-set-reps-target="rep"><%= exercise.reps %></p>
+                          <button type="button" class="links" data-action="click->set-reps#increase">+</button>
+                        </div>
+                      </div>
+                      <%= simple_form_for exercise, html: {data:{set_reps_target:"form"}, class:"d-none"} do |f| %>
+                        <%= f.input :reps, input_html: {data: {set_reps_target: "input"}} %>
+                        <%= f.submit %>
+                      <% end %>
+                    </div>
+                  </div>
                 </div>
-              <td>
-                <div class="edit-exercise d-flex">
-                  <%= link_to '-', exercise_path(exercise, exercise: {weight: (exercise.weight - 1)}), data: {turbo_method: :patch}, class:"links"%>
-                  <p><%= exercise.weight %>kg</p>
-                  <%= link_to '+', exercise_path(exercise, exercise: {weight: (exercise.weight + 1)}), data: {turbo_method: :patch}, class:"links"%>
+              </td>
+              <td data-controller="set-weight" class="text-center">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn bg-transparent" data-bs-toggle="modal" data-bs-target="#weightModal<%= exercise.id %>">
+                  <p data-set-weight-target="weights"><%= exercise.weight %></p>
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="weightModal<%= exercise.id %>" tabindex="-1" aria-labelledby="weightModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="weightModalLabel">Weights</h5>
+                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">X</button>
+                      </div>
+                      <div class="modal-body">
+                          <p>Change Exercise Weight:</p>
+                        <div class="modal-footer-weight d-flex justify-content-center">
+                          <%= simple_form_for exercise,html: {data:{set_weight_target:"form", action:"set-weight#update"}, class:""} do |f| %>
+                            <%= f.input :weight,label_html:{class:"d-none"}, input_html: {data: {set_weight_target: "input"}, class:"input-field"} %>
+                            <%= f.button :submit, class:"button-green-modal"%>
+                          <% end %>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </td>
             </tr>
