@@ -1,34 +1,93 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon sticky-top">
-  <div class="container-fluid">
-    <%= link_to root_path, class: "navbar-brand" do%>
-     <i class="fa-solid fa-dumbbell"></i>
-    <% end %>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="d-flex navbar-nav ml-auto d-flex align-items-center">
-        <li class="me-3">
-          <% if current_user.workout_program %>
-            <%= link_to "My Workout Program", workout_program_path(current_user.workout_program), class: "dropdown-item text-white fw-bold" %>
-          <% else %>
-            <%= link_to "Create Workout Program", new_workout_program_path, class: "dropdown-item text-white fw-bold" %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+      .navbar {
+          background-color: rgb(199, 233, 125);
+          position: fixed;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
+
+      ul.navbar-nav {
+          font-size: 25px;
+          display: flex;
+          flex-direction: row;
+          list-style: none;
+          margin: 0;
+          padding: 0;
+      }
+
+      ul.navbar-nav li {
+          margin: 0 28px;
+      }
+
+      .navbar-nav a {
+          color: inherit;
+          text-align: center;
+      }
+
+      .navbar-nav .nav-item {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+      }
+
+      body {
+          text-align: center;
+          margin-bottom: 60px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <%= link_to root_path do %>
+            <i class="fas fa-home"></i>
           <% end %>
         </li>
-        <li class="me-3">
-          <!-- This image tag belongs to the user's profile picture! Use the .avatar id to style it -->
-          <%= image_tag "kev.jpg", alt: "Avatar of the User", id:"avatar" %>
+        <li class="nav-item">
+          <%= link_to achievements_path do %>
+            <i class="fas fa-trophy"></i>
+          <% end %>
         </li>
-        <li class="nav-item dropdown">
-          <i class="fa-solid fa-gear me-3" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
-          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="/">Home</a>
-              <a class="dropdown-item" href="/profile">Profile</a>
-              <a href="/achievements" class="dropdown-item">Achievements</a>
-              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
-          </div>
+        <li class="nav-item">
+          <%= link_to workout_programs_path do %>
+            <i class="fas fa-dumbbell"></i>
+          <% end %>
+        </li>
+        <li class="nav-item">
+          <%= link_to library_path do %>
+            <i class="fas fa-book"></i>
+          <% end %>
+        </li>
+        <li class="nav-item">
+          <%= link_to profile_path do %>
+            <i class="fas fa-user"></i>
+          <% end %>
         </li>
       </ul>
-    </div>
-  </div>
-</div>
+    </nav>
+  </body>
+</html>
