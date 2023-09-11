@@ -6,13 +6,15 @@
     <span>/</span>
     <span data-target="achievement.goal"><%= achievement.goal %></span>
   </div>
-  <div data-target="achievement.status"><%= achievement.status %></div>
+
   <div data-action="click->achievement#completeWorkout" data-target="achievement.completeButton">
-    <% unless achievement.status == 'Unlocked' %>
+
+  </div>
+</div>
+<div class="description"><p>Description: <%= achievement.description %></p>
+<% unless achievement.status == 'Unlocked' %>
       Complete Workout
     <% else %>
       Achievement Unlocked
     <% end %>
-  </div>
-</div>
-<div class="description"><p>Description: <%= achievement.description %></p></div>
+      <div data-target="achievement.status"><%= achievement.status %></div></div>

@@ -1,9 +1,9 @@
 .container {
   justify-content: space-between;
   align-items: flex-start;
-  background-color: #C4ED6D;
+  background-color: #36373e;
   padding: 20px;
-  border-radius: 5px;
+  color: white;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   margin-top: 20px;
 }
@@ -27,15 +27,25 @@ h1 {
 
 .wrapper {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
   gap: 10px;
   grid-auto-rows: minmax(100px, auto);
   height: 100%;
+}
 
-  div {
-    background: rgb(67, 66, 66);
-    color: white;
+
+@media (min-width: 768px) {
+  .wrapper {
+    grid-template-columns: repeat(2, 1fr);
   }
+}
+
+.wrapper div {
+  background: rgba(54, 55, 62, 1);
+  color: white;
+  border: 1px solid #C4ED6D;
+  margin-bottom: 15px;
+  border-radius: 15px;
 }
 
 #workedHours {
@@ -49,21 +59,25 @@ h1 {
 }
 
 .achievement {
-  grid-template-columns: 1fr;
   margin-top: 5px;
   background-color:  rgb(67, 66, 66);
   color: white;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 10px;
+  padding-right: 10px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  border: 1px solid  #C4ED6D;
+  border-bottom: none;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 
   div {
     background: rgb(67, 66, 66);
     color: white;
+    text-align: center;
   }
 }
 
@@ -74,7 +88,9 @@ h1 {
   background-color:  rgb(67, 66, 66);
   color: white;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-content: space-between;
+  text-align: center;
+  grid-template-columns: 1fr 1fr 1fr;
   padding-bottom: 5px;
   padding-left: 10px;
   padding-top: 5px;
@@ -90,17 +106,28 @@ h1 {
   padding-top: 10px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  border-top: 2px solid rgb(0, 0, 0);
   text-align: center;
   justify-content: center;
   padding-bottom: 15px;
   margin-bottom: 20px;
+  border: 1px solid  #C4ED6D;
+  border-top: 1px solid black;
 
   p {
     padding-top: 10px;
   }
 }
 
+.custom-button {
+  background-color: rgba(54, 55, 62, 1);
+  border-radius: 15px;
+  border: 1px solid #C4ED6D;
+  color: white;
+  padding: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 15px;
+}
 
 #sort-by-name,
 #sort-by-category,
@@ -123,12 +150,13 @@ h1 {
   padding-top: 10px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  border-top: 2px solid rgb(0, 0, 0);
   text-align: center;
   justify-content: center;
-  padding-bottom: 15px;
   font-weight: bold;
   margin-bottom: 20px;
+  border: 1px solid  #C4ED6D;
+  border-top: 1px solid black;
+
 
   p {
     padding-top: 10px;
@@ -147,9 +175,11 @@ h1 {
   border-top: 2px solid rgb(0, 0, 0);
   text-align: center;
   justify-content: center;
-  padding-bottom: 15px;
   font-weight: bold;
   margin-bottom: 20px;
+  border: 1px solid  #C4ED6D;
+  border-top: 1px solid black;
+
 
   p {
     padding-top: 10px;
@@ -168,11 +198,48 @@ h1 {
   border-top: 2px solid rgb(0, 0, 0);
   text-align: center;
   justify-content: center;
-  padding-bottom: 15px;
   font-weight: bold;
+  border: 1px solid  #C4ED6D;
+  border-top: 1px solid black;
   margin-bottom: 20px;
+
 
   p {
     padding-top: 10px;
   }
+}
+
+.platdescription {
+  font-weight: lighter;
+  background-image: url('platback.jpg');
+  color: rgb(40, 36, 36);
+  display: block;
+  grid-template-columns: 1fr;
+  padding-top: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top: 2px solid rgb(0, 0, 0);
+  text-align: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-bottom: 20px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 1px solid  #C4ED6D;
+  border-top: 1px solid black;
+
+  p {
+    padding-top: 10px;
+  }
+}
+
+
+.text-center {
+
+
+  i {
+    color: #C4ED6D;
+    font-size: 20px;
+  }
+
 }
