@@ -23,5 +23,8 @@ class WorkoutPolicy < ApplicationPolicy
     record.workout_program.user == user # User can only destroy HIS workout program
   end
 
+  def add_exercise?
+    record.workout_program.user == user # User can only add HIS exercises to the workouts
+  end
 
 end
