@@ -1,18 +1,26 @@
 <%= turbo_frame_tag dom_id(@workout, :exercises) do %>
-  <%= link_to 'Back', workout_exercises_path(@workout) %>
-  <%= simple_form_for [@workout, @exercise] do |f| %>
-    <%= f.input :name %>
-    <%= f.input :category, collection: ['Chest', 'Back', 'Legs', 'Shoulders', 'Biceps', 'Triceps', 'Abs', 'Cardio', 'UpperBody', 'LowerBody', 'FullBody'] %>
-    <% if @exercise.errors[:category].any? %>
-      <div class="alert alert-danger">
-          <%= @exercise.errors[:category].first %>
+  <div class="form-exercise">
+    <%= link_to 'Back', workout_exercises_path(@workout), class:"text-decoration-none back-link" %>
+    <%= simple_form_for [@workout, @exercise] do |f| %>
+      <%= f.input :name, input_html: { autocomplete: "name", class: "transparent", placeholder: "Name the exercise" }%>
+      <%= f.input :category,
+      input_html: { autocomplete: "category", class: "transparent", placeholder: "Choose the exercise category" },
+      collection: ['Chest', 'Back', 'Legs', 'Shoulders', 'Biceps', 'Triceps', 'Abs', 'Cardio', 'UpperBody', 'LowerBody', 'FullBody'] %>
+      <% if @exercise.errors[:category].any? %>
+        <div class="alert alert-danger">
+            <%= @exercise.errors[:category].first %>
+        </div>
+      <% end %>
+      <div class="form-inputs">
+        <%= f.input :sets, input_html: { autocomplete: "sets", class: "transparent", placeholder: "Sets/Exercise" } %>
+        <%= f.input :reps, input_html: { autocomplete: "reps", class: "transparent", placeholder: "Reps/Set" } %>
+        <%= f.input :weight, step: 0.1, input_html: { autocomplete: "weight", class: "transparent", placeholder: "Weight" } %>
+        <%= f.input :rest, step: 1, input_html: { autocomplete: "rest", class: "transparent", placeholder: "Enter duration in seconds" }  %>
+        <%= f.input :rpe, step: 1, input_html: { autocomplete: "rest", class: "transparent", placeholder: "Rate exercise intensity 1-10" } %>
+        <div class="d-flex justify-content-center">
+          <%= f.button :submit, class:"button-green w-100 mt-4 mb-4"%>
+        </div>
       </div>
     <% end %>
-    <%= f.input :sets %>
-    <%= f.input :reps %>
-    <%= f.input :weight, step: 0.1, placeholder: "Enter weight in kg" %>
-    <%= f.input :rest, step: 1, placeholder: "Enter duration in minutes" %>
-    <%= f.input :rpe, step: 1, placeholder: "Rate the intensity of your workout" %>
-    <%= f.submit %>
-  <% end %>
+  </div>
 <% end %>

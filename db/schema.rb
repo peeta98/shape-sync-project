@@ -57,12 +57,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_07_130204) do
   create_table "exercises", force: :cascade do |t|
     t.string "name"
     t.string "category"
+    t.string "gif"
+    t.string "bodyPart"
+    t.string "target"
     t.integer "sets"
     t.integer "reps"
     t.integer "weight"
     t.integer "rest"
     t.integer "rpe"
-    t.bigint "workout_id", null: false
+    t.bigint "workout_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["workout_id"], name: "index_exercises_on_workout_id"
@@ -98,8 +101,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_07_130204) do
 
   create_table "workout_programs", force: :cascade do |t|
     t.integer "weekly_frequency"
-    t.date "start_date"
-    t.date "end_date"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -108,7 +109,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_07_130204) do
 
   create_table "workouts", force: :cascade do |t|
     t.string "categories"
-    t.datetime "start_time"
     t.integer "duration"
     t.bigint "workout_program_id", null: false
     t.datetime "created_at", null: false
