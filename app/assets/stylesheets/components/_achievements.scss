@@ -176,3 +176,26 @@ h1 {
     padding-top: 10px;
   }
 }
+
+.platdescription {
+  font-weight: lighter;
+  background-image: url('platback.jpg');
+  color: rgb(40, 36, 36);
+  display: block;
+  grid-template-columns: 1fr;
+  padding-top: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top: 2px solid rgb(0, 0, 0);
+  text-align: center;
+  justify-content: center;
+  padding-bottom: 15px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  p {
+    padding-top: 10px;
+  }
+}

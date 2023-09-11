@@ -1,3 +1,10 @@
+<% if user_signed_in? %>
+  <%= render 'user_navbar' %>
+<% else %>
+  <%= render 'visitor_navbar' %>
+<% end %>
+
+
 <div class="library" data-controller="library-exercises">
   <h1>Exercises Library 🏋️</h1>
   <div class="my-4 mx-0 gx-0">
