@@ -4,15 +4,15 @@
   <%= render 'visitor_navbar' %>
 <% end %>
 
-<div class="container text-center" id="home-background">
-  <h1 class="text-white"> Current Workout Program - <%= current_user.workout_program.weekly_frequency %> times per week</h1>
+<div class="container mt-0 rounded-0 text-center" id="home-background">
+  <h1 class="text-white">Current Workout Program - <%= current_user.workout_program.weekly_frequency %> times per week</h1>
   <% current_user.workout_program.workouts.each do |workout| %>
-  <div class="text-white mb-5 border border-danger">
-    <p><%= workout.categories %></p>
+  <div class="text-white mb-5" style="border: 1px solid #C4ED6D;">
+    <p class="fw-bold"><%= workout.categories %></p>
     <% workout.exercises.each do |exercise| %>
       <div class="d-flex justify-content-between">
         <p>Gif of exercise</p>
-       <!-- image_tag(exercise.gif) => Doesn't show anything because the first exercises that I seeded don't have any gifs from the API -->
+        <!-- image_tag(exercise.gif) => Doesn't show anything because the first exercises that I seeded don't have any gifs from the API -->
         <p><%= exercise.name %></p>
       </div>
     <% end %>
