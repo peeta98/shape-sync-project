@@ -1,4 +1,4 @@
 <%= simple_form_for @workout do |f| %>
-  <%= f.association :exercises, as: :radio_buttons %> <!-- Make it a dropdown menu listing all the exercises available -->
   <%= f.button :submit %> <!-- When we submit, there should be a patch request (exercise selected should now belong to a workout) -->
+  <%= f.association :exercises, as: :radio_buttons %> <!-- Make it a dropdown menu listing all the exercises available -->
 <% end %>

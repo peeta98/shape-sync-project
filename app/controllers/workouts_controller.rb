@@ -37,6 +37,10 @@ class WorkoutsController < ApplicationController
 
   def update
     authorize @workout
+    if params[:workout][:exercise_ids].present?
+      selected_exercise = Exercise.find(params[:workout][:exercise_ids])
+      selected_exercise.update(workout_id: @workout.id)
+    end
     if @workout.update(workout_params)
       redirect_to workout_program_path(@workout.workout_program), notice: 'Weekly workout was successfully updated!'
     else
@@ -52,7 +56,6 @@ class WorkoutsController < ApplicationController
   def add_exercise
     authorize @workout
     @exercises = Exercise.all
-    redirect_to workouts_path(@workout) if @workout.update
   end
 
   private

@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   post '/achievements/status', to: 'achievements#status'
   get '/profile', to: 'pages#profile'
   get '/workouts_history', to: 'pages#workout_history'
-  get '/:id/add_exercise', to: 'workouts#add_exercise'
+  get '/add_exercise/:id', to: 'workouts#add_exercise', as: 'add_exercise'
 
   resources :achievements, only: [:index]
   resources :users, only: %i[show update] do

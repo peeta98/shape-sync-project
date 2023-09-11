@@ -50,7 +50,7 @@
               </td>
             </tr>
           <% end %>
-        <%end %>
+        <% end %>
       <% else %>
         <p>No exercises yet...</p>
       <% end %>
@@ -66,7 +66,7 @@
       </div>
       <div>
         <strong><p>Add Exercises</p></strong>
-        <%= link_to library_path do %>
+          <%= link_to add_exercise_path(@workout) do %> <!-- Can't change path to add_exercise - Ticket with George -->
           <i class="fa-solid fa-circle-plus fa-2xl text-center"></i>
         <% end %>
       </div>
