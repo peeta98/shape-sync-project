@@ -155,7 +155,7 @@ export default class extends Controller {
     }
 
     goalMessage.innerHTML = message;
-    userGoal.textContent = `Goal: ${selectedGoal}`; //
+    userGoal.textContent = `${selectedGoal} is my goal!`;
   }
 
 
