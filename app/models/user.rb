@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_many :exercises, through: :workouts
   has_many :user_achievements, dependent: :destroy
   has_many :achievements, through: :user_achievements, dependent: :destroy
+  has_one_attached :avatar
 
   validates :username, presence: true
   validates :age, presence: true

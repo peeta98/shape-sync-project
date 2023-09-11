@@ -1,3 +1,10 @@
+<% if user_signed_in? %>
+  <%= render 'user_navbar' %>
+<% else %>
+  <%= render 'visitor_navbar' %>
+<% end %>
+
+
 <div class="library" data-controller="library-exercises">
   <h1>Exercises Library 🏋️</h1>
   <div class="my-4 mx-0 gx-0">
@@ -5,6 +12,7 @@
       <%= form.text_field :search, class: "transparent py-2", placeholder: "Search for exercises...",value: params[:search] ,data: {library_exercises_target: "search", action:"keyup->library-exercises#search"}%>
     <% end %>
   </div>
+
 
   <%= render "pages/list", exercises: @exercises %>
 </div>

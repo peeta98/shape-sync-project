@@ -1,0 +1,4 @@
+<%= simple_form_for @workout do |f| %>
+  <%= f.input :exercise_ids, collection: Exercise.where(workout_id: nil), input_html: {multiple: true, data: {controller: "tom-select", tom_select_options_value: {tags: true, maxOptions: nil}}}, label_method: :name, value_method: :id %> <!-- Maybe implement a auto-complete search feature? -->
+  <%= f.button :submit %>
+<% end %>
