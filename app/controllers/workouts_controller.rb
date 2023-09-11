@@ -1,6 +1,6 @@
 class WorkoutsController < ApplicationController
   # before_action :authenticate_user!
-  before_action :find_workout, only: %i[show edit update destroy]
+  before_action :find_workout, only: %i[show edit update destroy add_exercise]
   before_action :find_workout_program, only: %i[create new]
 
   def index
@@ -47,6 +47,12 @@ class WorkoutsController < ApplicationController
   def destroy
     @workout.destroy
     redirect_to @workout_program, notice: 'Weekly workout was successfully deleted.'
+  end
+
+  def add_exercise
+    authorize @workout
+    @exercises = Exercise.all
+    redirect_to workouts_path(@workout) if @workout.update
   end
 
   private
