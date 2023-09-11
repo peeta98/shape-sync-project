@@ -8,7 +8,7 @@ export default class extends Controller {
   completeWorkout() {
     const currentProgress = parseInt(this.progressValueTarget.textContent);
     const goal = parseInt(this.goalTarget.textContent);
-    const status = this.statusTarget.textContent.trim();
+    const status = this.statusTarget.trim();
 
     // Check if the goal is reached and the status is not 'Unlocked'
     if (currentProgress < goal && status !== "Unlocked") {

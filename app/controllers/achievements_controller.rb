@@ -1,7 +1,7 @@
 class AchievementsController < ApplicationController
   def index
     @achievements = Achievement.all
-    sort_by = params[:sort] || 'category' 
+    sort_by = params[:sort] || 'category'
 
     case sort_by
     when 'completion'
@@ -19,7 +19,7 @@ class AchievementsController < ApplicationController
   end
 
   def completion
-    @achievements = Achievement.all 
+    @achievements = Achievement.all
     @achievements = @achievements.order(goal: :desc)
     respond_to do |format|
       format.html

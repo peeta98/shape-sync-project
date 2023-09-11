@@ -1,7 +1,7 @@
 <div class="container mt-5 mb-4">
-     <h2 class="text-center">Achievements Overview</h2>
+     <h2 class="text-center mb-3">Achievements Overview</h2>
     <div class="wrapper">
-      <div class="py-3 px-3"> <h1>This year you worked out for <span id="workedHours">45.7</span> hours.</h1>
+      <div class="py-3 px-3 text-center"> <h1>This year you worked out for <span id="workedHours">76.5</span> hours.</h1>
           <p>Take a look at your previous trainings and see where you spent the most time.</p></div>
       <div class="text-center py-3 px-3">
         <h1 class="py-3 px-3">Statistics</h2>
@@ -9,22 +9,22 @@
         <p><i class="fa-solid fa-dumbbell"></i> Your favourite muscle group to workout is "legs", which you picked 7 times this month!</p>
         <p><i class="fa-solid fa-chart-line"></i> Your strongest excercise is "leg press", where you improved by 16kg this month!</p>
       </div>
-      <div class="py-3 px-3"> <p>You've added to your collection<span id="trophyAmount">5</span>trophies</p>
+      <div class="py-3 px-3 text-center"> <p>You've added to your collection<span id="trophyAmount">7</span>trophies</p>
 
             <span>Check the achievements below on how to get more!</span></div>
       <div class="text-center py-3 px-3">
         <h2 class="mb-3">Your trophy cabinet</h2>
           <ul class="trophy-list">
-          <div class="row">
+          <div class="row border-0">
             <li class="mb-2">
              <%= image_tag "platinumtrophy.png", alt: "Platinum Trophy", width: 60, height: 60 %>
-             <span id="platinumCount">0 x</span>
+             <span id="platinumCount">1 x</span>
           </li>
           <li class="mb-2">
               <%= image_tag "goldtrophy.png", alt: "Gold Trophy", width: 50, height: 50 %>
               <span id="goldCount">1 x</span>
           </li></div>
-          <div class="row">
+          <div class="row border-0">
           <li class="mb-3">
               <%= image_tag "silvertrophy.png", alt: "Silver Trophy", width: 40, height: 40 %>
               <span id="silverCount">2 x</span>
@@ -36,34 +36,33 @@
           </div>
           </ul></div>
     </div>
-    <h2 class="text-center mt-4"><i class="fa-solid fa-dumbbell"></i> Unlockable Achievements <i class="fa-solid fa-dumbbell"></i></h2>
+    <h2 class="text-center mt-4 mb-4"><i class="fa-solid fa-dumbbell"></i> Unlockables <i class="fa-solid fa-dumbbell"></i></h2>
     <div data-controller="controller">
     <div class="sort-buttons text-center my-4">
- <button  data-action="click->controller#sort" data-url="/achievements/category"  data-sort="category">Sort by Category</button>
-  <button  data-action="click->controller#sort" data-url="/achievements/completion"  data-sort="completion">Sort by Completion</button>
-  <button  data-action="click->controller#sort" data-url="/achievements/status"  data-sort="status">Sort by Status</button>
+ <button class="custom-button" data-action="click->controller#sort" data-url="/achievements/category"  data-sort="category">Sort by Category</button>
+  <button class="custom-button" data-action="click->controller#sort" data-url="/achievements/completion"  data-sort="completion">Sort by Completion</button>
+  <button class="custom-button" data-action="click->controller#sort" data-url="/achievements/status"  data-sort="status">Sort by Status</button>
 </div>
 
     <div class="achievements">
       <div>Achievement</div>
       <div>Category</div>
       <div>Progress</div>
-      <div>Status</div>
     </div>
 
     <!-- FROM HERE: ONLY FOR DEMO PURPOSES, CAN REMOVE LATER -->
 
 <div class="achievement">
-  <div style="color: #C4ED6D;"><strong>Welcome to ShapeSync!</strong></div>
+  <div class="mr-3" style="color: #C4ED6D;"><strong>Welcome to ShapeSync!</strong></div>
   <div>General</div>
   <div>
     <span>1</span>
     <span>/</span>
     <span>1</span>
   </div>
-  <div>Unlocked <%= image_tag "bronzetrophy.png", alt: "Bronze Trophy", width: 20, height: 20 %></div>
+
 </div>
-<div class="bronzedescription"><p>Create an account: COMPLETED!</p></div>
+<div class="bronzedescription"><p>Create an account<div>Unlocked! <%= image_tag "bronzetrophy.png", alt: "Bronze Trophy", width: 20, height: 20 %></div></p></div>
 
 <div class="achievement">
   <div style="color: #C4ED6D;"><strong>Abs Amateur</strong></div>
@@ -73,10 +72,10 @@
     <span>/</span>
     <span>5</span>
   </div>
-  <div>Unlocked <%= image_tag "bronzetrophy.png", alt: "Bronze Trophy", width: 20, height: 20 %></div>
+
 </div>
 
-<div class="bronzedescription"><p>Do 5 abs exercises: COMPLETED!</p></div>
+<div class="bronzedescription"><p>Do 5 abs exercises <div>Unlocked! <%= image_tag "bronzetrophy.png", alt: "Bronze Trophy", width: 20, height: 20 %></div></p></div>
 
 <div class="achievement">
   <div style="color: #C4ED6D;"><strong>Leg Day Survivor</strong></div>
@@ -86,10 +85,10 @@
     <span>/</span>
     <span>5</span>
   </div>
-  <div>Unlocked <%= image_tag "bronzetrophy.png", alt: "Bronze Trophy", width: 20, height: 20 %></div>
+
 </div>
 
-<div class="bronzedescription"><p>Do 5 leg exercises: COMPLETED!</p></div>
+<div class="bronzedescription"><p>Do 5 leg exercises<div>Unlocked! <%= image_tag "bronzetrophy.png", alt: "Bronze Trophy", width: 20, height: 20 %></div></p></div>
 
 <div class="achievement">
   <div style="color: #C4ED6D;"><strong>Abs Apprentice</strong></div>
@@ -99,9 +98,9 @@
     <span>/</span>
     <span>25</span>
   </div>
-  <div>Unlocked <%= image_tag "silvertrophy.png", alt: "Silver Trophy", width: 20, height: 20 %></div>
+
 </div>
-<div class="silverdescription"><p>Do 25 abs exercises: COMPLETED!</p></div>
+<div class="silverdescription"><p>Do 25 abs exercises <div>Unlocked! <%= image_tag "silvertrophy.png", alt: "Silver Trophy", width: 20, height: 20 %></div></p></div>
 
 <div class="achievement">
   <div style="color: #C4ED6D;"><strong>Legs Connoisseur</strong></div>
@@ -111,9 +110,9 @@
     <span>/</span>
     <span>25</span>
   </div>
-  <div>Unlocked <%= image_tag "silvertrophy.png", alt: "Silver Trophy", width: 20, height: 20 %></div>
+
 </div>
-<div class="silverdescription"><p>Do 25 leg exercises: COMPLETED!</p></div>
+<div class="silverdescription"><p>Do 25 leg exercises <div>Unlocked! <%= image_tag "silvertrophy.png", alt: "Silver Trophy", width: 20, height: 20 %></div></p></div>
 
 <div class="achievement">
   <div style="color: #C4ED6D;"><strong>Legendary Legmaster</strong></div>
@@ -123,9 +122,19 @@
     <span>/</span>
     <span>80</span>
   </div>
-  <div>Unlocked <%= image_tag "goldtrophy.png", alt: "Gold Trophy", width: 20, height: 20 %></div>
 </div>
-<div class="golddescription"><p>Do 80 leg exercises: COMPLETED!</p></div>
+<div class="golddescription"><p>Do 80 leg exercises<div>Unlocked! <%= image_tag "goldtrophy.png", alt: "Gold Trophy", width: 20, height: 20 %></div></p></div>
+
+<div class="achievement">
+  <div style="color: #C4ED6D;"><strong>Legendary Legmaster</strong></div>
+  <div>Legs</div>
+  <div>
+    <span>80</span>
+    <span>/</span>
+    <span>80</span>
+  </div>
+</div>
+<div class="platdescription"><p>Do 200 leg exercises<div>Unlocked! <%= image_tag "platinumtrophy.png", alt: "Platinum Trophy", width: 20, height: 20 %></div></p></div>
 
 <!-- UNTIL HERE: ONLY FOR DEMO PURPOSES, CAN REMOVE LATER -->
 
