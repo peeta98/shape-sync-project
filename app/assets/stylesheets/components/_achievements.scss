@@ -1,7 +1,7 @@
 .container {
   justify-content: space-between;
   align-items: flex-start;
-  background-color: #171718;
+  background-color: black;
   padding: 20px;
   color: white;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -60,7 +60,7 @@ h1 {
 
 .achievement {
   margin-top: 5px;
-  background-color:  rgb(67, 66, 66);
+  background-color:  #3c3c3c;
   color: white;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -75,7 +75,7 @@ h1 {
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 
   div {
-    background: rgb(67, 66, 66);
+    background: #3c3c3c;
     color: white;
     text-align: center;
   }
@@ -85,7 +85,7 @@ h1 {
   font-weight: bolder;
   grid-template-columns: 1fr;
   margin-top: 5px;
-  background-color:  rgb(67, 66, 66);
+  background-color:  #3c3c3c;
   color: white;
   display: grid;
   justify-content: space-between;
@@ -99,7 +99,7 @@ h1 {
 
 .description {
   font-weight: lighter;
-  background-color:  rgb(67, 66, 66);
+  background-color:  #3c3c3c;
   color: white;
   display: block;
   grid-template-columns: 1fr;
@@ -238,7 +238,7 @@ h1 {
 
 
   i {
-    color: $app-color;
+    color: white;
     font-size: 20px;
   }
 
