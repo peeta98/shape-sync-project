@@ -17,4 +17,21 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  def favorite_bodypart
+    user_exercises = Exercise.where(workout: workouts)
+    favorite = user_exercises.group(:bodyPart).sum(:sets).max_by{ |_, sets| sets }
+    favorite # Returns an array, 1st value related to the bodyPart, 2nd related to the total number of sets
+  end
+
+  def favorite_target
+    user_exercises = Exercise.where(workout: workouts)
+    favorite = user_exercises.group(:target).sum(:reps).max_by{ |_, reps| reps }
+    favorite # Returns an array, 1st value related to the target, 2nd related to the total number of reps
+  end
+
+  def strongest_exercise
+    user_exercises = Exercise.where(workout: workouts)
+    user_exercises.max_by{ |exercise| exercise.weight }
+  end
 end
