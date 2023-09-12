@@ -42,11 +42,13 @@ class WorkoutsController < ApplicationController
       selected_exercises.each do |selected_exercise|
         selected_exercise.update(workout_id: @workout.id)
       end
-    end
-    if @workout.update(workout_params)
       redirect_to workout_program_path(@workout.workout_program), notice: 'Weekly workout was successfully updated!'
     else
-      render 'workout_programs/show'
+      if @workout.update(workout_params)
+        redirect_to workout_program_path(@workout.workout_program), notice: 'Weekly workout was successfully updated!'
+      else
+        render 'workout_programs/show'
+      end
     end
   end
 
