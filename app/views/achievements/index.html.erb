@@ -50,7 +50,13 @@
       <div>Progress</div>
     </div>
 
-    <!-- FROM HERE: ONLY FOR DEMO PURPOSES, CAN REMOVE LATER -->
+  <div data-controller-target="achievements">
+  <% map_achievements = current_user.user_achievements.map{ |user_achievement| user_achievement.achievement } %>
+  <% @achievements.each do |achievement| %>
+  <%= render 'achievement', achievement: achievement, user_achievements: map_achievements  %>
+  <% end %>
+  </div>
+<!-- FROM HERE: ONLY FOR DEMO PURPOSES, CAN REMOVE LATER
 
 <div class="achievement">
   <div class="mr-3" style="color: #C4ED6D;"><strong>Welcome to ShapeSync!</strong></div>
@@ -135,14 +141,8 @@
   </div>
 </div>
 <div class="platdescription"><p>Do 200 leg exercises<div>Unlocked! <%= image_tag "platinumtrophy.png", alt: "Platinum Trophy", width: 20, height: 20 %></div></p></div>
-
-<!-- UNTIL HERE: ONLY FOR DEMO PURPOSES, CAN REMOVE LATER -->
-
+ UNTIL HERE: ONLY FOR DEMO PURPOSES, CAN REMOVE LATER -->
 
 
-<div  data-controller-target="achievements">
-<% @achievements.each do |achievement| %>
-<%= render 'achievement', achievement: achievement  %>
-<% end %>
-</div>
+
 </div>

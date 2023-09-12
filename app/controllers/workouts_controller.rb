@@ -42,8 +42,6 @@ class WorkoutsController < ApplicationController
       selected_exercises.each do |selected_exercise|
         selected_exercise.update(workout_id: @workout.id)
       end
-      # Create a method to check if each achievement was unlocked
-      # check_achievents
       redirect_to workout_program_path(@workout.workout_program), notice: 'Weekly workout was successfully updated!'
     else
       if @workout.update(workout_params)
@@ -66,9 +64,6 @@ class WorkoutsController < ApplicationController
   end
 
   private
-
-  # def check_achievents
-  # end
 
   def workout_params
     params.require(:workout).permit(:categories, :start_time, :duration, exercise_ids: [])

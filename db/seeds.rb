@@ -112,7 +112,7 @@ achievement = Achievement.create!(
   name: 'Volume is key',
   message: 'Your workout sets surpasses the number 9, INSANE (for a beginner)!',
   description: 'Have a total number of sets higher than 9, in any current workout',
-  goal: 10,
+  goal: 1,
   trophy: 'silver',
   category: 'General'
 )
@@ -121,7 +121,7 @@ achievement = Achievement.create!(
   name: 'Biceps Abuser',
   message: 'Congratulations, your workout has more than 2 biceps exercises!',
   description: 'Do more than 2 biceps exercises in a single workout',
-  goal: 3,
+  goal: 1,
   trophy: 'gold',
   category: 'Biceps'
 )
@@ -130,7 +130,7 @@ achievement = Achievement.create!(
   name: 'Never Skip Leg Day',
   message: 'Congratulations, you have atleast 8 sets of leg exercises, no more spaghetti leg jokes!',
   description: 'Do 8 or more sets of leg exercises in a single workout',
-  goal: 8,
+  goal: 1,
   trophy: 'gold',
   category: 'Legs'
 )
@@ -139,7 +139,7 @@ achievement = Achievement.create!(
   name: 'Lightweight baby',
   message: 'Congratulations, you did an exercise with atleast 200kg, Arnold would be proud!',
   description: 'Do an exercise with a total weight of atleast 200kg',
-  goal: 200,
+  goal: 1,
   trophy: 'platinum',
   category: 'General'
 )
@@ -148,7 +148,7 @@ achievement = Achievement.create!(
   name: 'Who is gonna carry the boats?',
   message: 'Congratulations, you did more than 200 reps in a single workout!',
   description: 'Do a total of more than 200 total reps in a single workout',
-  goal: 201,
+  goal: 1,
   trophy: 'platinum',
   category: 'General'
 )

@@ -14,7 +14,7 @@ class AchievementsController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.json { render  'achievements/achievement', collection: @achievements }
+      format.json { render 'achievements/achievement', collection: @achievements }
     end
   end
 
