@@ -2,7 +2,7 @@
   <div class="text-white fw-bold mt-5">
     <p class="fw-bold">Choose your exercises</p>
     <%= simple_form_for @workout do |f| %>
-      <%= f.input :exercise_ids, collection: Exercise.where(workout_id: nil), input_html: {class:"color-green", multiple: true, data: {controller: "tom-select", tom_select_options_value: {tags: true, maxOptions: nil}}}, label_method: :name, value_method: :id , label:false , class: "transparent"%> <!-- Maybe implement a auto-complete search feature? -->
+      <%= f.input :exercise_ids, collection: Exercise.where(workout_id: nil), input_html: {class:"transparent", multiple: true, data: {controller: "tom-select", tom_select_options_value: {tags: true, maxOptions: nil}}}, label_method: :name, value_method: :id , label:false%> <!-- Maybe implement a auto-complete search feature? -->
       <%= f.button :submit, class:"button-green text-white w-100"%>
     <% end %>
     <div class="mx-auto d-block">

@@ -1,13 +1,13 @@
 .workout-cards{
   padding: 1rem;
   h1,h2,h3,h4,h5,h6{
-    color: #C4ED6D;
+    color: $app-color;
   }
   p{
     color: white;
   }
   i{
-    color: #C4ED6D;
+    color: $app-color;
   }
   .button-green{
     margin-top: 2rem;
@@ -17,20 +17,25 @@
 .workout-card{
   display: flex;
   justify-content: space-between;
-  border: 1px solid #C4ED6D;
+  border: 1px solid $app-color;
   border-radius: 16px;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding: 3.5rem 1rem;
   margin-top: 2rem;
+  background-size: cover;
+  background-position: center bottom;
+  vertical-align: center;
+  color: rgb(255, 255, 255);
+  border: 2px solid $app-color;
+  background-position-y: -70px;
+  background-position-x: 75px;
+  background-repeat: no-repeat;
   h4{
     margin-bottom: 0;
     color: white;
     padding-bottom: 0;
   }
   i{
-    color: #C4ED6D;
+    color: $app-color;
   }
   .workout-card-links{
     button{
@@ -38,6 +43,7 @@
       border: 0;
     }
   }
+
 
   .add-exercise{
     display: flex;
@@ -62,13 +68,13 @@
 
 
 .exercises-div{
-  border: 1px solid #C4ED6D;
-  border-radius: 5px;
+  border: 1px solid $app-color;
+  border-radius: 16px;
   padding: 1rem;
   h6{
     color: white;
     font-size: 20px;
-    border-bottom: 1px solid #C4ED6D;
+    border-bottom: 1px solid $app-color;
   }
   p{
     font-size: 18px;
@@ -80,25 +86,25 @@
 
 #table {
   border-collapse: separate;
-  border-spacing: auto 15px;
+  border-spacing: 10px auto;
   margin: 0;
 }
 
 
 
 .form-exercise{
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  margin-top: 1rem;
   border-end-end-radius: 16px;
   border-end-start-radius: 16px;
   .back-link{
-    color: #C4ED6D;
+    color: $app-color;
     margin-top: 1rem;
     margin-bottom: 1rem;
   }
   color: white;
 }
 #submit-button{
-  background-image: linear-gradient(144deg,#C4ED6D, #C4ED6D 50%,#C4ED6D);
+  background-image: linear-gradient(144deg,$app-color, $app-color 50%,$app-color);
   border: 0;
   border-radius: 16px;
   box-sizing: border-box;
@@ -145,7 +151,7 @@
 
 .transparent {
   background-color: transparent;
-  border: 1px solid #C4ED6D;
+  border: 1px solid $app-color;
   color: white;
   border-radius: 16px;
 }

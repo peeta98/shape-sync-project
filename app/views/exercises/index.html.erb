@@ -25,15 +25,15 @@
         <% @exercises.each do |exercise|  %>
           <%= turbo_frame_tag dom_id(exercise) do %>
             <tr>
-              <td class="d-flex">
+              <td class="d-flex align-items-center">
                 <%= link_to remove_association_path(exercise.id), data: {turbo_method: :patch, turbo_frame: :_top} do %>
-                  <i class="fa-solid fa-trash" style="color: #C4ED6D;"></i>
+                  <i class="fa-solid fa-trash fa-lg" style="color: $app-color;"></i>
                 <% end %>
                 <p class="ms-2"><%= exercise.name %></p>
               </td>
               <td data-controller="set-sets" class="text-center">
                 <!-- Button trigger modal -->
-                <button type="button" class="btn bg-transparent" data-bs-toggle="modal" data-bs-target="#setsModal<%= exercise.id %>">
+                <button type="button" class="bg-transparent" data-bs-toggle="modal" data-bs-target="#setsModal<%= exercise.id %>">
                   <p data-set-sets-target="sets"><%= exercise.sets %></p>
                 </button>
 
@@ -63,7 +63,7 @@
               </td>
               <td data-controller="set-reps" class="text-center">
                 <!-- Button trigger modal -->
-                <button type="button" class="btn bg-transparent" data-bs-toggle="modal" data-bs-target="#repsModal<%= exercise.id %>">
+                <button type="button" class="bg-transparent" data-bs-toggle="modal" data-bs-target="#repsModal<%= exercise.id %>">
                   <p data-set-reps-target="reps"><%= exercise.reps %></p>
                 </button>
 
@@ -93,7 +93,7 @@
               </td>
               <td data-controller="set-weight" class="text-center">
                 <!-- Button trigger modal -->
-                <button type="button" class="btn bg-transparent" data-bs-toggle="modal" data-bs-target="#weightModal<%= exercise.id %>">
+                <button type="button" class="bg-transparent" data-bs-toggle="modal" data-bs-target="#weightModal<%= exercise.id %>">
                   <p data-set-weight-target="weights"><%= exercise.weight %></p>
                 </button>
 
@@ -110,7 +110,7 @@
                         <div class="modal-footer-weight d-flex justify-content-center">
                           <%= simple_form_for exercise,html: {data:{set_weight_target:"form", action:"set-weight#update"}, class:""} do |f| %>
                             <%= f.input :weight,label_html:{class:"d-none"}, input_html: {data: {set_weight_target: "input"}, class:"input-field"} %>
-                            <%= f.button :submit, class:"button-green-modal"%>
+                            <%= f.button :submit, class:"button-green-modal", data:{bs_dismiss: "modal"}%>
                           <% end %>
                         </div>
                       </div>

@@ -1,13 +1,13 @@
 <div class="global-container">
 
-<div class="container2 user-goal my-3 text-center">
-    <h2>Welcome <%= current_user.username %>!</h2>
-    <p>Welcome to your profile page, your personal fitness hub! Here, you have the power to shape your fitness journey.</p>
-    <p>Easily set and track your <a href="#goals">goals</a>,
-       customize your metrics, and showcase your progress with your profile picture.
-       It's your space to make every workout count and celebrate your <a href="#bottom">achievements.</a></p>
-     <p> Let's get started on your path to a healthier, stronger you!</p>
-</div>
+  <div class="container2 user-goal mt-4 mb-3 text-center">
+      <h2>Welcome <%= current_user.username %>!</h2>
+      <p>Welcome to your profile page, your personal fitness hub! Here, you have the power to shape your fitness journey.</p>
+      <p>Easily set and track your <a href="#goals">goals</a>,
+        customize your metrics, and showcase your progress with your profile picture.
+        It's your space to make every workout count and celebrate your <a href="#bottom">achievements.</a></p>
+      <p> Let's get started on your path to a healthier, stronger you!</p>
+  </div>
 
 
 <div class="container2 text-center" data-controller="edit-profile">
@@ -42,23 +42,23 @@
     </div>
 </div>
 
-<div class="container2 user-goal text-center" id="goals">
-  <h2>My Goal <sup><i id="goalIcon" class="fa-solid fa-pen-to-square"  data-action="click->edit-profile#displayForm"></i></sup></h2>
-    <select id="goalSelect" class="hidden centered-select">
-      <option value="Weight Loss">Weight Loss</option>
-      <option value="Gain Muscle">Gain Muscle</option>
-      <option value="Get Shredded">Get Shredded</option>
-      <option value="Improve Flexibility">Improve Flexibility</option>
-    </select>
-  <div id="goalMessage" class="goal-message my-3"></div>
-</div>
+  <div class="container2 user-goal text-center" id="goals">
+    <h2>My Goal <sup><i id="goalIcon" class="fa-solid fa-pen-to-square"  data-action="click->edit-profile#displayForm"></i></sup></h2>
+      <select id="goalSelect" class="hidden centered-select">
+        <option value="Weight Loss">Weight Loss</option>
+        <option value="Gain Muscle">Gain Muscle</option>
+        <option value="Get Shredded">Get Shredded</option>
+        <option value="Improve Flexibility">Improve Flexibility</option>
+      </select>
+    <div id="goalMessage" class="goal-message my-3"></div>
+  </div>
 
- <div class="container2 user-goal mb-3">
-<div class="container1 mx-4 my-3 justify-content-center">
-  <h2 class="text-center"><i class="fa-solid fa-dumbbell"></i> Latest unlocks <i class="fa-solid fa-dumbbell"></i></h2>
-</div>
+  <div class="container2 user-goal mb-3">
+  <div class="container1 mx-4 my-3 justify-content-center">
+    <h2 class="text-center"><i class="fa-solid fa-dumbbell"></i> Latest unlocks <i class="fa-solid fa-dumbbell"></i></h2>
+  </div>
 
-<div class="container3 mx-4 mb-3 justify-content-center bg-dark" id="bottom">
-  <p class="text-center">No achievements yet</p>
-</div>
+  <div class="container3 mx-4 mb-3 justify-content-center bg-dark" id="bottom">
+    <p class="text-center">No achievements yet</p>
+  </div>
 </div>

@@ -1,0 +1,27 @@
+.gif-cards{
+  border-radius: 16px;
+  margin: 2.25rem auto;
+  background-color: #1A1C1D;
+  .gifs{
+    width: 120px;
+    border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px;
+  }
+  h5{
+    color: white;
+    text-align: start;
+    margin: auto 1rem;
+  }
+}
+
+#home-background{
+  .home-cards{
+    padding: 1rem;
+    border-radius: 16px;
+  }
+
+  h1{
+    color: $app-color;
+  }
+
+}
