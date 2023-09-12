@@ -5,8 +5,7 @@
     <p class="fw-bold"><%= workout.categories %></p>
     <% workout.exercises.each do |exercise| %>
       <div class="d-flex justify-content-between">
-        <p>Gif of exercise</p>
-        <!-- image_tag(exercise.gif) => Doesn't show anything because the first exercises that I seeded don't have any gifs from the API -->
+        <%= image_tag(exercise.gif) %>
         <p><%= exercise.name %></p>
       </div>
     <% end %>
