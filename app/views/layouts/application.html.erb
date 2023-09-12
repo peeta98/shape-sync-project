@@ -13,12 +13,9 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
-
   <body>
     <% if user_signed_in? %>
       <%= render 'pages/user_navbar' %>
-    <% else %>
-      <%= render 'pages/visitor_navbar' %>
     <% end %>
     <%= render "shared/flashes" %>
     <%= yield %>
