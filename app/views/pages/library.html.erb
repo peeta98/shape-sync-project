@@ -6,8 +6,6 @@
         <%= form.text_field :search, class: "transparent py-2", placeholder: "Search for exercises...",value: params[:search] ,data: {library_exercises_target: "search", action:"keyup->library-exercises#search"}%>
       <% end %>
     </div>
-
-
     <%= render "pages/list", exercises: @exercises %>
   </div>
 </div>

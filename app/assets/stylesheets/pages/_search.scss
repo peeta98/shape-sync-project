@@ -43,7 +43,7 @@
   border-radius: 16px;
   border: 1px solid $app-color;
   padding: 2rem;
-  background-image: linear-gradient(144deg,#36373E, $app-color 50%,#36373E);
+  background-image: linear-gradient(144deg,$app-color, $app-color, $app-color);
   color: white;
   margin-top: 2rem;
   margin-bottom: 0;
@@ -56,6 +56,164 @@
     color: #36373E;
   }
 
+}
+
+.category-card.chest {
+  background-image: url('/assets/chest1.png');
+  background-size: cover;
+  background-position-x: 80px;
+  background-position-y: 130px;
+  vertical-align: center;
+  color: rgb(255, 255, 255);
+  border: 2px solid #C4ED6D;
+  background-color: rgb(67, 66, 66);
+
+  h2{
+    margin-bottom: 0;
+    margin-left: -10px;
+  }
+
+}
+
+.category-card.back {
+  background-image: url('/assets/back3.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-position: center center;
+  vertical-align: center;
+  color: rgb(255, 255, 255);
+  border: 2px solid #C4ED6D;
+  background-position-x: 85px;
+  background-position-y: -105px;
+  background-color: rgb(67, 66, 66);
+
+  h2{
+    margin-bottom: 0;
+    margin-left: -10px;
+  }
+}
+
+.category-card.abs {
+  background-image: url('/assets/abs1.png');
+  background-size: cover;
+  background-position: center center;
+  vertical-align: center;
+  color: rgb(255, 255, 255);
+  border: 2px solid #C4ED6D;
+  background-position-x: 75px;
+  background-position-y: -170px;
+  background-color: rgb(67, 66, 66);
+  background-repeat: no-repeat;
+
+  h2{
+    margin-bottom: 0;
+    margin-left: -10px;
+  }
+}
+
+.category-card.legs {
+  background-image: url('/assets/legs1.png');
+  background-size: cover;
+  background-position: center bottom;
+  vertical-align: center;
+  color: rgb(255, 255, 255);
+  border: 2px solid #C4ED6D;
+  background-position-y: -110px;
+  background-position-x: 75px;
+  background-color: rgb(67, 66, 66);
+
+  h2{
+    margin-bottom: 0;
+    margin-left: -10px;
+  }
+}
+
+.category-card.triceps {
+  background-image: url('/assets/triceps1.png');
+  background-size: cover;
+  background-position: center;
+  vertical-align: center;
+  color: rgb(255, 255, 255);
+  border: 3px solid #C4ED6D;
+  background-position-x: 80px;
+  background-color: rgb(67, 66, 66);
+  background-repeat: no-repeat;
+
+  h2{
+    margin-bottom: 0;
+    margin-left: -10px;
+  }
+}
+
+.category-card.biceps {
+  background-image: url('/assets/biceps1.png');
+  background-size: cover;
+  background-position: center;
+  vertical-align: center;
+  color: rgb(255, 255, 255);
+  border: 2px solid #C4ED6D;
+  background-position-x: 70px;
+  background-color: rgb(67, 66, 66);
+  background-repeat: no-repeat;
+
+  h2{
+    margin-bottom: 0;
+    margin-left: -10px;
+  }
+}
+
+.category-card.shoulders {
+  background-image: url('/assets/shoulders4.png');
+  background-size: cover;
+  background-position: center;
+  vertical-align: center;
+  color: rgb(255, 255, 255);
+  border: 2px solid #C4ED6D;
+  background-position-x: 80px;
+  background-position-y: -60px;
+  background-color: rgb(67, 66, 66);
+
+  h2{
+    margin-bottom: 0;
+    margin-left: -10px;
+  }
+}
+
+.category-card.cardio {
+  background-image: url('/assets/cardio.png');
+  background-size: cover;
+  background-position: center;
+  vertical-align: center;
+  color: rgb(255, 255, 255);
+  border: 2px solid #C4ED6D;
+  background-position-x: 100px;
+  background-position-y: 0px;
+  background-color: rgb(67, 66, 66);
+  background-repeat: no-repeat;
+
+  h2{
+    margin-bottom: 0;
+    margin-left: -10px;
+  }
+}
+
+.category-card.all {
+  background-image: url('/assets/all.png');
+  background-size: cover;
+  background-position: center;
+  vertical-align: center;
+  color: rgb(255, 255, 255);
+  border: 2px solid #C4ED6D;
+  background-position-x: 49px;
+  background-position-y: -70px;
+  background-color: rgb(67, 66, 66);
+  background-repeat: no-repeat;
+
+  h2{
+    margin-bottom: 0;
+    margin-left: -10px;
+  }
 }
 
 .category-card:hover .show-exercises{
