@@ -7,7 +7,7 @@
     <% workout.exercises.each do |exercise| %>
       <div class="gif-cards d-flex align-items-center">
         <%= image_tag(exercise.gif, class:"gifs")%>
-        <p><%= exercise.name %></p>
+        <h6><%= exercise.name %></h6>
       </div>
     <% end %>
   </div>

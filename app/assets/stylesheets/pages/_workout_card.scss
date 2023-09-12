@@ -19,11 +19,16 @@
   justify-content: space-between;
   border: 1px solid $app-color;
   border-radius: 16px;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding: 3.5rem 1rem;
   margin-top: 2rem;
+  background-size: cover;
+  background-position: center bottom;
+  vertical-align: center;
+  color: rgb(255, 255, 255);
+  border: 2px solid $app-color;
+  background-position-y: -70px;
+  background-position-x: 75px;
+  background-repeat: no-repeat;
   h4{
     margin-bottom: 0;
     color: white;
@@ -38,6 +43,7 @@
       border: 0;
     }
   }
+
 
   .add-exercise{
     display: flex;

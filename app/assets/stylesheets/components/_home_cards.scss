@@ -1,13 +1,14 @@
 .gif-cards{
   border-radius: 16px;
-  box-shadow: 0 0 10px $app-color;
   margin: 2.25rem auto;
+  background-color: #1A1C1D;
   .gifs{
     width: 120px;
     border-top-left-radius: 16px;
     border-bottom-left-radius: 16px;
   }
-  p{
+  h5{
+    color: white;
     text-align: start;
     margin: auto 1rem;
   }
