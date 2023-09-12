@@ -13,7 +13,8 @@
     background-color: #0056b3;
 }
 
-ul {
+ul  {
     list-style-type: none;
-    text-align: start;
+    text-align: left;
   }
+  
