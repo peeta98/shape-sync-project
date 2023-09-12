@@ -21,7 +21,26 @@
       <% when 'Chest' %>
         <% chest_exercises = Exercise.all.select { |exercise| exercise.bodyPart == 'chest' } %>
         <% chest_exercises.each do |chest_exercise| %>
-          <p><%= chest_exercise.name %></p>
+        <ul class="list-unstyled">
+    <li><button type="button" class="button_styling" data-bs-toggle="modal" data-bs-target="#exerciseModal<%= chest_exercise.id %>">
+    <i class="fa-solid fa-eye"></i> <%= chest_exercise.name %></li></button></ul>
+    <div class="modal fade" id="exerciseModal<%= chest_exercise.id %>" tabindex="-1" role="dialog" aria-labelledby="exerciseModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5"  id="exerciseModalLabel"><%= chest_exercise.name %></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+    <div class="modal-body">
+  <%= image_tag chest_exercise.gif, alt: 'Exercise GIF' %>
+</div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
         <% end %>
       <% when 'Back' %>
         <% back_exercises = Exercise.all.select { |exercise| exercise.bodyPart == 'back' } %>
