@@ -9,9 +9,31 @@
   <% exercises.each do |exercise| %>
     <p><%= exercise.name %></p>
   <% end %>
-  <% categories = ['Chest', 'Back', 'Legs', 'Shoulders', 'Biceps', 'Triceps', 'Abs', 'Cardio', 'All'] %>
+  <% categories = ['Chest', 'Biceps', 'Triceps', 'Abs', 'Back', 'Legs', 'Shoulders', 'All', 'Cardio'] %>
   <% categories.each do |category| %>
-    <div class="category-card" data-library-exercises-target="button" data-action="click->library-exercises#showExercises" id ="<%= category %>">
+   <% css_class = case category
+    when 'Chest'
+      'chest'
+    when 'Back'
+      'back'
+    when 'Legs'
+      'legs'
+    when 'Shoulders'
+      'shoulders'
+    when 'Abs'
+      'abs'
+    when 'Biceps'
+      'biceps'
+    when 'Cardio'
+      'cardio'
+    when 'All'
+      'all'
+    when 'Triceps'
+      'triceps'
+      end
+  %>
+
+    <div class="category-card <%= css_class %>" data-library-exercises-target="button" data-action="click->library-exercises#showExercises" id ="<%= category %>">
       <h2><%= category %></h2>
     </div>
     <!-- DATA ACTION IS ONLY WORKIN FORM CHEST CATEGORY - NEEDS DEBUGGING -->

@@ -1,4 +1,4 @@
-<div class="container mt-5 mb-4">
+<div class="container mt-2 mb-4">
      <h2 class="text-center mb-3">Achievements Overview</h2>
     <div class="wrapper">
       <div class="py-3 px-3 text-center"> <h1>This year you worked out for <span id="workedHours">76.5</span> hours.</h1>
@@ -14,35 +14,35 @@
             <span>Check the achievements below on how to get more!</span></div>
       <div class="text-center py-3 px-3">
         <h2 class="mb-3">Your trophy cabinet</h2>
-          <ul class="trophy-list">
+        <ul class="trophy-list">
           <div class="row border-0">
             <li class="mb-2">
              <%= image_tag "platinumtrophy.png", alt: "Platinum Trophy", width: 60, height: 60 %>
              <span id="platinumCount">1 x</span>
-          </li>
-          <li class="mb-2">
+            </li>
+            <li class="mb-2">
               <%= image_tag "goldtrophy.png", alt: "Gold Trophy", width: 50, height: 50 %>
               <span id="goldCount">1 x</span>
-          </li></div>
+            </li></div>
           <div class="row border-0">
-          <li class="mb-3">
+            <li class="mb-3">
               <%= image_tag "silvertrophy.png", alt: "Silver Trophy", width: 40, height: 40 %>
               <span id="silverCount">2 x</span>
-          </li>
-          <li class="mb-2">
+            </li>
+            <li class="mb-2">
              <%= image_tag "bronzetrophy.png", alt: "Bronze Trophy", width: 40, height: 40 %>
-           <span id="bronzeCount">3 x</span>
-          </li>
+             <span id="bronzeCount">3 x</span>
+            </li>
           </div>
-          </ul></div>
+        </ul></div>
     </div>
     <h2 class="text-center mt-4 mb-4"><i class="fa-solid fa-dumbbell"></i> Unlockables <i class="fa-solid fa-dumbbell"></i></h2>
-    <div data-controller="controller">
-    <div class="sort-buttons text-center my-4">
- <button class="custom-button" data-action="click->controller#sort" data-url="/achievements/category"  data-sort="category">Sort by Category</button>
-  <button class="custom-button" data-action="click->controller#sort" data-url="/achievements/completion"  data-sort="completion">Sort by Completion</button>
-  <button class="custom-button" data-action="click->controller#sort" data-url="/achievements/status"  data-sort="status">Sort by Status</button>
-</div>
+      <div data-controller="controller">
+      <div class="sort-buttons text-center my-4">
+        <button class="custom-button" data-action="click->controller#sort" data-url="/achievements/category"  data-sort="category">Sort by Category</button>
+        <button class="custom-button" data-action="click->controller#sort" data-url="/achievements/completion"  data-sort="completion">Sort by Completion</button>
+        <button class="custom-button" data-action="click->controller#sort" data-url="/achievements/status"  data-sort="status">Sort by Status</button>
+      </div>
 
     <div class="achievements">
       <div>Achievement</div>
@@ -52,16 +52,16 @@
 
     <!-- FROM HERE: ONLY FOR DEMO PURPOSES, CAN REMOVE LATER -->
 
-<div class="achievement">
-  <div class="mr-3" style="color: #C4ED6D;"><strong>Welcome to ShapeSync!</strong></div>
-  <div>General</div>
+  <div class="achievement">
+    <div class="mr-3" style="color: #C4ED6D;"><strong>Welcome to ShapeSync!</strong></div>
+    <div>General</div>
   <div>
     <span>1</span>
     <span>/</span>
     <span>1</span>
   </div>
 
-</div>
+  </div>
 <div class="bronzedescription"><p>Create an account<div>Unlocked! <%= image_tag "bronzetrophy.png", alt: "Bronze Trophy", width: 20, height: 20 %></div></p></div>
 
 <div class="achievement">
