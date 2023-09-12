@@ -10,7 +10,7 @@
   <%= link_to "Delete This Workout Program",
                 workout_program_path(@workout_program),
                 data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
-                class: "button-grey mb-5" %>
+                class: "btn-already my-5" %>
 </div>
 
 <% unless @workout_program.workouts.any?(&:persisted?) %>
@@ -24,7 +24,7 @@
       <% @workout_program.weekly_frequency.times do |i| %>
         <h2>Workout #<%= i + 1 %></h2>
         <%= f.simple_fields_for :workouts, @workout_program.workouts[i] || Workout.new do |workout_fields| %>
-          <%= workout_fields.input :categories, collection: ['Chest', 'Back', 'Legs', 'Shoulders', 'Biceps', 'Triceps', 'Abs', 'Cardio', 'UpperBody', 'LowerBody', 'FullBody'] %>
+          <%= workout_fields.input :categories, collection: ['Chest', 'Back', 'Legs', 'Shoulders', 'Biceps', 'Triceps', 'Abs', 'Cardio', 'UpperBody', 'LowerBody', 'FullBody']%>
         <% end %>
       <% end %>
       <%= f.submit %>

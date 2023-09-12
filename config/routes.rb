@@ -14,6 +14,14 @@ Rails.application.routes.draw do
   get '/profile', to: 'pages#profile'
   get '/workouts_history', to: 'pages#workout_history'
   get '/add_exercise/:id', to: 'workouts#add_exercise', as: 'add_exercise'
+  post '/user_achievements/bronze1', to: 'user_achievements#bronze1', as: 'bronze1'
+  post '/user_achievements/bronze2', to: 'user_achievements#bronze2', as: 'bronze2'
+  post '/user_achievements/silver1', to: 'user_achievements#silver1', as: 'silver1'
+  post '/user_achievements/silver2', to: 'user_achievements#silver2', as: 'silver2'
+  post '/user_achievements/gold1', to: 'user_achievements#gold1', as: 'gold1'
+  post '/user_achievements/gold2', to: 'user_achievements#gold2', as: 'gold2'
+  post '/user_achievements/platinum1', to: 'user_achievements#platinum1', as: 'platinum1'
+  post '/user_achievements/platinum2', to: 'user_achievements#platinum2', as: 'platinum2'
 
   resources :achievements, only: [:index]
   resources :users, only: %i[show update] do

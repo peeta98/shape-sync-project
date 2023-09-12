@@ -1,15 +1,15 @@
 <div class="container mt-2 mb-4">
      <h2 class="text-center mb-3">Achievements Overview</h2>
     <div class="wrapper">
-      <div class="py-3 px-3 text-center"> <h1>This year you worked out for <span id="workedHours">76.5</span> hours.</h1>
-          <p>Take a look at your previous trainings and see where you spent the most time.</p></div>
+      <div class="py-3 px-3 text-center"> <h1>Welcome to your very own trophy cabinet!</h1>
+          <p>Take a look at the some cool statistics based on your workouts and try to fill your cabinet with trophies!</p></div>
       <div class="text-center py-3 px-3">
         <h1 class="py-3 px-3">Statistics</h2>
-        <p><i class="fa-solid fa-star"></i> Your favourite exercise seems to be "squats" which you completed 20 times this month!</p>
-        <p><i class="fa-solid fa-dumbbell"></i> Your favourite muscle group to workout is "legs", which you picked 7 times this month!</p>
-        <p><i class="fa-solid fa-chart-line"></i> Your strongest excercise is "leg press", where you improved by 16kg this month!</p>
+        <p><i class="fa-solid fa-star"></i> Your favourite body part seems to be <%= current_user.favorite_bodypart.nil? ? 'none' : current_user.favorite_bodypart[0] %>, which you completed <%= current_user.favorite_bodypart.nil? ? 0 : current_user.favorite_bodypart[1] %> weekly sets!</p>
+        <p><i class="fa-solid fa-dumbbell"></i> Your favourite muscle to grind reps is <%= current_user.favorite_target.nil? ? 'none' : current_user.favorite_target[0] %>, which you did a total of <%= current_user.favorite_target.nil? ? 0 : current_user.favorite_target[1] %> weekly reps!</p>
+        <p><i class="fa-solid fa-chart-line"></i> Your strongest exercise is <%= current_user.strongest_exercise.nil? ? 'none' : current_user.strongest_exercise.name.downcase %>, which was done with an outstanding weight of <%= current_user.strongest_exercise.nil? ? 0 : current_user.strongest_exercise.weight %>kg!</p>
       </div>
-      <div class="py-3 px-3 text-center"> <p>You've added to your collection<span id="trophyAmount">7</span>trophies</p>
+      <div class="py-3 px-3 text-center"> <p>You've added to your collection<span id="trophyAmount">X<%#= current_user.user_achievements.size %></span>trophies</p>
 
             <span>Check the achievements below on how to get more!</span></div>
       <div class="text-center py-3 px-3">
@@ -50,7 +50,13 @@
       <div>Progress</div>
     </div>
 
-    <!-- FROM HERE: ONLY FOR DEMO PURPOSES, CAN REMOVE LATER -->
+  <div data-controller-target="achievements">
+  <% map_achievements = current_user.user_achievements.map{ |user_achievement| user_achievement.achievement } %>
+  <% @achievements.each do |achievement| %>
+  <%= render 'achievement', achievement: achievement, user_achievements: map_achievements  %>
+  <% end %>
+  </div>
+<!-- FROM HERE: ONLY FOR DEMO PURPOSES, CAN REMOVE LATER
 
 <div class="achievement">
   <div class="mr-3" style="color: $app-color;"><strong>Welcome to ShapeSync!</strong></div>
@@ -135,14 +141,8 @@
   </div>
 </div>
 <div class="platdescription"><p>Do 200 leg exercises<div>Unlocked! <%= image_tag "platinumtrophy.png", alt: "Platinum Trophy", width: 20, height: 20 %></div></p></div>
-
-<!-- UNTIL HERE: ONLY FOR DEMO PURPOSES, CAN REMOVE LATER -->
-
+ UNTIL HERE: ONLY FOR DEMO PURPOSES, CAN REMOVE LATER -->
 
 
-<div  data-controller-target="achievements">
-<% @achievements.each do |achievement| %>
-<%= render 'achievement', achievement: achievement  %>
-<% end %>
-</div>
+
 </div>
