@@ -16,9 +16,9 @@
 
   <body>
     <% if user_signed_in? %>
-      <%= render 'user_navbar' %>
+      <#%= render 'user_navbar' %>
     <% else %>
-      <%= render 'visitor_navbar' %>
+      <#%= render 'pages/visitor_navbar' %>
     <% end %>
     <%= render "shared/flashes" %>
     <%= yield %>
