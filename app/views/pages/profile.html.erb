@@ -15,7 +15,7 @@
     <div data-edit-profile-target="infos">
       <h2 class="mb-4">My Metrics <i class="fa-solid fa-pen-to-square" data-action="click->edit-profile#displayForm"></i></h2>
       <% if current_user.avatar.attached? %>
-        <%= cl_image_tag current_user.avatar.key, alt: "Avatar of the User", id: "profile_avatar" %>
+        <%= cl_image_tag current_user.avatar.key, alt: "default_avatar.jpg", id: "profile_avatar" %>
       <% else %>
         <%= image_tag "default_avatar.jpg", alt: "Default Avatar", id: "profile_avatar" %>
       <% end %>
