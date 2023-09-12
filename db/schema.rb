@@ -60,6 +60,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_07_130204) do
     t.string "gif"
     t.string "bodyPart"
     t.string "target"
+    t.string "equipment"
     t.integer "sets"
     t.integer "reps"
     t.integer "weight"
