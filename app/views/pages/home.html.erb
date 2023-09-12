@@ -2,7 +2,7 @@
   <h1 class="fw-bold mt-4">Current Workout Program</h1>
   <h1 class="fw-bold mb-4"><%= current_user.workout_program.weekly_frequency %> times per week</h1>
   <% current_user.workout_program.workouts.each do |workout| %>
-  <div class="home-cards text-white mb-5">
+  <div class="home-cards text-white mb-3">
     <h3 class="mb-3 g-0 p-0"><%= workout.categories %></h3>
     <% workout.exercises.each do |exercise| %>
       <div class="gif-cards d-flex align-items-center">

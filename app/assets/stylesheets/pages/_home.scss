@@ -1,7 +1,7 @@
 // Specific CSS for your home-page
 .createworkout {
   margin-top: 5px;
-  background-color: $app-color;
+  background-color: white;
   color: white;
   padding-bottom: 5px;
   padding-left: 10px;
@@ -32,7 +32,7 @@
 .info-card4 {
   margin-top: 5px;
   background-color: #1f201e;
-  color: $app-color;
+  color: white;
   justify-content: space-between;
   margin-bottom: 5px;
 }
@@ -43,13 +43,13 @@
 
   i {
     font-size: 35px;
-    color: $app-color;
+    color: white;
   }
 }
 
 .workout-name-card {
   margin-top: 5px;
-  background-color:  rgb(67, 66, 66);
+  background-color:  #3c3c3c;
   color: white;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -60,9 +60,9 @@
 }
 
 #home-background {
-  background-color: #171718;
+  background-color: black;
 }
 
 #border {
-  border-color: $app-color;
+  border-color: white;
 }

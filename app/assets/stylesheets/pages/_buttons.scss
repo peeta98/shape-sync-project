@@ -4,7 +4,7 @@
   border: 0;
   border-radius: 16px;
   box-sizing: border-box;
-  color: #FFFFFF;
+  color: black;
   display: flex;
   font-family: Phantomsans, sans-serif;
   font-size: 18px;
@@ -13,7 +13,7 @@
   line-height: 1em;
   max-width: 100%;
   min-width: 140px;
-  padding: 10px;
+  padding: 30px;
   text-decoration: none;
   user-select: none;
   -webkit-user-select: none;
@@ -23,12 +23,13 @@
 }
 
 .btn-already {
+  margin-top: 2rem;
   align-items: center;
-  background-image: linear-gradient(144deg,#818181, #818181 50%,#818181);
+  background-image: linear-gradient(130deg,#3c3c3c, #818181,#3c3c3c);
   border: 0;
   border-radius: 16px;
   box-sizing: border-box;
-  color: #FFFFFF;
+  color: black;
   display: flex;
   font-family: Phantomsans, sans-serif;
   font-size: 18px;
@@ -37,7 +38,7 @@
   line-height: 1em;
   max-width: 100%;
   min-width: 140px;
-  padding: 10px;
+  padding: 30px;
   text-decoration: none;
   user-select: none;
   -webkit-user-select: none;

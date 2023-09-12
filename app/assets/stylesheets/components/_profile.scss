@@ -5,7 +5,7 @@
   gap: 10px;
   width: 100%;
   padding: 20px;
-  background-color: #171718;
+  background-color: black;
 }
 
 .container1 {
@@ -30,7 +30,7 @@
 }
 
 .container3 {
-  background-color: #272726;
+  background-color: #3c3c3c;
   color: white;
   padding-left: 10px;
   padding-top: 5px;
@@ -39,7 +39,7 @@
 
 
 .user-info {
-  background-color: rgb(65, 65, 65);
+  background-color: #3c3c3c;
   display: inline-block;
   width: 100%;
   border-radius: 15px;
@@ -47,7 +47,6 @@
   padding-right: 15px;
   padding-top: 15px;
   justify-content: left;
-  border: 1px solid $app-color;
 
   i {
     color: $app-color;
@@ -57,7 +56,7 @@
 }
 
 .user-goal {
-  background-color: rgb(65, 65, 65);
+  background-color: #3c3c3c;
   display: inline-block;
   width: 100%;
   border-radius: 15px;
@@ -65,7 +64,6 @@
   padding-right: 15px;
   padding-top: 15px;
   justify-content: left;
-  border: 1px solid $app-color;
 
   i {
     color: $app-color;
@@ -74,7 +72,7 @@
 }
 
 .user-achievements {
-  background-color: rgb(65, 65, 65);
+  background-color: #3c3c3c;
   display: inline-block;
   width: 100%;
   padding-left: 15px;
@@ -84,8 +82,8 @@
 
 .workoutbtn {
   text-align: center;
-  background-color: #8aaa46;
-  color: white;
+  background-color: $app-color;
+  color: black;
   font-weight: bold;
   width: 100%;
   text-decoration: none;
@@ -106,7 +104,7 @@
     border:none;
     color: white;
     border-radius: 10px;
-    background-color: #272726;
+    background-color: #3c3c3c;
     margin-left: -5px;
   }
 
@@ -134,7 +132,7 @@
     top: 20px;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #272726;
+    background-color: #3c3c3c;
     color: white;
     padding: 5px;
     border-radius: 15px;
