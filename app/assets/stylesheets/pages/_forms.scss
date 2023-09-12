@@ -8,7 +8,7 @@
 
   .col-12{
     h2{
-      color: #C4ED6D;
+      color: $app-color;
       font-size: 26px;
       padding-top: 50px;
     }
@@ -76,7 +76,7 @@
   }
   .transparent {
     background-color: transparent;
-    border: 1px solid #C4ED6D;
+    border: 1px solid $app-color;
     color: white;
     border-radius: 16px;
   }
@@ -86,7 +86,7 @@
   }
 
   .form-actions {
-    border-color: #C4ED6D;
+    border-color: $app-color;
   }
   .center {
     display: block;

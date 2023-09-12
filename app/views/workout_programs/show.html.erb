@@ -1,4 +1,4 @@
-<div class="workout-cards mt-3" data-controller="add-exercises-to-workout">
+<div class="workout-cards mt-4" data-controller="add-exercises-to-workout">
   <div>
     <h2>Current Workouts</h2>
   </div>
@@ -10,7 +10,7 @@
   <%= link_to "Delete This Workout Program",
                 workout_program_path(@workout_program),
                 data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
-                class: "button-grey" %>
+                class: "button-grey mb-5" %>
 </div>
 
 <% unless @workout_program.workouts.any?(&:persisted?) %>
@@ -31,5 +31,3 @@
     <% end %>
   </div>
 <% end %>
-
-

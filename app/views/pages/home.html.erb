@@ -1,11 +1,12 @@
 <div class="container mt-0 rounded-0 text-center" id="home-background">
-  <h1 class="text-white">Current Workout Program - <%= current_user.workout_program.weekly_frequency %> times per week</h1>
+  <h1 class="fw-bold mt-4">Current Workout Program</h1>
+  <h1 class="fw-bold mb-4"><%= current_user.workout_program.weekly_frequency %> times per week</h1>
   <% current_user.workout_program.workouts.each do |workout| %>
-  <div class="text-white mb-5" style="border: 1px solid #C4ED6D;">
-    <p class="fw-bold"><%= workout.categories %></p>
+  <div class="home-cards text-white mb-5">
+    <h3 class="mb-3 g-0 p-0"><%= workout.categories %></h3>
     <% workout.exercises.each do |exercise| %>
-      <div class="d-flex justify-content-between">
-        <%= image_tag(exercise.gif) %>
+      <div class="gif-cards d-flex align-items-center">
+        <%= image_tag(exercise.gif, class:"gifs")%>
         <p><%= exercise.name %></p>
       </div>
     <% end %>

@@ -1,4 +1,12 @@
-<%= simple_form_for @workout do |f| %>
-  <%= f.input :exercise_ids, collection: Exercise.where(workout_id: nil), input_html: {multiple: true, data: {controller: "tom-select", tom_select_options_value: {tags: true, maxOptions: nil}}}, label_method: :name, value_method: :id %> <!-- Maybe implement a auto-complete search feature? -->
-  <%= f.button :submit %>
-<% end %>
+<div class="gx-0" id="authentication">
+  <div class="row gx-0">
+    <div class="col-12">
+      <%= simple_form_for @workout do |f| %>
+        <%= f.input :exercise_ids, collection: Exercise.where(workout_id: nil), input_html: {class: "transparent", placeholder: "Choose Exercises",multiple: true, data: {controller: "tom-select", tom_select_options_value: {tags: true, maxOptions: nil}}}, label_method: :name, value_method: :id %> <!-- Maybe implement a auto-complete search feature? -->
+        <div class="form-actions">
+          <%= f.button :submit, class:"button-green w-100 mt-4 mb-3" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,7 +1,7 @@
 // Specific CSS for your home-page
 .createworkout {
   margin-top: 5px;
-  background-color: #C4ED6D;
+  background-color: $app-color;
   color: white;
   padding-bottom: 5px;
   padding-left: 10px;
@@ -25,14 +25,14 @@
   color: white;
   padding: 40px 20px;
   justify-content: space-between;
-  border: 1px solid #C4ED6D;
+  border: 1px solid $app-color;
   margin: 15px 0;
 }
 
 .info-card4 {
   margin-top: 5px;
   background-color: #1f201e;
-  color: #C4ED6D;
+  color: $app-color;
   justify-content: space-between;
   margin-bottom: 5px;
 }
@@ -43,7 +43,7 @@
 
   i {
     font-size: 35px;
-    color: #C4ED6D;
+    color: $app-color;
   }
 }
 
@@ -64,5 +64,5 @@
 }
 
 #border {
-  border-color: #C4ED6D;
+  border-color: $app-color;
 }
