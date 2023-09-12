@@ -6,6 +6,7 @@ class CreateExercises < ActiveRecord::Migration[7.0]
       t.string :gif
       t.string :bodyPart
       t.string :target
+      t.string :equipment
       t.integer :sets
       t.integer :reps
       t.integer :weight
