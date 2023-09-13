@@ -38,22 +38,22 @@
   <% if current_user.bronze_achievement2? && achievement.name == "One is better than nothing" %>
     <%= button_to "Unlock Achievement", bronze2_path, data: {turbo_method: :post}%>
   <% end %>
-  <% if current_user.silver_achievement1? && achievement.id == "Wannabe Powerlifter" %>
+  <% if current_user.silver_achievement1? && achievement.name == "Wannabe Powerlifter" %>
     <%= button_to "Unlock Achievement", silver1_path, data: {turbo_method: :post}%>
   <% end %>
-  <% if current_user.silver_achievement2? && achievement.id == "Volume is key" %>
+  <% if current_user.silver_achievement2? && achievement.name == "Volume is key" %>
     <%= button_to "Unlock Achievement", silver2_path, data: {turbo_method: :post}%>
   <% end %>
-  <% if current_user.gold_achievement1? && achievement.id == "Biceps Abuser" %>
+  <% if current_user.gold_achievement1? && achievement.name == "Biceps Abuser" %>
     <%= button_to "Unlock Achievement", gold1_path, data: {turbo_method: :post}%>
   <% end %>
-  <% if current_user.gold_achievement2? && achievement.id == "Never Skip Leg Day" %>
+  <% if current_user.gold_achievement2? && achievement.name == "Never Skip Leg Day" %>
     <%= button_to "Unlock Achievement", gold2_path, data: {turbo_method: :post}%>
   <% end %>
-  <% if current_user.platinum_achievement1? && achievement.id == "Lightweight baby" %>
+  <% if current_user.platinum_achievement1? && achievement.name == "Lightweight baby" %>
     <%= button_to "Unlock Achievement", platinum1_path, data: {turbo_method: :post}%>
   <% end %>
-  <% if current_user.platinum_achievement2? && achievement.id == "Who is gonna carry the boats?" %>
+  <% if current_user.platinum_achievement2? && achievement.name == "Who is gonna carry the boats?" %>
     <%= button_to "Unlock Achievement", platinum2_path, data: {turbo_method: :post}%>
   <% end %>
 <% end %>
