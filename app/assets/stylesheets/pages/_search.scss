@@ -113,9 +113,10 @@
   background-position: center bottom;
   vertical-align: center;
   color: rgb(255, 255, 255);
-  background-position-y: -105px;
+  background-position-y: -90px;
   background-position-x: 75px;
   background-color: #3c3c3c;
+  background-repeat: no-repeat;
 
   h2{
     margin-bottom: 0;
@@ -159,6 +160,7 @@
   background-image: url('/assets/shoulders4.png');
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   vertical-align: center;
   color: rgb(255, 255, 255);
   background-position-x: 80px;
