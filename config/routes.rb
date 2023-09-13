@@ -29,7 +29,7 @@ Rails.application.routes.draw do
       post 'achievements'
     end
   end
-  resources :workout_programs, only: %i[show edit update create new destroy] do
+  resources :workout_programs, only: %i[show new create edit update destroy] do
     resources :workouts, shallow: true
   end
 

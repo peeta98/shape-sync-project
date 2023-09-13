@@ -10,11 +10,13 @@
             <i class="fas fa-trophy"></i>
           <% end %>
         </li>
-        <li class="nav-item">
-          <%= link_to workout_program_path(current_user.workout_program) do %>
-            <i class="fas fa-dumbbell"></i>
-          <% end %>
-        </li>
+        <% if current_user.workout_program.present? %>
+          <li class="nav-item">
+            <%= link_to workout_program_path(current_user.workout_program) do %>
+              <i class="fas fa-dumbbell"></i>
+            <% end %>
+          </li>
+        <% end %>
         <li class="nav-item">
           <%= link_to library_path do %>
             <i class="fas fa-book"></i>

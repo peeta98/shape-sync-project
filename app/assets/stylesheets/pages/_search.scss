@@ -44,7 +44,7 @@
   padding: 2rem;
   color: white;
   margin-top: 2rem;
-  margin-bottom: 0;
+  margin-bottom: 1rem;
   h2{
     margin-bottom: 0;
   }
@@ -61,7 +61,6 @@
   background-size: cover;
   background-position-x: 75px;
   background-position-y: 130px;
-  vertical-align: center;
   color: black;
   background-color: white;
 
@@ -79,10 +78,10 @@
   background-repeat: no-repeat;
   background-position: center center;
   vertical-align: center;
-  color: rgb(255, 255, 255);
+  color: black;
   background-position-x: 85px;
   background-position-y: -105px;
-  background-color: #3c3c3c;
+  background-color: white;
 
   h2{
     margin-bottom: 0;
@@ -95,10 +94,10 @@
   background-size: cover;
   background-position: center center;
   vertical-align: center;
-  color: rgb(255, 255, 255);
+  color: black;
   background-position-x: 75px;
   background-position-y: -170px;
-  background-color: #3c3c3c;
+  background-color: white;
   background-repeat: no-repeat;
 
   h2{
@@ -112,10 +111,10 @@
   background-size: cover;
   background-position: center bottom;
   vertical-align: center;
-  color: rgb(255, 255, 255);
+  color: black;
   background-position-y: -90px;
   background-position-x: 75px;
-  background-color: #3c3c3c;
+  background-color: white;
   background-repeat: no-repeat;
 
   h2{
@@ -129,9 +128,9 @@
   background-size: cover;
   background-position: center;
   vertical-align: center;
-  color: rgb(255, 255, 255);
+  color: black;
   background-position-x: 80px;
-  background-color: #3c3c3c;
+  background-color: white;
   background-repeat: no-repeat;
 
   h2{
@@ -145,9 +144,9 @@
   background-size: cover;
   background-position: center;
   vertical-align: center;
-  color: rgb(255, 255, 255);
+  color: black;
   background-position-x: 70px;
-  background-color: #3c3c3c;
+  background-color: white;
   background-repeat: no-repeat;
 
   h2{
@@ -162,10 +161,10 @@
   background-position: center;
   background-repeat: no-repeat;
   vertical-align: center;
-  color: rgb(255, 255, 255);
+  color: black;
   background-position-x: 80px;
   background-position-y: -60px;
-  background-color: #3c3c3c;
+  background-color: white;
 
   h2{
     margin-bottom: 0;
@@ -178,10 +177,10 @@
   background-size: cover;
   background-position: center;
   vertical-align: center;
-  color: rgb(255, 255, 255);
+  color: black;
   background-position-x: 100px;
   background-position-y: 0px;
-  background-color: #3c3c3c;
+  background-color: white;
   background-repeat: no-repeat;
   margin-bottom: 100px;
 
@@ -197,10 +196,10 @@
   background-size: cover;
   background-position: center;
   vertical-align: center;
-  color: rgb(255, 255, 255);
+  color: black;
   background-position-x: 49px;
   background-position-y: -70px;
-  background-color: #3c3c3c;
+  background-color: white;
   background-repeat: no-repeat;
 
   h2{
@@ -212,4 +211,13 @@
 .category-card:hover .show-exercises{
   display: block;
   background-color: transparent;
+}
+
+.button_styling{
+  display: flex;
+  align-items: center;
+  i{
+    font-size: 30px;
+    margin-right: 1rem;
+  }
 }
