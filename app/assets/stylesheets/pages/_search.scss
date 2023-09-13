@@ -57,7 +57,7 @@
 }
 
 .category-card.chest {
-  background-image: image-url('/assets/chest1.png');
+  background: image-url('/assets/chest1.png');
   background-size: cover;
   background-position-x: 75px;
   background-position-y: 130px;
@@ -72,7 +72,7 @@
 }
 
 .category-card.back {
-  background-image: image-url('/assets/back3.png');
+  background: image-url('/assets/back3.png');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -90,7 +90,7 @@
 }
 
 .category-card.abs {
-  background-image: image-url('/assets/abs1.png');
+  background: image-url('/assets/abs1.png');
   background-size: cover;
   background-position: center center;
   vertical-align: center;
@@ -107,7 +107,7 @@
 }
 
 .category-card.legs {
-  background-image: image-url('/assets/legs1.png');
+  background: image-url('/assets/legs1.png');
   background-size: cover;
   background-position: center bottom;
   vertical-align: center;
@@ -124,7 +124,7 @@
 }
 
 .category-card.triceps {
-  background-image: image-url('/assets/triceps1.png');
+  background: image-url('/assets/triceps1.png');
   background-size: cover;
   background-position: center;
   vertical-align: center;
@@ -140,7 +140,7 @@
 }
 
 .category-card.biceps {
-  background-image: image-url('/assets/biceps1.png');
+  background: image-url('/assets/biceps1.png');
   background-size: cover;
   background-position: center;
   vertical-align: center;
@@ -156,7 +156,7 @@
 }
 
 .category-card.shoulders {
-  background-image: image-url('/assets/shoulders4.png');
+  background: image-url('/assets/shoulders4.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -173,7 +173,7 @@
 }
 
 .category-card.cardio {
-  background-image: image-url('/assets/cardio.png');
+  background: image-url('/assets/cardio.png');
   background-size: cover;
   background-position: center;
   vertical-align: center;
@@ -192,7 +192,7 @@
 
 .category-card.all {
   margin-bottom: 2rem;
-  background-image: image-url('/assets/all.png');
+  background: image-url('/assets/all.png');
   background-size: cover;
   background-position: center;
   vertical-align: center;
