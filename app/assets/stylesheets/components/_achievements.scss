@@ -154,7 +154,7 @@ h1 {
 
 .bronzedescription {
   font-weight: lighter;
-  background-image: url('bronzeback.jpg');
+  background: image-url('bronzeback.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   color: rgb(40, 36, 36);
@@ -178,7 +178,7 @@ h1 {
 
 .silverdescription {
   font-weight: lighter;
-  background-image: url('silverback.jpeg');
+  background: image-url('silverback.jpg');
   color: rgb(40, 36, 36);
   display: block;
   grid-template-columns: 1fr;
@@ -203,7 +203,7 @@ h1 {
 
 .golddescription {
   font-weight: lighter;
-  background-image: url('goldback.jpg');
+  background: image-url('goldback.jpg');
   color: rgb(40, 36, 36);
   display: block;
   grid-template-columns: 1fr;
@@ -228,7 +228,7 @@ h1 {
 
 .platinumdescription {
   font-weight: lighter;
-  background-image: url('platback.jpg');
+  background: image-url('platback.jpg');
   color: rgb(40, 36, 36);
   display: block;
   grid-template-columns: 1fr;
