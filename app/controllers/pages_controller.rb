@@ -21,4 +21,9 @@ class PagesController < ApplicationController
       format.text { render partial: "pages/list", locals: { exercises: @exercises }, formats: [:html] }
     end
   end
+
+  def profile
+    @latest_achievement = current_user.show_latest_achievement
+    authorize @latest_achievement
+  end
 end
