@@ -12,6 +12,9 @@
 @import "components/index";
 @import "pages/index";
 
+p {
+  font-size: 19px;
+}
 html,body {
   background-color: black;
   height: 100%;
@@ -24,5 +27,3 @@ body{
   }
   font-family: 'Poppins', sans-serif;
 }
-
-
