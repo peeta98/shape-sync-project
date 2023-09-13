@@ -23,7 +23,7 @@ class PagesController < ApplicationController
   end
 
   def profile
-    @latest_achievement = current_user.show_latest_achievement
-    authorize @latest_achievement
+    @latest_achievement = current_user.show_latest_achievement if current_user.show_latest_achievement.present?
+    authorize @latest_achievement unless @latest_achievement.nil?
   end
 end

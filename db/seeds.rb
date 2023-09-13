@@ -244,7 +244,7 @@ achievement = Achievement.create!(
 # )
 
 # achievement21 = Achievement.create!(
-#   name: 'Broadback Brother',
+#   name: 'back Brother',
 #   message: 'Congratulations, you finished 80 back exercises!',
 #   description: 'Do a total of 80 back exercises',
 #   goal: 80,
