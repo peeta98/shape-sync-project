@@ -5,7 +5,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    border: 1px solid $app-color;
+    /* border: 1px solid $app-color; */
     border-radius: 16px;
     width: 60%;
     margin: auto;
@@ -96,7 +96,7 @@
   text-align: center;
   margin-top: 1rem;
   background-color: transparent;
-  border: 1px solid $app-color;
+  /* border: 1px solid $app-color; */
   border-radius: 16px;
   padding: 12px;
   color: white;
