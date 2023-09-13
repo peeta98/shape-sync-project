@@ -1,7 +1,7 @@
 <% if user_achievements.include?(achievement) %>
-  <div class="achievement">
-    <div style="color: #C4ED6D;"><strong><%= achievement.name %></strong></div>
-    <div><%= achievement.category %></div>
+
+    <div class="mb2" style="color: #C4ED6D;"><strong><%= achievement.name %></strong></div>
+   <div class="achievement"> <div><%= achievement.category %></div>
     <div>
       <span>1</span>
       <span>/</span>
@@ -12,8 +12,9 @@
   <div class="<%= achievement.trophy %>description"><p><%= achievement.description %><div>Unlocked! <%= image_tag "#{achievement.trophy}trophy.png", alt: "#{achievement.trophy.capitalize} Trophy", width: 20, height: 20 %></div></p></div>
 
 <% else %>
+<div style="color: #C4ED6D;"><strong><%= achievement.name %></strong></div>
   <div class="achievement" data-controller="achievement">
-    <div style="color: #C4ED6D;"><strong><%= achievement.name %></strong></div>
+
     <div><%= achievement.category %></div>
     <div data-target="achievement.progress">
       <span data-target="achievement.progressValue">0</span>
@@ -25,9 +26,8 @@
 
     </div>
   </div>
-  <div class="description"><p>Description: <%= achievement.description %></p>
+  <div class="description"><p><%= achievement.description %></p>
   <% unless achievement.status == 'Unlocked' %>
-        Complete Workout
       <% else %>
         Achievement Unlocked
       <% end %>
