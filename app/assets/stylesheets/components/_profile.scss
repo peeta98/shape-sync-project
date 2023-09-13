@@ -23,7 +23,7 @@
 
   a {
     text-decoration: none;
-    font-size: 15px;
+    font-size: 19px;
     color: $app-color;
     font-weight: bold;
   }
@@ -50,7 +50,7 @@
 
   i {
     color: $app-color;
-    font-size: 15px;
+    font-size: 19px;
     vertical-align: super;
   }
 }
@@ -67,7 +67,7 @@
 
   i {
     color: $app-color;
-    font-size: 15px;
+    font-size: 19px;
   }
 }
 
@@ -94,7 +94,7 @@
 
 .profile-input {
     background-color: transparent;
-    border: 1px solid $app-color;
+    /* border: 1px solid $app-color; */
     color: white;
     border-radius: 16px;
   }
@@ -136,7 +136,7 @@
     color: white;
     padding: 5px;
     border-radius: 15px;
-    border: 1px solid $app-color;
+    /* border: 1px solid $app-color; */
   }
 
   #goals {
@@ -146,3 +146,16 @@
   #bottom {
 
   }
+
+.my-3 {
+  font-size: 19px;
+}
+
+.profile-grid {
+  display: grid;
+	grid-template-columns: 1fr 1fr;
+	//grid-template-rows: 150px 150px;
+	//grid-row-gap: 30px;
+	//grid-column-gap: 30px;
+	//grid-gap: 30px;
+}
