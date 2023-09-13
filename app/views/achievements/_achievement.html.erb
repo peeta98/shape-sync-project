@@ -1,6 +1,6 @@
 <% if user_achievements.include?(achievement) %>
 
-    <div class="mb2" style="color: #C4ED6D;"><strong><%= achievement.name %></strong></div>
+    <div class="mb2" style="color: #C4ED6D;"><strong><h4 class="mt-5"><%= achievement.name %></strong></h4></div>
    <div class="achievement"> <div><%= achievement.category %></div>
     <div>
       <span>1</span>
@@ -12,7 +12,7 @@
   <div class="<%= achievement.trophy %>description"><p><%= achievement.description %><div>Unlocked! <%= image_tag "#{achievement.trophy}trophy.png", alt: "#{achievement.trophy.capitalize} Trophy", width: 20, height: 20 %></div></p></div>
 
 <% else %>
-<div style="color: #C4ED6D;"><strong><%= achievement.name %></strong></div>
+<div style="color: #C4ED6D;"><strong><h4 class="mt-5"><%= achievement.name %></h4></strong></div>
   <div class="achievement" data-controller="achievement">
 
     <div><%= achievement.category %></div>
