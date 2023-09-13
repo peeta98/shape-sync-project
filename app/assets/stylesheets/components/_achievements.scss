@@ -31,6 +31,14 @@ h1 {
   gap: 10px;
   grid-auto-rows: minmax(100px, auto);
   height: 100%;
+
+
+}
+
+#icons {
+  i {
+    color: $app-color;
+  }
 }
 
 
@@ -183,6 +191,8 @@ h1 {
 
   p {
     padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
 
@@ -206,6 +216,8 @@ h1 {
 
   p {
     padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
 
