@@ -10,7 +10,7 @@
   <%= link_to "Delete All",
                 workout_program_path(@workout_program),
                 data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
-                class: "btn-already mb-5" %>
+                class: "btn-already mb-4" %>
 </div>
 
 <% unless @workout_program.workouts.any?(&:persisted?) %>
