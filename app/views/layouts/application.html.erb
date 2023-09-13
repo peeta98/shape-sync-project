@@ -14,7 +14,11 @@
     <%= javascript_importmap_tags %>
   </head>
   <body>
-    <%= yield %>
+    <div class="page-container">
+      <div class="navbar-container"><%= render "shared/navbar" %></div>
+      <div class="content-container"><%= yield %></div>
+    </div>
+
     <% if user_signed_in? %>
       <%= render 'pages/user_navbar' %>
     <% end %>
