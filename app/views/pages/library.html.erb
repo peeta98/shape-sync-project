@@ -1,6 +1,6 @@
 <div class="container mt-0">
   <div class="library mt-4" data-controller="library-exercises">
-    <h1>Exercises Library</h1>
+    <h1>Exercyclopedia</h1>
     <div class="my-4 mx-0 gx-0">
       <%= form_with url: library_path, method: :get, html: {class: "search-form transparent", data: {library_exercises_target: "form"}} do |form| %>
         <%= form.text_field :search, class: "transparent py-2", placeholder: "Search for exercises...",value: params[:search] ,data: {library_exercises_target: "search", action:"keyup->library-exercises#search"}%>
