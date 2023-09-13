@@ -7,9 +7,10 @@
     <% end %>
   </p>
   <% exercises.each do |exercise| %>
-   <ul >
+        <ul >
           <li><div class="button_styling" data-bs-toggle="modal" data-bs-target="#exerciseModal<%= exercise.id %>">
-          <i class="fa-solid fa-eye"></i> <%= exercise.name %></div></li></ul>
+          <i class="fa-solid fa-eye"></i><%= exercise.name %></div></li>
+        </ul>
           <div class="modal fade" id="exerciseModal<%= exercise.id %>" tabindex="-1" role="dialog" aria-labelledby="exerciseModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
               <div class="modal-content">
@@ -26,9 +27,9 @@
               </div>
             </div>
           </div>
-   
+
   <% end %>
-  <% categories = ['Chest', 'Biceps', 'Triceps', 'Abs', 'Back', 'Legs', 'Shoulders', 'All', 'Cardio'] %>
+  <% categories = ['Chest', 'Biceps', 'Triceps', 'Abs', 'Back', 'Legs', 'Shoulders', 'All'] %>
   <% categories.each do |category| %>
    <% css_class = case category
     when 'Chest'
@@ -43,8 +44,6 @@
       'abs'
     when 'Biceps'
       'biceps'
-    when 'Cardio'
-      'cardio'
     when 'All'
       'all'
     when 'Triceps'
@@ -55,14 +54,14 @@
     <div class="category-card <%= css_class %>" data-library-exercises-target="button" data-action="click->library-exercises#showExercises" id ="<%= category %>">
       <h2><%= category %></h2>
     </div>
-    
+
     <!-- DATA ACTION IS ONLY WORKIN FORM CHEST CATEGORY - NEEDS DEBUGGING -->
     <div class="d-none" data-library-exercises-target="exercises" id ="<%= category %>">
       <div >
         <% case category %>
-        <% when 'Chest' %>
-        <% chest_exercises = Exercise.all.select { |exercise| exercise.bodyPart == 'chest' } %>
-        <% chest_exercises.each do |chest_exercise| %>
+          <% when 'Chest' %>
+          <% chest_exercises = Exercise.all.select { |exercise| exercise.bodyPart == 'chest' } %>
+          <% chest_exercises.each do |chest_exercise| %>
            <ul >
           <li><div class="button_styling" data-bs-toggle="modal" data-bs-target="#chestexerciseModal<%= chest_exercise.id %>">
           <i class="fa-solid fa-eye"></i> <%= chest_exercise.name %></div></li></ul>
@@ -83,7 +82,7 @@
             </div>
           </div>
         <% end %>
-        <% when 'Back' %>
+          <% when 'Back' %>
           <% back_exercises = Exercise.all.select { |exercise| exercise.bodyPart == 'back' } %>
           <% back_exercises.each do |back_exercise| %>
            <ul >
@@ -106,7 +105,7 @@
             </div>
           </div>
           <% end %>
-        <% when 'Legs' %>
+          <% when 'Legs' %>
           <% legs_exercises = Exercise.all.select { |exercise| exercise.bodyPart == 'upper legs' || exercise.bodyPart == 'lower legs' } %>
           <% legs_exercises.each do |legs_exercise| %>
            <ul >
@@ -129,7 +128,7 @@
             </div>
           </div>
           <% end %>
-        <% when 'Shoulders' %>
+          <% when 'Shoulders' %>
           <% shoulder_exercises = Exercise.all.select { |exercise| exercise.bodyPart == 'shoulders'} %>
           <% shoulder_exercises.each do |shoulder_exercise| %>
            <ul >
@@ -152,7 +151,7 @@
             </div>
           </div>
           <% end %>
-        <% when 'Biceps' %>
+          <% when 'Biceps' %>
           <% biceps_exercises = Exercise.all.select { |exercise| exercise.target == 'biceps'} %>
           <% biceps_exercises.each do |biceps_exercise| %>
             <ul >
@@ -175,7 +174,7 @@
             </div>
           </div>
           <% end %>
-        <% when 'Triceps' %>
+          <% when 'Triceps' %>
           <% triceps_exercises = Exercise.all.select { |exercise| exercise.target == 'triceps'} %>
           <% triceps_exercises.each do |triceps_exercise| %>
             <ul >
@@ -198,7 +197,7 @@
             </div>
           </div>
           <% end %>
-        <% when 'Abs' %>
+          <% when 'Abs' %>
           <% abs_exercises = Exercise.all.select { |exercise| exercise.target == 'abs'} %>
           <% abs_exercises.each do |abs_exercise| %>
            <ul >
@@ -221,38 +220,36 @@
             </div>
           </div>
           <% end %>
-        <% when 'Cardio' %>
-          <p><%= 'Seed some Cardio exercises, because this API does not have that 🤣' %></p>
-            <% when 'All' %>
-          <% all_exercises = Exercise.all%>
-          <% all_exercises.each do |all_exercise| %>
-           <ul >
-          <li><div class="button_styling" data-bs-toggle="modal" data-bs-target="#exercise8Modal<%= all_exercise.id %>">
-          <i class="fa-solid fa-eye"></i> <%= all_exercise.name %></div></li></ul>
-          <div class="modal fade" id="exercise8Modal<%= all_exercise.id %>" tabindex="-1" role="dialog" aria-labelledby="exercise8ModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5"  id="exercise8ModalLabel"><%= all_exercise.name %></h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  <% if all_exercise.gif.nil? %>
-                    <p>This exercise does not have a GIF image.</p>
-                  <% else %>
-                    <%= image_tag all_exercise.gif, alt: 'Exercise GIF' %>
-                  <% end %>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <% when 'All' %>
+            <% all_exercises = Exercise.all%>
+            <% all_exercises.each do |all_exercise| %>
+            <ul >
+            <li><div class="button_styling" data-bs-toggle="modal" data-bs-target="#exercise8Modal<%= all_exercise.id %>">
+            <i class="fa-solid fa-eye"></i> <%= all_exercise.name %></div></li></ul>
+            <div class="modal fade" id="exercise8Modal<%= all_exercise.id %>" tabindex="-1" role="dialog" aria-labelledby="exercise8ModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5"  id="exercise8ModalLabel"><%= all_exercise.name %></h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <% if all_exercise.gif.nil? %>
+                      <p>This exercise does not have a GIF image.</p>
+                    <% else %>
+                      <%= image_tag all_exercise.gif, alt: 'Exercise GIF' %>
+                    <% end %>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
           <% end %>
-        <% else %>
-          <% exercises.each do |exercise| %>
-            <p><%= exercise.name %></p>
+          <% else %>
+            <% exercises.each do |exercise| %>
+              <p><%= exercise.name %></p>
           <% end %>
         <% end %>
       </div>

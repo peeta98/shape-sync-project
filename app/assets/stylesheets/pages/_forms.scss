@@ -35,7 +35,7 @@
     color: black;
     display: flex;
     font-family: Phantomsans, sans-serif;
-    font-size: 18px;
+    font-size: 19px;
     font-weight: bold;
     justify-content: center;
     line-height: 1em;
@@ -59,7 +59,7 @@
     color: black;
     display: flex;
     font-family: Phantomsans, sans-serif;
-    font-size: 18px;
+    font-size: 19px;
     font-weight: bold;
     justify-content: center;
     line-height: 1em;
@@ -76,7 +76,7 @@
   }
   .transparent {
     background-color: transparent;
-    border: 1px solid $app-color;
+    /* border: 1px solid $app-color; */
     color: white;
     border-radius: 16px;
   }

@@ -1,10 +1,9 @@
 <div class="container mt-2 mb-4">
-     <h2 class="text-center mb-3">Achievements Overview</h2>
     <div class="wrapper">
       <div class="py-3 px-3 text-center"> <h1>Welcome to your very own trophy cabinet!</h1>
           <p>Take a look at the some cool statistics based on your workouts and try to fill your cabinet with trophies!</p></div>
       <div class="text-center py-3 px-3">
-        <h1 class="py-3 px-3">Statistics</h2>
+        <h1 class="py-3 px-3">Gymtistics</h2>
        <p class="mt-4"><i class="fa-solid fa-star" id="icn"></i></p><p> Favorite body part to sculpt</p><p> <strong><%= current_user.favorite_bodypart.nil? ? 'None' : current_user.favorite_bodypart[0].capitalize %> </strong> : Crushed <%= current_user.favorite_bodypart.nil? ? '0' : current_user.favorite_bodypart[1] %> weekly sets!</p>
        <p class="mt-4"><i class="fa-solid fa-dumbbell" id="icn"></i> </p><p>Top muscle for pumping reps</p><p><strong><%= current_user.favorite_target.nil? ? 'None' : current_user.favorite_target[0].capitalize %></strong> : Nailed <%= current_user.favorite_target.nil? ? '0' : current_user.favorite_target[1] %> weekly reps!</p>
        <p class="mt-4"><i class="fa-solid fa-chart-line" id="icn"></i></p><p> Absolute beast mode exercise</p><p><strong> <%= current_user.strongest_exercise.nil? ? 'None' : current_user.strongest_exercise.name.capitalize %></strong> : Mastered an epic <%= current_user.strongest_exercise.nil? ? '0' : current_user.strongest_exercise.weight %>kg!</p>

@@ -2,23 +2,23 @@
 <%= turbo_frame_tag dom_id(workout) do %>
   <% case workout.categories
     when 'Chest'
-      image = '/assets/images/chest1.png'
+      image = '/assets/chest1.png'
     when 'Back'
-      image = '/assets/images/back3.png'
+      image = '/assets/back3.png'
     when 'Legs'
-      image = '/assets/images/legs1.png'
+      image = '/assets/legs1.png'
     when 'Shoulders'
-      image = '/assets/images/shoulders4.png'
+      image = '/assets/shoulders4.png'
     when 'Abs'
-      image = '/assets/images/abs1.png'
+      image = '/assets/abs1.png'
     when 'Biceps'
-      image = '/assets/images/biceps1.png'
+      image = '/assets/biceps1.png'
     when 'Cardio'
-      image = '/assets/images/cardio.png'
+      image = '/assets/cardio.png'
     when 'FullBody'
       image = '/assets/all.png'
     when 'Triceps'
-      image = '/assets/images/triceps1.png'
+      image = '/assets/triceps1.png'
     when 'UpperBody'
       image = '/assets/upperbody.png'
     when 'LowerBody'
@@ -26,10 +26,10 @@
     end
   %>
   <div class="workout-card" style="background-image: url(<%= image  %>);">
-    <div class="d-flex">
+    <div class="workout-info d-flex align-items-center">
       <h4><%= workout.categories %></h4>
       <%= link_to edit_workout_path(workout) do %>
-        <i class="fa-solid fa-pen-to-square fa-xl"></i>
+        <sup><i class="fa-solid fa-pen-to-square fa-xl"></i></sup>
       <% end %>
     </div>
     <div class="workout-card-links">

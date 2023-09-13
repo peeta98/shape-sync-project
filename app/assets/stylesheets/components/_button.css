@@ -1,12 +1,13 @@
 
 .button_styling {
-    background-color: inherit;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+  font-size: 19px;
+  background-color: inherit;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 0px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .button_styling:hover {
@@ -16,5 +17,6 @@
 ul  {
     list-style-type: none;
     text-align: left;
+    margin-left: 0;
+    padding-left: 0;
   }
-  
