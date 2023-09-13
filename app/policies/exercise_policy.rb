@@ -33,7 +33,7 @@ class ExercisePolicy < ApplicationPolicy
   end
 
   def remove_association?
-    record.workout.workout_program.user == user
+    record.workout.nil? ? true : record.workout.workout_program.user == user
   end
 
   def library?

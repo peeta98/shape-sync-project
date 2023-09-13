@@ -1,5 +1,5 @@
 <div class="global-container">
-  <div class="container2 user-goal mt-4 mb-3 text-center">
+  <div class="container2 user-goal mt-4 mb-3 text-start text-justify">
       <h2>Welcome <%= current_user.username %>!</h2>
       <p>Welcome to your profile page, your personal fitness hub! Here, you have the power to shape your fitness journey.</p>
       <p>Easily set and track your <a href="#goals">goals</a>,
@@ -11,7 +11,7 @@
   <div class="container2 text-center mb-3" data-controller="edit-profile">
     <div class="user-info my-3">
       <div data-edit-profile-target="infos">
-        <h2 class="mb-4">My Metrics <i class="fa-solid fa-pen-to-square" data-action="click->edit-profile#displayForm"></i></h2>
+        <h2 class="mb-4">Profile <i class="fa-solid fa-pen-to-square" data-action="click->edit-profile#displayForm"></i></h2>
         <% if current_user.avatar.attached? %>
           <%= cl_image_tag current_user.avatar.key, alt: "default_avatar.jpg", id: "profile_avatar" %>
         <% else %>
