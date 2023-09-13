@@ -85,6 +85,6 @@ class User < ApplicationRecord
 
   def show_latest_achievement
     last_user_achievement = user_achievements.max_by{ |user_achievement| user_achievement.date_of_completion }
-    last_user_achievement.achievement
+    last_user_achievement.achievement unless last_user_achievement.nil?
   end
 end
