@@ -2,6 +2,7 @@
   padding: 1rem;
   padding-bottom: 0;
   h1,h2,h3,h4,h5,h6{
+    font-size: 22px;
     color: white;
   }
   p{
@@ -86,23 +87,45 @@
 
 
 .exercises-div{
-  background-color: #3c3c3c;
+  margin-top: 8px;
+  background-color: white;
   border-radius: 16px;
-  padding: 1rem;
+  padding: 2rem;
+  .name{
+    margin: 1rem 0;
+    padding-top: 1rem;
+    p{
+      margin-left: 1rem;
+      font-weight: bold;
+    }
+  }
+  .attributes{
+    border-bottom: 1px solid black;
+    border-end-start-radius: 16px;
+    border-end-end-radius: 16px;
+    padding-bottom: 2rem;
+    h6{
+      font-size: 22px;
+      margin-bottom: 0;
+    }
+  }
   h6{
-    color: white;
-    font-size: 20px;
-    border-bottom: 2px solid $app-color;
+    color: black;
+    font-size: 22px;
   }
   p{
-    font-size: 18px;
-    margin: 0 auto;
+    color: black;
+    font-size: 19px;
     margin-bottom: 0;
   }
   i{
-    font-size: 25px;
+    color: black;
+    font-size: 30px;
   }
 
+}
+strong{
+  font-weight: bold;
 }
 
 #table {
@@ -132,7 +155,7 @@
   color: #FFFFFF;
   display: flex;
   font-family: Phantomsans, sans-serif;
-  font-size: 18px;
+  font-size: 19px;
   font-weight: bold;
   justify-content: center;
   line-height: 1em;
@@ -193,5 +216,17 @@
 .insert-exercises{
   i{
     font-size: 40px;
+  }
+}
+
+.workout-program{
+  text-align: center;
+  padding: 1rem;
+  h2{
+    margin-top: 1rem;
+    margin-bottom: 0;
+  }
+  .profile-input{
+    padding: 20px;
   }
 }
