@@ -7,28 +7,26 @@
     <% end %>
   </p>
   <% exercises.each do |exercise| %>
-     <ul >
-          <li><div class="button_styling" data-bs-toggle="modal" data-bs-target="#exercise0Modal<%= exercise.id %>">
+   <ul >
+          <li><div class="button_styling" data-bs-toggle="modal" data-bs-target="#exerciseModal<%= exercise.id %>">
           <i class="fa-solid fa-eye"></i> <%= exercise.name %></div></li></ul>
-          <div class="modal fade" id="exercise0Modal<%= exercise.id %>" tabindex="-1" role="dialog" aria-labelledby="exercise0ModalLabel" aria-hidden="true">
+          <div class="modal fade" id="exerciseModal<%= exercise.id %>" tabindex="-1" role="dialog" aria-labelledby="exerciseModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h1 class="modal-title fs-5"  id="exercise0ModalLabel"><%= exercise.name %></h1>
+                  <h1 class="modal-title fs-5"  id="exerciseModalLabel"><%= exercise.name %></h1>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                 <% if exercise.gif.nil? %>
-                    <p>This exercise does not have a GIF image.</p>
-                  <% else %>
                     <%= image_tag exercise.gif, alt: 'Exercise GIF' %>
-                  <% end %>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
               </div>
             </div>
+          </div>
+   
   <% end %>
   <% categories = ['Chest', 'Biceps', 'Triceps', 'Abs', 'Back', 'Legs', 'Shoulders', 'All', 'Cardio'] %>
   <% categories.each do |category| %>
@@ -65,13 +63,13 @@
         <% chest_exercises = Exercise.all.select { |exercise| exercise.bodyPart == 'chest' } %>
         <% chest_exercises.each do |chest_exercise| %>
            <ul >
-          <li><div class="button_styling" data-bs-toggle="modal" data-bs-target="#exerciseModal<%= chest_exercise.id %>">
+          <li><div class="button_styling" data-bs-toggle="modal" data-bs-target="#chestexerciseModal<%= chest_exercise.id %>">
           <i class="fa-solid fa-eye"></i> <%= chest_exercise.name %></div></li></ul>
-          <div class="modal fade" id="exerciseModal<%= chest_exercise.id %>" tabindex="-1" role="dialog" aria-labelledby="exerciseModalLabel" aria-hidden="true">
+          <div class="modal fade" id="chestexerciseModal<%= chest_exercise.id %>" tabindex="-1" role="dialog" aria-labelledby="chestexerciseModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h1 class="modal-title fs-5"  id="exerciseModalLabel"><%= chest_exercise.name %></h1>
+                  <h1 class="modal-title fs-5"  id="chestexerciseModalLabel"><%= chest_exercise.name %></h1>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
