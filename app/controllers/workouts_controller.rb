@@ -52,6 +52,7 @@ class WorkoutsController < ApplicationController
     end
   end
 
+
   def destroy
     @workout.destroy
     redirect_to @workout_program, notice: 'Weekly workout was successfully deleted.'

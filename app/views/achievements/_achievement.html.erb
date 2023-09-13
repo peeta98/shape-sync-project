@@ -1,20 +1,59 @@
-<div class="achievement" data-controller="achievement">
-  <div style="color: #C4ED6D;"><strong><%= achievement.name %></strong></div>
-  <div><%= achievement.category %></div>
-  <div data-target="achievement.progress">
-    <span data-target="achievement.progressValue">0</span>
-    <span>/</span>
-    <span data-target="achievement.goal"><%= achievement.goal %></span>
-  </div>
+<% if user_achievements.include?(achievement) %>
+  <div class="achievement">
+    <div style="color: #C4ED6D;"><strong><%= achievement.name %></strong></div>
+    <div><%= achievement.category %></div>
+    <div>
+      <span>1</span>
+      <span>/</span>
+      <span>1</span>
+    </div>
 
-  <div data-action="click->achievement#completeWorkout" data-target="achievement.completeButton">
-
   </div>
-</div>
-<div class="description"><p>Description: <%= achievement.description %></p>
-<% unless achievement.status == 'Unlocked' %>
-      Complete Workout
-    <% else %>
-      Achievement Unlocked
-    <% end %>
-      <div data-target="achievement.status"><%= achievement.status %></div></div>
+  <div class="<%= achievement.trophy %>description"><p><%= achievement.description %><div>Unlocked! <%= image_tag "#{achievement.trophy}trophy.png", alt: "#{achievement.trophy.capitalize} Trophy", width: 20, height: 20 %></div></p></div>
+
+<% else %>
+  <div class="achievement" data-controller="achievement">
+    <div style="color: #C4ED6D;"><strong><%= achievement.name %></strong></div>
+    <div><%= achievement.category %></div>
+    <div data-target="achievement.progress">
+      <span data-target="achievement.progressValue">0</span>
+      <span>/</span>
+      <span data-target="achievement.goal"><%= achievement.goal %></span>
+    </div>
+
+    <div data-action="click->achievement#completeWorkout" data-target="achievement.completeButton">
+
+    </div>
+  </div>
+  <div class="description"><p>Description: <%= achievement.description %></p>
+  <% unless achievement.status == 'Unlocked' %>
+        Complete Workout
+      <% else %>
+        Achievement Unlocked
+      <% end %>
+        <div data-target="achievement.status"><%= achievement.status %></div></div>
+  <% if current_user.bronze_achievement1? && achievement.id == 1 %>
+    <%= button_to "Unlock Achievement", bronze1_path, data: {turbo_method: :post} %>
+  <% end %>
+  <% if current_user.bronze_achievement2? && achievement.id == 2 %>
+    <%= button_to "Unlock Achievement", bronze2_path, data: {turbo_method: :post} %>
+  <% end %>
+  <% if current_user.silver_achievement1? && achievement.id == 3 %>
+    <%= button_to "Unlock Achievement", silver1_path, data: {turbo_method: :post} %>
+  <% end %>
+  <% if current_user.silver_achievement2? && achievement.id == 4 %>
+    <%= button_to "Unlock Achievement", silver2_path, data: {turbo_method: :post} %>
+  <% end %>
+  <% if current_user.gold_achievement1? && achievement.id == 5 %>
+    <%= button_to "Unlock Achievement", gold1_path, data: {turbo_method: :post} %>
+  <% end %>
+  <% if current_user.gold_achievement2? && achievement.id == 6 %>
+    <%= button_to "Unlock Achievement", gold2_path, data: {turbo_method: :post} %>
+  <% end %>
+  <% if current_user.platinum_achievement1? && achievement.id == 7 %>
+    <%= button_to "Unlock Achievement", platinum1_path, data: {turbo_method: :post} %>
+  <% end %>
+  <% if current_user.platinum_achievement2? && achievement.id == 8 %>
+    <%= button_to "Unlock Achievement", platinum2_path, data: {turbo_method: :post} %>
+  <% end %>
+<% end %>

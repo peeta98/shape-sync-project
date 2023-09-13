@@ -5,7 +5,7 @@
   gap: 10px;
   width: 100%;
   padding: 20px;
-  background-color: #36373e;
+  background-color: black;
 }
 
 .container1 {
@@ -24,13 +24,13 @@
   a {
     text-decoration: none;
     font-size: 15px;
-    color: #C4ED6D;
+    color: $app-color;
     font-weight: bold;
   }
 }
 
 .container3 {
-  background-color: #272726;
+  background-color: #3c3c3c;
   color: white;
   padding-left: 10px;
   padding-top: 5px;
@@ -39,7 +39,7 @@
 
 
 .user-info {
-  background-color: rgb(65, 65, 65);
+  background-color: #3c3c3c;
   display: inline-block;
   width: 100%;
   border-radius: 15px;
@@ -47,17 +47,16 @@
   padding-right: 15px;
   padding-top: 15px;
   justify-content: left;
-  border: 1px solid #C4ED6D;
 
   i {
-    color: #C4ED6D;
+    color: $app-color;
     font-size: 15px;
     vertical-align: super;
   }
 }
 
 .user-goal {
-  background-color: rgb(65, 65, 65);
+  background-color: #3c3c3c;
   display: inline-block;
   width: 100%;
   border-radius: 15px;
@@ -65,16 +64,15 @@
   padding-right: 15px;
   padding-top: 15px;
   justify-content: left;
-  border: 1px solid #C4ED6D;
 
   i {
-    color: #C4ED6D;
+    color: $app-color;
     font-size: 15px;
   }
 }
 
 .user-achievements {
-  background-color: rgb(65, 65, 65);
+  background-color: #3c3c3c;
   display: inline-block;
   width: 100%;
   padding-left: 15px;
@@ -84,8 +82,8 @@
 
 .workoutbtn {
   text-align: center;
-  background-color: #8aaa46;
-  color: white;
+  background-color: $app-color;
+  color: black;
   font-weight: bold;
   width: 100%;
   text-decoration: none;
@@ -96,7 +94,7 @@
 
 .profile-input {
     background-color: transparent;
-    border: 1px solid #C4ED6D;
+    border: 1px solid $app-color;
     color: white;
     border-radius: 16px;
   }
@@ -106,7 +104,7 @@
     border:none;
     color: white;
     border-radius: 10px;
-    background-color: #272726;
+    background-color: #3c3c3c;
     margin-left: -5px;
   }
 
@@ -134,11 +132,11 @@
     top: 20px;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #272726;
+    background-color: #3c3c3c;
     color: white;
     padding: 5px;
     border-radius: 15px;
-    border: 1px solid #C4ED6D;
+    border: 1px solid $app-color;
   }
 
   #goals {
