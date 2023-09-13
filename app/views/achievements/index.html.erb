@@ -3,7 +3,7 @@
     <div class="wrapper">
       <div class="py-3 px-3 text-center"> <h1>Welcome to your very own trophy cabinet!</h1>
           <p>Take a look at the some cool statistics based on your workouts and try to fill your cabinet with trophies!</p></div>
-      <div class="text-center py-3 px-3">
+      <div class="text-center py-3 px-3" id="icons">
         <h1 class="py-3 px-3">Statistics</h2>
         <p><i class="fa-solid fa-star"></i> Your favourite body part seems to be <%= current_user.favorite_bodypart.nil? ? 'none' : current_user.favorite_bodypart[0] %>, which you completed <%= current_user.favorite_bodypart.nil? ? 0 : current_user.favorite_bodypart[1] %> weekly sets!</p>
         <p><i class="fa-solid fa-dumbbell"></i> Your favourite muscle to grind reps is <%= current_user.favorite_target.nil? ? 'none' : current_user.favorite_target[0] %>, which you did a total of <%= current_user.favorite_target.nil? ? 0 : current_user.favorite_target[1] %> weekly reps!</p>

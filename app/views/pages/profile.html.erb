@@ -52,11 +52,25 @@
   </div>
 
   <div class="container2 user-goal mb-5">
-    <div class="container1 mx-4 my-5 justify-content-center">
-      <h2 class="text-center"><i class="fa-solid fa-dumbbell"></i> Latest unlocks <i class="fa-solid fa-dumbbell"></i></h2>
+    <div class="container1 mx-4 justify-content-center">
+      <h2 class="text-center mb-2"><i class="fa-solid fa-dumbbell"></i> Latest unlocks <i class="fa-solid fa-dumbbell"></i></h2>
     </div>
   </div>
-  <div class="container3 mx-4 mb-3 justify-content-center bg-dark" id="bottom">
+  <div class="container3 mb-3 justify-content-center bg-dark" id="bottom">
     <p class="text-center">No achievements yet</p>
   </div>
+
+  <div class="container">
+    <h2>Latest Achievement</h2>
+    <% if @latest_achievement %>
+    <div class="achievement">
+      <div><strong><%= @latest_achievement.name %></strong></div>
+      <div><%= @latest_achievement.category %></div>
+      <div><%= @latest_achievement.description %></div>
+    </div>
+    <% else %>
+      <p>No achievements yet.</p>
+    <% end %>
+  </div>
+
 </div>
