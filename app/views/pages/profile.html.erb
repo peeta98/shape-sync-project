@@ -2,7 +2,7 @@
   <div class="container2 user-goal mt-4 mb-3 text-start text-justify p-4">
       <h2>Welcome <%= current_user.username %>!</h2>
       <p>Welcome to your profile page, your personal fitness hub! Here, you have the power to shape your fitness journey.</p>
-      <p>Easily set and track your <a href="#goals">goals</a>,
+      <p>Easily set and track your <span><a href="#goals">goals</a></span>,
         customize your metrics, and showcase your progress with your profile picture.
         It's your space to make every workout count and celebrate your <a href="#bottom">achievements.</a></p>
       <p> Let's get started on your path to a healthier, stronger you!</p>
@@ -53,22 +53,22 @@
 
   <div class="container2 user-goal p-4">
     <div class="container1 mx-4 justify-content-center">
-      <h2 class="text-center mb-2"><i class="fa-solid fa-dumbbell"></i> Latest unlocks <i class="fa-solid fa-dumbbell"></i></h2>
+      <h2 class="text-center mb-2"><i class="fa-solid fa-dumbbell"></i> Latest unlock <i class="fa-solid fa-dumbbell"></i></h2>
     </div>
-  </div>
-
-  <div class="container p-4">
-    <h2>Latest Achievement</h2>
     <% if @latest_achievement.present? %>
-    <div class="achievement p-4">
-      <div><strong><%= @latest_achievement.name %></strong></div>
-      <div><%= @latest_achievement.category %></div>
+    <div class="row1 mt-2"><%= @latest_achievement.category %></div>
+    <div class="latest-achievement p-2">
+      <div><strong><%= @latest_achievement.name %></strong> <i class="fa-solid fa-unlock"></i></div>
+
       <div><%= @latest_achievement.description %></div>
     </div>
     <% else %>
       <p>No achievements yet.</p>
     <% end %>
   </div>
+
+
+
   <%= link_to "Sign Out",
                 destroy_user_session_path,
                 data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
