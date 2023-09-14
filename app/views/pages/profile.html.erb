@@ -56,7 +56,6 @@
       <h2 class="text-center mb-2"><i class="fa-solid fa-dumbbell"></i> Latest unlock <i class="fa-solid fa-dumbbell"></i></h2>
     </div>
     <% if @latest_achievement.present? %>
-      <div class="description">
         <div class="row1 mt-2">
           <%= @latest_achievement.category %>
         </div>
@@ -64,10 +63,9 @@
           <div><strong><%= @latest_achievement.name %></strong> <i class="fa-solid fa-unlock"></i></div>
           <div><%= @latest_achievement.description %></div>
         </div>
-      </div>
-    <% else %>
-      <p>No achievements yet.</p>
-    <% end %>
+      <% else %>
+        <p>No achievements yet.</p>
+      <% end %>
   </div>
 
 

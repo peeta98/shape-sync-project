@@ -5,8 +5,6 @@ export default class extends Controller {
   static targets= ["weight", "weights", "input", "form"]
   update(event) {
     event.preventDefault()
-    console.log(this.inputTarget.value)
-    console.log(this.weightsTarget.innerText)
     this.weightsTarget.innerText = this.inputTarget.value
     const url = this.formTarget.action
     fetch(url, {
