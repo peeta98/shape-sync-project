@@ -117,8 +117,8 @@
     width: 150px;
     height: 150px;
     margin-bottom: 20px;
-    border: 10px solid transparent;
     border-radius: 50%;
+    border: 3px solid $app-color;
   }
 
   #goalSelect {
@@ -144,9 +144,6 @@
     color: white;
   }
 
-  #bottom {
-
-  }
 
  .logout{
    font-size: 20px;
