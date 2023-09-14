@@ -1,34 +1,36 @@
 <% content_for :meta_title, "My Workout Program #{DEFAULT_META["meta_product_name"]}" %>
 <div class="workout-cards mt-4" data-controller="add-exercises-to-workout">
-  <div>
-    <h2>Available Workouts</h2>
-  </div>
+  <% if @workout_program.workouts.present? %>
+    <div>
+      <h2>Available Workouts</h2>
+    </div>
 
-  <% @workout_program.workouts.each do |workout| %>
-    <%= render 'workouts/workout', workout: workout %>
+    <% @workout_program.workouts.each do |workout| %>
+      <%= render 'workouts/workout', workout: workout %>
+    <% end %>
+    <%= link_to "Workout Program", root_path, class:"button-green" %>
+    <%= link_to "Delete All",
+                  workout_program_path(@workout_program),
+                  data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+                  class: "btn-already mb-4" %>
   <% end %>
-  <%= link_to "Workout Program", root_path, class:"button-green" %>
-  <%= link_to "Delete All",
-                workout_program_path(@workout_program),
-                data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
-                class: "btn-already mb-4" %>
 </div>
 
 <% unless @workout_program.workouts.any?(&:persisted?) %>
   <div class="workout-program">
-    <h1>Add workouts:</h1>
+    <h1 class="text-white">Add workouts:</h1>
     <%= simple_form_for @workout_program do |f| %>
       <% @workout_program.errors.full_messages.each do |e| %>
         <p class="text-danger"><%= e %></p>
       <% end %>
       <!-- Nested Workout fields (using fields_for) -->
       <% @workout_program.weekly_frequency.times do |i| %>
-        <h2>Workout #<%= i + 1 %></h2>
+        <h2 class="text-white">Workout <%= i + 1 %></h2>
         <%= f.simple_fields_for :workouts, @workout_program.workouts[i] || Workout.new do |workout_fields| %>
-          <%= workout_fields.input :categories, collection: ['Chest', 'Back', 'Legs', 'Shoulders', 'Biceps', 'Triceps', 'Abs', 'Cardio', 'UpperBody', 'LowerBody', 'FullBody']%>
+          <%= workout_fields.input :categories,collection: ['Chest', 'Back', 'Legs', 'Shoulders', 'Biceps', 'Triceps', 'Abs', 'Cardio', 'UpperBody', 'LowerBody', 'FullBody'], input_html: { class: "profile-input" }%>
         <% end %>
       <% end %>
-      <%= f.submit %>
+      <%= f.button :submit, "Confirm Workouts", class:"button-green w-100 mt-4 mb-3"  %>
     <% end %>
   </div>
 <% end %>

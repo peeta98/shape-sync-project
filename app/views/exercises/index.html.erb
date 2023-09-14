@@ -6,125 +6,111 @@
     <%= link_to 'Hide exercises', workout_program_path(@workout.workout_program), data: { turbo_frame: :_top }, class:"text-decoration-none text-white mb-2" %>
   </div>
   <div class="exercises-div">
-    <table id="table">
-      <tr>
-        <th>
-          <strong><h6>Name</h6></strong>
-        </th>
-        <th>
-          <strong><h6>Sets</h6></strong>
-        </th>
-        <th>
-          <strong><h6>Reps</h6></strong>
-        </th>
-        <th>
-          <strong><h6>Weights</h6></strong>
-        </th>
-      </tr>
-      <% if @exercises.any? %>
-        <% @exercises.each do |exercise|  %>
-          <%= turbo_frame_tag dom_id(exercise) do %>
-            <tr>
-              <td class="d-flex align-items-center">
-                <%= link_to remove_association_path(exercise.id), data: {turbo_method: :patch, turbo_frame: :_top} do %>
-                  <i class="fa-solid fa-trash fa-lg" style="color: white;"></i>
-                <% end %>
-                <p class="ms-2"><%= exercise.name %></p>
-              </td>
-              <td data-controller="set-sets" class="text-center">
-                <!-- Button trigger modal -->
-                <button type="button" class="bg-transparent" data-bs-toggle="modal" data-bs-target="#setsModal<%= exercise.id %>">
-                  <p data-set-sets-target="sets"><%= exercise.sets %></p>
-                </button>
+    <div class="headers d-flex justify-content-between">
+      <h6>Sets</h6>
+      <h6 class="ms-4">Reps</h6>
+      <h6>Weight</h6>
+    </div>
+    <% if @exercises.any? %>
+      <% @exercises.each do |exercise|  %>
+        <%= turbo_frame_tag dom_id(exercise) do %>
+          <div class="name d-flex align-items-center">
+            <%= link_to remove_association_path(exercise.id), data: {turbo_method: :patch, turbo_frame: :_top} do %>
+              <i class="fa-solid fa-trash fa-lg" style="color: black;"></i>
+            <% end %>
+            <strong><p><%= exercise.name %></p></strong>
+          </div>
+          <div class="attributes d-flex justify-content-between">
+            <div data-controller="set-sets" class="text-center">
+              <!-- Button trigger modal -->
+              <button type="button" class="bg-transparent" data-bs-toggle="modal" data-bs-target="#setsModal<%= exercise.id %>">
+                <h6 data-set-sets-target="sets"><%= exercise.sets %></h6>
+              </button>
 
-                <!-- Modal -->
-                <div class="modal fade" id="setsModal<%= exercise.id %>" tabindex="-1" aria-labelledby="setsModalLabel" aria-hidden="true">
-                  <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="setsModalLabel">Sets</h5>
-                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">X</button>
-                      </div>
-                      <div class="modal-body">
-                          <p>Change Exercise Sets:</p>
-                        <div class="edit-exercise">
-                          <button type="button" class="links" data-action="click->set-sets#decrease">-</button>
-                          <p data-set-sets-target="set"><%= exercise.sets %></p>
-                          <button type="button" class="links" data-action="click->set-sets#increase">+</button>
-                        </div>
-                      </div>
-                      <%= simple_form_for exercise, html: {data:{set_sets_target:"form"}, class:"d-none"} do |f| %>
-                        <%= f.input :sets, input_html: {data: {set_sets_target: "input"}} %>
-                        <%= f.submit %>
-                      <% end %>
+              <!-- Modal -->
+              <div class="modal fade" id="setsModal<%= exercise.id %>" tabindex="-1" aria-labelledby="setsModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="setsModalLabel">Sets</h5>
+                      <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">X</button>
                     </div>
+                    <div class="modal-body">
+                      <div class="edit-exercise">
+                        <button type="button" class="links" data-action="click->set-sets#decrease">-</button>
+                        <h6 data-set-sets-target="set"><%= exercise.sets %></h6>
+                        <button type="button" class="links" data-action="click->set-sets#increase">+</button>
+                      </div>
+                    </div>
+                    <%= simple_form_for exercise, html: {data:{set_sets_target:"form"}, class:"d-none"} do |f| %>
+                      <%= f.input :sets, input_html: {data: {set_sets_target: "input"}} %>
+                      <%= f.submit %>
+                    <% end %>
                   </div>
                 </div>
-              </td>
-              <td data-controller="set-reps" class="text-center">
-                <!-- Button trigger modal -->
-                <button type="button" class="bg-transparent" data-bs-toggle="modal" data-bs-target="#repsModal<%= exercise.id %>">
-                  <p data-set-reps-target="reps"><%= exercise.reps %></p>
-                </button>
+              </div>
+            </div>
+            <div data-controller="set-reps" class="text-center">
+              <!-- Button trigger modal -->
+              <button type="button" class="bg-transparent" data-bs-toggle="modal" data-bs-target="#repsModal<%= exercise.id %>">
+                <h6 data-set-reps-target="reps"><%= exercise.reps %></h6>
+              </button>
 
-                <!-- Modal -->
-                <div class="modal fade" id="repsModal<%= exercise.id %>" tabindex="-1" aria-labelledby="repsModalLabel" aria-hidden="true">
-                  <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="repsModalLabel">Reps</h5>
-                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">X</button>
-                      </div>
-                      <div class="modal-body">
-                          <p>Change Exercise Reps:</p>
-                        <div class="edit-exercise">
-                          <button type="button" class="links" data-action="click->set-reps#decrease">-</button>
-                          <p data-set-reps-target="rep"><%= exercise.reps %></p>
-                          <button type="button" class="links" data-action="click->set-reps#increase">+</button>
-                        </div>
-                      </div>
-                      <%= simple_form_for exercise, html: {data:{set_reps_target:"form"}, class:"d-none"} do |f| %>
-                        <%= f.input :reps, input_html: {data: {set_reps_target: "input"}} %>
-                        <%= f.submit %>
-                      <% end %>
+              <!-- Modal -->
+              <div class="modal fade" id="repsModal<%= exercise.id %>" tabindex="-1" aria-labelledby="repsModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="repsModalLabel">Reps</h5>
+                      <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">X</button>
                     </div>
+                    <div class="modal-body">
+                      <div class="edit-exercise">
+                        <button type="button" class="links" data-action="click->set-reps#decrease">-</button>
+                        <h6 data-set-reps-target="rep"><%= exercise.reps %></h6>
+                        <button type="button" class="links" data-action="click->set-reps#increase">+</button>
+                      </div>
+                    </div>
+                    <%= simple_form_for exercise, html: {data:{set_reps_target:"form"}, class:"d-none"} do |f| %>
+                      <%= f.input :reps, input_html: {data: {set_reps_target: "input"}} %>
+                      <%= f.submit %>
+                    <% end %>
                   </div>
                 </div>
-              </td>
-              <td data-controller="set-weight" class="text-center">
-                <!-- Button trigger modal -->
-                <button type="button" class="bg-transparent" data-bs-toggle="modal" data-bs-target="#weightModal<%= exercise.id %>">
-                  <p data-set-weight-target="weights"><%= exercise.weight %></p>
-                </button>
+              </div>
+            </div>
+            <div data-controller="set-weight" class="text-center">
+              <!-- Button trigger modal -->
+              <button type="button" class="bg-transparent" data-bs-toggle="modal" data-bs-target="#weightModal<%= exercise.id %>">
+                <h6 data-set-weight-target="weights"><%= exercise.weight %></h6>
+              </button>
 
-                <!-- Modal -->
-                <div class="modal fade" id="weightModal<%= exercise.id %>" tabindex="-1" aria-labelledby="weightModalLabel" aria-hidden="true">
-                  <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="weightModalLabel">Weights</h5>
-                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">X</button>
-                      </div>
-                      <div class="modal-body">
-                          <p>Change Exercise Weight:</p>
-                        <div class="modal-footer-weight d-flex justify-content-center">
-                          <%= simple_form_for exercise,html: {data:{set_weight_target:"form", action:"set-weight#update"}, class:""} do |f| %>
-                            <%= f.input :weight,label_html:{class:"d-none"}, input_html: {data: {set_weight_target: "input"}, class:"input-field"} %>
-                            <%= f.button :submit, class:"button-green-modal", data:{bs_dismiss: "modal"}%>
-                          <% end %>
-                        </div>
+              <!-- Modal -->
+              <div class="modal fade" id="weightModal<%= exercise.id %>" tabindex="-1" aria-labelledby="weightModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="weightModalLabel">Weights</h5>
+                      <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">X</button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="modal-footer-weight d-flex justify-content-center">
+                        <%= simple_form_for exercise,html: {data:{set_weight_target:"form", action:"set-weight#update"}, class:""} do |f| %>
+                          <%= f.input :weight,label_html:{class:"d-none"}, input_html: {data: {set_weight_target: "input"}, class:"input-field"} %>
+                          <%= f.button :submit, class:"button-green-modal", data:{bs_dismiss: "modal"}%>
+                        <% end %>
                       </div>
                     </div>
                   </div>
                 </div>
-              </td>
-            </tr>
-          <% end %>
+              </div>
+            </div>
+          </div>
         <% end %>
-      <% else %>
-        <p>No exercises yet...</p>
       <% end %>
-    </table>
+    <% else %>
+      <p>No exercises yet...</p>
+    <% end %>
   </div>
   <div class="insert-exercises d-flex justify-content-around text-center mt-3">
     <div>
