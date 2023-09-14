@@ -8,7 +8,7 @@
     <% @workout_program.workouts.each do |workout| %>
       <%= render 'workouts/workout', workout: workout %>
     <% end %>
-    <%= link_to "Workout Program", root_path, class:"button-green" %>
+    <%= link_to "Home", root_path, class:"button-green" %>
     <%= link_to "Delete All",
                   workout_program_path(@workout_program),
                   data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
