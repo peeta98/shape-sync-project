@@ -36,7 +36,6 @@ export default class extends Controller {
     })
     .then((response) => response.json())
     .then(data => {
-      console.log(data);
       data
       const innerHTML = data.achievements.map(achievement =>`
         <div class="achievement">

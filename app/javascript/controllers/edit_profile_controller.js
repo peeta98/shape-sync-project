@@ -5,7 +5,6 @@ export default class extends Controller {
   static values = { goalSelectVisible: Boolean };
 
   connect() {
-    console.log("Stimulus Controller is Connected!");
     const goalSelect = document.getElementById("goalSelect");
     const goalMessage = document.getElementById("goalMessage");
     const goalIcon = document.getElementById("goalIcon");
