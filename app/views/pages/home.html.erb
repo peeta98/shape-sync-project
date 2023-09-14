@@ -1,4 +1,4 @@
-<div class="container mt-0 rounded-0 text-center" id="home-background">
+<div class="container mt-0  rounded-0 text-center" id="home-background">
   <% if current_user.workout_program.present? %>
     <h1 class="fw-bold mt-4">Active Program</h1>
     <h1 class="fw-bold mb-4"><%= current_user.workout_program.weekly_frequency %> times a week</h1>
@@ -14,7 +14,14 @@
     </div>
     <% end %>
   <% else %>
-    <h1>You have no workout yet</h1>
-    <%= link_to "Create Program", new_workout_program_path %>
+    <div class="w-100">
+      <%= image_tag "logo.png" , class:"w-100"%>
+    </div>
+    <div class="d-flex align-items-center justify-content-center">
+      <div>
+        <h1>You have no program yet</h1>
+        <%= link_to "Lets Start", new_workout_program_path, class:"button-green text-black text-decoration-none" %>
+      </div>
+    </div>
   <% end %>
 </div>

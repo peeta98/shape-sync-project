@@ -97,6 +97,7 @@
     /* border: 1px solid $app-color; */
     color: white;
     border-radius: 16px;
+    padding: 25px;
   }
 
   .profile-input-pic {
@@ -147,6 +148,18 @@
 
   }
 
+ .logout{
+   font-size: 20px;
+   font-weight: bold;
+  
+  }
+ .logout a:link { 
+    text-decoration:none; 
+}
+.text{
+  color:azure
+}
+ 
 .my-3 {
   font-size: 19px;
 }
