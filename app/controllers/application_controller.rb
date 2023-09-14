@@ -18,9 +18,10 @@ class ApplicationController < ActionController::Base
     # For additional in app/views/devise/registrations/edit.html.erb
     devise_parameter_sanitizer.permit(:account_update, keys: [:weight, :height, :age, :gender, :username])
   end
+
   private
 
   def skip_pundit?
-    devise_controller? || params[:controller] =~  /(^(rails_)?admin)|(^pages$)|(^achievements$)/
+    devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)|(^achievements$)/
   end
 end

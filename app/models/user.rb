@@ -82,4 +82,9 @@ class User < ApplicationRecord
   def platinum_achievement2? # User needs to do a total amount of reps > 200 in a workout
     workouts.to_a.any?{ |workout| workout.exercises.sum(:reps) > 200 }
   end
+
+  def show_latest_achievement
+    last_user_achievement = user_achievements.max_by{ |user_achievement| user_achievement.date_of_completion }
+    last_user_achievement.achievement unless last_user_achievement.nil?
+  end
 end

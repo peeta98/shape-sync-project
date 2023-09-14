@@ -43,7 +43,7 @@ class WorkoutProgramsController < ApplicationController
   def destroy
     authorize @workout_program
     @workout_program.destroy
-    redirect_to new_workout_program
+    redirect_to new_workout_program_path, status: :see_other
   end
 
   private

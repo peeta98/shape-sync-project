@@ -46,8 +46,4 @@ class AchievementsController < ApplicationController
       format.json { render json: { achievements: @achievements } }
     end
   end
-
-  def show_latest_achievement
-    @latest_achievement = current_user.achievements.order(created_at: :desc).first
-  end
 end

@@ -21,7 +21,7 @@
   .transparent{
     background-color: transparent;
     color: white;
-    border: 1px solid $app-color;
+    /* border: 1px solid $app-color; */
     border-radius: 16px;
     width: 95vw;
   }
@@ -44,7 +44,7 @@
   padding: 2rem;
   color: white;
   margin-top: 2rem;
-  margin-bottom: 0;
+  margin-bottom: 1rem;
   h2{
     margin-bottom: 0;
   }
@@ -57,11 +57,10 @@
 }
 
 .category-card.chest {
-  background-image: url('/assets/chest1.png');
+  background: image-url('chest1.png');
   background-size: cover;
   background-position-x: 75px;
   background-position-y: 130px;
-  vertical-align: center;
   color: black;
   background-color: white;
 
@@ -73,16 +72,16 @@
 }
 
 .category-card.back {
-  background-image: url('/assets/back3.png');
+  background: image-url('back3.png');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   background-position: center center;
   vertical-align: center;
-  color: rgb(255, 255, 255);
+  color: black;
   background-position-x: 85px;
   background-position-y: -105px;
-  background-color: #3c3c3c;
+  background-color: white;
 
   h2{
     margin-bottom: 0;
@@ -91,14 +90,14 @@
 }
 
 .category-card.abs {
-  background-image: url('/assets/abs1.png');
+  background: image-url('abs1.png');
   background-size: cover;
   background-position: center center;
   vertical-align: center;
-  color: rgb(255, 255, 255);
+  color: black;
   background-position-x: 75px;
   background-position-y: -170px;
-  background-color: #3c3c3c;
+  background-color: white;
   background-repeat: no-repeat;
 
   h2{
@@ -108,14 +107,14 @@
 }
 
 .category-card.legs {
-  background-image: url('/assets/legs1.png');
+  background: image-url('legs1.png');
   background-size: cover;
   background-position: center bottom;
   vertical-align: center;
-  color: rgb(255, 255, 255);
+  color: black;
   background-position-y: -90px;
   background-position-x: 75px;
-  background-color: #3c3c3c;
+  background-color: white;
   background-repeat: no-repeat;
 
   h2{
@@ -125,13 +124,13 @@
 }
 
 .category-card.triceps {
-  background-image: url('/assets/triceps1.png');
+  background: image-url('triceps1.png');
   background-size: cover;
   background-position: center;
   vertical-align: center;
-  color: rgb(255, 255, 255);
+  color: black;
   background-position-x: 80px;
-  background-color: #3c3c3c;
+  background-color: white;
   background-repeat: no-repeat;
 
   h2{
@@ -141,13 +140,13 @@
 }
 
 .category-card.biceps {
-  background-image: url('/assets/biceps1.png');
+  background: image-url('biceps1.png');
   background-size: cover;
   background-position: center;
   vertical-align: center;
-  color: rgb(255, 255, 255);
+  color: black;
   background-position-x: 70px;
-  background-color: #3c3c3c;
+  background-color: white;
   background-repeat: no-repeat;
 
   h2{
@@ -157,15 +156,15 @@
 }
 
 .category-card.shoulders {
-  background-image: url('/assets/shoulders4.png');
+  background: image-url('shoulders4.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   vertical-align: center;
-  color: rgb(255, 255, 255);
+  color: black;
   background-position-x: 80px;
   background-position-y: -60px;
-  background-color: #3c3c3c;
+  background-color: white;
 
   h2{
     margin-bottom: 0;
@@ -174,14 +173,14 @@
 }
 
 .category-card.cardio {
-  background-image: url('/assets/cardio.png');
+  background: image-url('cardio.png');
   background-size: cover;
   background-position: center;
   vertical-align: center;
-  color: rgb(255, 255, 255);
+  color: black;
   background-position-x: 100px;
   background-position-y: 0px;
-  background-color: #3c3c3c;
+  background-color: white;
   background-repeat: no-repeat;
   margin-bottom: 100px;
 
@@ -193,14 +192,14 @@
 
 .category-card.all {
   margin-bottom: 2rem;
-  background-image: url('/assets/all.png');
+  background: image-url('all.png');
   background-size: cover;
   background-position: center;
   vertical-align: center;
-  color: rgb(255, 255, 255);
+  color: black;
   background-position-x: 49px;
   background-position-y: -70px;
-  background-color: #3c3c3c;
+  background-color: white;
   background-repeat: no-repeat;
 
   h2{
@@ -212,4 +211,13 @@
 .category-card:hover .show-exercises{
   display: block;
   background-color: transparent;
+}
+
+.button_styling{
+  display: flex;
+  align-items: center;
+  i{
+    font-size: 30px;
+    margin-right: 1rem;
+  }
 }

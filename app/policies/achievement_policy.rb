@@ -8,4 +8,8 @@ class AchievementPolicy < ApplicationPolicy
     #   scope.all
     # end
   end
+
+  def profile?
+    true
+  end
 end

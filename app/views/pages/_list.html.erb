@@ -7,9 +7,10 @@
     <% end %>
   </p>
   <% exercises.each do |exercise| %>
-   <ul >
+        <ul >
           <li><div class="button_styling" data-bs-toggle="modal" data-bs-target="#exerciseModal<%= exercise.id %>">
-          <i class="fa-solid fa-eye"></i> <%= exercise.name %></div></li></ul>
+          <i class="fa-solid fa-eye"></i><%= exercise.name %></div></li>
+        </ul>
           <div class="modal fade" id="exerciseModal<%= exercise.id %>" tabindex="-1" role="dialog" aria-labelledby="exerciseModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
               <div class="modal-content">

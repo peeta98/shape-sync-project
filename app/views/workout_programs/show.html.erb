@@ -1,17 +1,17 @@
 <% content_for :meta_title, "My Workout Program #{DEFAULT_META["meta_product_name"]}" %>
 <div class="workout-cards mt-4" data-controller="add-exercises-to-workout">
   <div>
-    <h2>Current Workouts</h2>
+    <h2>Available Workouts</h2>
   </div>
 
   <% @workout_program.workouts.each do |workout| %>
     <%= render 'workouts/workout', workout: workout %>
   <% end %>
-  <%= link_to "Back To Home Page", root_path, class:"button-green" %>
-  <%= link_to "Delete This Workout Program",
+  <%= link_to "Workout Program", root_path, class:"button-green" %>
+  <%= link_to "Delete All",
                 workout_program_path(@workout_program),
                 data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
-                class: "btn-already mb-5" %>
+                class: "btn-already mb-4" %>
 </div>
 
 <% unless @workout_program.workouts.any?(&:persisted?) %>

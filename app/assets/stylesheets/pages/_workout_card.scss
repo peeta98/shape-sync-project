@@ -16,37 +16,49 @@
 }
 
 .workout-card{
-  background-color: #3c3c3c;
+  background-color: white;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: end;
   border-radius: 16px;
-  padding: 3.5rem 1rem;
+  padding-top: 6rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   margin-top: 2rem;
   background-size: cover;
   background-position: center bottom;
-  vertical-align: center;
-  color: rgb(255, 255, 255);
+  color: black;
   background-position-y: -45px;
   background-position-x: 60px;
   background-repeat: no-repeat;
   h4{
     margin-bottom: 0;
-    color: white;
+    color: black;
     padding-bottom: 0;
   }
 
-  i{
-    padding: 30px 18px;
-    background-color: rgba(172, 172, 172, 0.3);
-    border-radius: 50%;
-    color: white;
-    font-size: 25px;
-  }
+
   .workout-card-links{
+
     i{
+      background-color: rgba(172, 172, 172, 0.3);
+      border-radius: 50%;
+      color: black;
+      font-size: 25px;
       padding: 30px 15px;
       border: 0;
+    }
+  }
+  .workout-info{
+    background-color: rgba(172, 172, 172, 0.5);
+    padding-left: 1rem;
+    border-radius: 16px;
+    i{
+      padding: 30px 18px;
+      color: black;
+      font-size: 25px;
+      margin-left: 0;
     }
   }
 
@@ -167,11 +179,11 @@
 
 .transparent::placeholder {
   color: white;
-  font-size: 12px;
+  font-size: 15px;
 }
 
 .image-add {
-  margin-top: 205px;
+  margin-top: 65px;
 }
 
 .remember {

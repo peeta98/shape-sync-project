@@ -1,15 +1,14 @@
 <div class="container mt-2 mb-4">
-     <h2 class="text-center mb-3">Achievements Overview</h2>
     <div class="wrapper">
       <div class="py-3 px-3 text-center"> <h1>Welcome to your very own trophy cabinet!</h1>
           <p>Take a look at the some cool statistics based on your workouts and try to fill your cabinet with trophies!</p></div>
-      <div class="text-center py-3 px-3" id="icons">
-        <h1 class="py-3 px-3">Statistics</h2>
-        <p><i class="fa-solid fa-star"></i> Your favourite body part seems to be <%= current_user.favorite_bodypart.nil? ? 'none' : current_user.favorite_bodypart[0] %>, which you completed <%= current_user.favorite_bodypart.nil? ? 0 : current_user.favorite_bodypart[1] %> weekly sets!</p>
-        <p><i class="fa-solid fa-dumbbell"></i> Your favourite muscle to grind reps is <%= current_user.favorite_target.nil? ? 'none' : current_user.favorite_target[0] %>, which you did a total of <%= current_user.favorite_target.nil? ? 0 : current_user.favorite_target[1] %> weekly reps!</p>
-        <p><i class="fa-solid fa-chart-line"></i> Your strongest exercise is <%= current_user.strongest_exercise.nil? ? 'none' : current_user.strongest_exercise.name.downcase %>, which was done with an outstanding weight of <%= current_user.strongest_exercise.nil? ? 0 : current_user.strongest_exercise.weight %>kg!</p>
+      <div class="text-center py-3 px-3">
+        <h1 class="py-3 px-3">Gymtistics</h2>
+       <p class="mt-4"><i class="fa-solid fa-star" id="icn"></i></p><p> Favorite body part to sculpt</p><p> <strong><%= current_user.favorite_bodypart.nil? ? 'None' : current_user.favorite_bodypart[0].capitalize %> </strong> : Crushed <%= current_user.favorite_bodypart.nil? ? '0' : current_user.favorite_bodypart[1] %> weekly sets!</p>
+       <p class="mt-4"><i class="fa-solid fa-dumbbell" id="icn"></i> </p><p>Top muscle for pumping reps</p><p><strong><%= current_user.favorite_target.nil? ? 'None' : current_user.favorite_target[0].capitalize %></strong> : Nailed <%= current_user.favorite_target.nil? ? '0' : current_user.favorite_target[1] %> weekly reps!</p>
+       <p class="mt-4"><i class="fa-solid fa-chart-line" id="icn"></i></p><p> Absolute beast mode exercise</p><p><strong> <%= current_user.strongest_exercise.nil? ? 'None' : current_user.strongest_exercise.name.capitalize %></strong> : Mastered an epic <%= current_user.strongest_exercise.nil? ? '0' : current_user.strongest_exercise.weight %>kg!</p>
       </div>
-      <div class="py-3 px-3 text-center"> <p>You've added to your collection<span id="trophyAmount"><%= current_user.user_achievements.count %></span>trophies</p>
+      <div class="py-3 px-3 text-center"> <p>So far you've collected<span id="trophyAmount"><%= current_user.user_achievements.count %></span><h2>trophies</h2></p>
 
             <span>Check the achievements below on how to get more!</span></div>
       <div class="text-center py-3 px-3">
@@ -18,20 +17,20 @@
           <div class="row border-0">
             <li class="mb-2">
              <%= image_tag "platinumtrophy.png", alt: "Platinum Trophy", width: 60, height: 60 %>
-             <span id="platinumCount"><%= current_user.achievements.where(trophy: "platinum").count %> x</span>
+             <span id="platinumCount">x <%= current_user.achievements.where(trophy: "platinum").count %></span>
             </li>
             <li class="mb-2">
               <%= image_tag "goldtrophy.png", alt: "Gold Trophy", width: 50, height: 50 %>
-              <span id="goldCount"><%= current_user.achievements.where(trophy: "gold").count %> x</span>
+              <span id="goldCount">x <%= current_user.achievements.where(trophy: "gold").count %></span>
             </li></div>
           <div class="row border-0">
-            <li class="mb-3">
+            <li class="mb-3 mt-2">
               <%= image_tag "silvertrophy.png", alt: "Silver Trophy", width: 40, height: 40 %>
-              <span id="silverCount"><%= current_user.achievements.where(trophy: "silver").count %> x</span>
+              <span id="silverCount">x <%= current_user.achievements.where(trophy: "silver").count %></span>
             </li>
             <li class="mb-2">
              <%= image_tag "bronzetrophy.png", alt: "Bronze Trophy", width: 40, height: 40 %>
-             <span id="bronzeCount"><%= current_user.achievements.where(trophy: "bronze").count %> x</span>
+             <span id="bronzeCount">x <%= current_user.achievements.where(trophy: "bronze").count %></span>
             </li>
           </div>
         </ul></div>
@@ -44,9 +43,9 @@
         <button class="custom-button" data-action="click->controller#sort" data-url="/achievements/status"  data-sort="status">Sort by Status</button>
       </div>
 
-    <div class="achievements">
-      <div>Achievement</div>
+    <div class="achievements mb-4">
       <div>Category</div>
+      <div>Achievement</div>
       <div>Progress</div>
     </div>
 
