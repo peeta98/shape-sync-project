@@ -62,7 +62,7 @@ Rails.application.configure do
   # Suppress logger output for asset requests.
   config.assets.quiet = true
 
-  config.hosts << /\A[a-z\d-]+\.loca\.lt\z/
+  config.hosts.clear
 
   # Raises error for missing translations.
 
