@@ -27,7 +27,7 @@
       </div>
         <!-- Simple form to edit user information -->
         <%= simple_form_for current_user, html: {class: "d-none p-4"}, data: { edit_profile_target: "form" } do |f| %>
-          <%= f.file_field :avatar, label: 'Change Profile Picture', class: 'profile-input-pic' %>
+          <%= f.file_field :avatar, label: 'Change Profile Picture', class: 'profile-input-pic w-100' %>
           <%= f.button :submit, 'Upload', class: 'workoutbtn my-3' %>
           <%= f.input :username, label: false, input_html: { class: 'profile-input' } %>
           <%= f.input :email, label: false, input_html: { class: 'profile-input' } %>
@@ -52,7 +52,7 @@
   </div>
 
   <div class="container2 user-goal p-4">
-    <div class="container1 mx-4 justify-content-center">
+    <div class="container1 mx-a justify-content-center w-100">
       <h2 class="text-center mb-2"><i class="fa-solid fa-dumbbell"></i> Latest unlock <i class="fa-solid fa-dumbbell"></i></h2>
     </div>
     <% if @latest_achievement.present? %>
@@ -67,11 +67,11 @@
         <p>No achievements yet.</p>
       <% end %>
   </div>
+  <div class="log-out">
+    <%= link_to "Sign Out",
+              destroy_user_session_path,
+              data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+              class: "btn-already" %>
+  </div>
 
-
-
-  <%= link_to "Sign Out",
-                destroy_user_session_path,
-                data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
-                class: "btn-already mb-4" %>
 </div>
