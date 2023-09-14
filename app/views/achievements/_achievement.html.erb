@@ -33,27 +33,27 @@
       <% end %>
         <div data-target="achievement.status"><%= achievement.status %></div></div>
   <% if current_user.bronze_achievement1? && achievement.name == "Newbie Gains" %>
-    <%= button_to "Unlock Achievement", bronze1_path, data: {turbo_method: :post}%>
+    <%= button_to raw('Unlocked! <i class="fa-solid fa-unlock"></i>'), bronze1_path, data: {turbo_method: :post}, class: 'button-achievement' %>
   <% end %>
   <% if current_user.bronze_achievement2? && achievement.name == "One is better than nothing" %>
-    <%= button_to "Unlock Achievement", bronze2_path, data: {turbo_method: :post}%>
+    <%= button_to raw('Unlocked! <i class="fa-solid fa-unlock"></i>'), bronze2_path, data: {turbo_method: :post}, class: 'button-achievement' %>
   <% end %>
   <% if current_user.silver_achievement1? && achievement.name == "Wannabe Powerlifter" %>
-    <%= button_to "Unlock Achievement", silver1_path, data: {turbo_method: :post}%>
+    <%= button_to raw('Unlocked! <i class="fa-solid fa-unlock"></i>'), silver1_path, data: {turbo_method: :post}, class: 'button-achievement' %>
   <% end %>
   <% if current_user.silver_achievement2? && achievement.name == "Volume is key" %>
-    <%= button_to "Unlock Achievement", silver2_path, data: {turbo_method: :post}%>
+    <%= button_to raw('Unlocked! <i class="fa-solid fa-unlock"></i>'), silver2_path, data: {turbo_method: :post}, class: 'button-achievement' %>
   <% end %>
   <% if current_user.gold_achievement1? && achievement.name == "Biceps Abuser" %>
-    <%= button_to "Unlock Achievement", gold1_path, data: {turbo_method: :post}%>
+    <%= button_to raw('Unlocked! <i class="fa-solid fa-unlock"></i>'), gold1_path, data: {turbo_method: :post}, class: 'button-achievement' %>
   <% end %>
   <% if current_user.gold_achievement2? && achievement.name == "Never Skip Leg Day" %>
-    <%= button_to "Unlock Achievement", gold2_path, data: {turbo_method: :post}%>
+    <%= button_to raw('Unlocked! <i class="fa-solid fa-unlock"></i>'), gold2_path, data: {turbo_method: :post}, class: 'button-achievement' %>
   <% end %>
   <% if current_user.platinum_achievement1? && achievement.name == "Lightweight baby" %>
-    <%= button_to "Unlock Achievement", platinum1_path, data: {turbo_method: :post}%>
+    <%= button_to raw('Unlocked! <i class="fa-solid fa-unlock"></i>'), platinum1_path, data: {turbo_method: :post}, class: 'button-achievement' %>
   <% end %>
   <% if current_user.platinum_achievement2? && achievement.name == "Who is gonna carry the boats?" %>
-    <%= button_to "Unlock Achievement", platinum2_path, data: {turbo_method: :post}%>
+    <%= button_to raw('Unlocked! <i class="fa-solid fa-unlock"></i>'), platinum2_path, data: {turbo_method: :post}, class: 'button-achievement' %>
   <% end %>
 <% end %>
