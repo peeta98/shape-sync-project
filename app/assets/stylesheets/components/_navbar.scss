@@ -5,6 +5,7 @@
 }
 
 .navbar {
+  --bs-navbar-padding-y: 0rem;
   background-color: $app-color;
   position: fixed;
   bottom: 0;
@@ -18,7 +19,7 @@
 }
 
 ul.navbar-nav {
-  height: 70px;
+  height: 80px;
   font-size: 25px;
   display: flex;
   align-items: center;
@@ -60,4 +61,12 @@ body {
   width: 35px;
   height: 35px;
   border-radius: 50%;
+}
+
+.sign-up{
+  margin-top: 140px;
+}
+
+.sign-up2{
+  margin-top: 100px;
 }
