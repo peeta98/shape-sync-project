@@ -14,11 +14,11 @@
     <% if @exercises.any? %>
       <% @exercises.each do |exercise|  %>
         <%= turbo_frame_tag dom_id(exercise) do %>
-          <div class="name d-flex align-items-center">
+          <div class="name d-flex align-items-center justify-content-between">
+            <strong><p class="ex-name"><%= exercise.name %></p></strong>
             <%= link_to remove_association_path(exercise.id), data: {turbo_method: :patch, turbo_frame: :_top} do %>
               <i class="fa-solid fa-trash fa-lg" style="color: black;"></i>
             <% end %>
-            <strong><p><%= exercise.name %></p></strong>
           </div>
           <div class="attributes d-flex justify-content-between">
             <div data-controller="set-sets" class="text-center">

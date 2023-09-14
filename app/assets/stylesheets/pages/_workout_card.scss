@@ -1,5 +1,5 @@
 .workout-cards{
-  padding: 1rem;
+  padding: 20px;
   padding-bottom: 0;
   h1,h2,h3,h4,h5,h6{
     font-size: 22px;
@@ -95,8 +95,12 @@
     margin: 1rem 0;
     padding-top: 1rem;
     p{
-      margin-left: 1rem;
       font-weight: bold;
+    }
+    .ex-name{
+      font-size: 22px;
+      text-align: left;
+      padding-left: 0;
     }
   }
   .attributes{
@@ -120,7 +124,7 @@
   }
   i{
     color: black;
-    font-size: 30px;
+    font-size: 20px;
   }
 
 }
