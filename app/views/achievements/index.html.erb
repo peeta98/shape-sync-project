@@ -1,7 +1,7 @@
 <div class="container mt-2 mb-4">
     <div class="wrapper">
-      <div class="py-3 px-3 text-center p-4"> <h1>Welcome fellow Gymrat</h1>
-          <p>Lift heavy weights, blast some pre-workout, and try to collect them all!</p></div>
+      <div class="py-3 px-3 text-center p-4"> <h1>Winner's Club</h1>
+          <p class="text-center">Show off your gym prowless unlocking our achievements!</p></div>
       <div class="text-center py-3 px-3 p-4">
         <h1 class="py-3 px-3">Gymtistics</h2>
        <p class="mt-4"><i class="fa-solid fa-star" id="icn"></i></p><p> Favorite body part to sculpt</p><p> <strong><%= current_user.favorite_bodypart.nil? ? 'None' : current_user.favorite_bodypart[0].capitalize %> </strong> : Crushed <%= current_user.favorite_bodypart.nil? ? '0' : current_user.favorite_bodypart[1] %> weekly sets!</p>
